@@ -1,145 +1,146 @@
-# ECMAScript 6 React Card Component [![Build Status](https://travis-ci.org/aaronkaka/es6-react-component.svg?branch=master)](https://travis-ci.org/aaronkaka/es6-react-component)
+# REMOVE THIS SECTION ONCE COMPLETE
 
-![Image](https://cloud.githubusercontent.com/assets/1950683/13100443/594fa604-d4fa-11e5-8042-77dc6b77280a.jpg?raw=true "screenshot")
+**Assumption**: You understand how to use Git and have the git CLI correctly installed in your development environment.
+
+1. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to remove 
+the need to manually authenticate to GitHub on every network request. This enables the use of any automated npm scripts.
+
+2. Create your new repository in GitHub (open source - default) or, if needed, Pearson BitBucket (private source).
+
+3. Perform these steps in your terminal:
+
+
+    git clone https://github.com/Pearson-Higher-Ed/component-archetype.git <name_of_your_new_component>
+    
+    cd <name_of_your_new_component>
+    
+    git remote set-url origin <url_of_new_component_repository>
+    
+    git remote -v
+    
+    
+Once you've verified that the remote origin now looks correct for your repo, do the initial push:
+
+    git push -u origin master
+
+
+/////////////////////////////////// ^ REMOVE ^ ///////////////////////////////////
+
+# New Component Name
+
+## Summary
+
+This is an executive summary of why my component exists and what it does.
+
+## External Dependencies
 
 **React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.**
 
-## Goals
+Other dependencies:
 
-Card web component written with ES6 modules, classes, and syntax using [React](http://facebook.github.io/react) to 
-achieve the following goals:
+- <ANY OTHER DEPENDENCIES LISTED HERE>
 
-- Reusable and responsively-designed; just drop into DOM node
-- Event all interaction
-- External styling is bundled with and scoped to the component; targets Bootstrap 3
-- Cross-browser for modern browsers [no IE]; thus no style scoped attribute or Shadow DOM encapsulation
-- Internationalization using React Intl (thanks to @deepak2510)
-
-[no IE] Uses the native CustomEvent constructor that no version of IE supports (MS Edge does!). This choice was made to 
-reduce complexity and encourage adherence to web standards - add the polyfill if needed.
-
-## Toolchain
-
-- [Node.js](http://nodejs.org) v4+
-- [webpack](https://webpack.github.io/)
-    - Bundle javascript, styles and icon
-    - Babel 6 transpiles ES6 and JSX
-    - ESLint
-
-Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
-to manage them.
-
-## Externalizing React
-
-In webpack, "externals" allows you to specify dependencies that are not resolved by webpack, but become dependencies of 
-the output. This means they are imported from the environment during runtime.
-
-By doing this with React, it reduced the byte size of the bundle from 288521 to 85990 - about a 70% reduction!
-
-## Playtime
-
-### Can I see the project working before I change anything?
-
-After cloning the repo:
-
-    cd es6-react-component
-    npm install
-    npm run dev
-
-Once bundling is complete, open a browser tab to **localhost:8080/demo**, and dev.card-component.js is served in memory.
-
-### Hot Reload
-
-Hot module replacement is activated in the webpack dev server; changes to react_components are automatically reloaded in
- the browser.
-
-### Test
-
-The project is wired to unit test with the Jest framework and Enzyme, a JavaScript testing utility for React that makes 
-it easier to assert, manipulate, and traverse your component's output.
-
-    npm test    
-
-## Usage
+## Usage for Consuming Application
 
 Do as described in this section from the consuming application:
      
-    > npm i --save es6-react-component react@latest react-dom@latest
+    > npm i --save <new component> react@latest react-dom@latest
 
-### Script Include the Bundle
+### Bundle (Simplest)
 
-The transpiled, minified bundle will be available as /node_modules/es6-react-component/build/dist.card-component.js.
+The transpiled, minified bundle will be available in /node_modules/es6-react-component/build.
 
-Include it in the consuming page, then event `cardstrap` with the container type, e.g.
+    EXAMPLE INITIALIZATION GOES HERE
 
-    { detail: '.container' }
+### or Build
+
+There are use cases where building the component into your application is necessary.
+
+Example javascript using CommonJS:
+
+    EXAMPLE GOES HERE
     
-To remove a card instance, event `destroyCard` with the DOM element ID, e.g.
+Example webpack configuration (requires installation of correct dependencies, loaders, and config).
 
-    { detail: 'div2' }
-
-### ...or CommonJS
-
-Example javascript:
-
-    var cardstrap = require('es6-react-component').default;
-    cardstrap('.container'); // pass in your container element
-    
-Then build the required bundle with webpack (requires installation of correct dependencies, loaders, and config), 
-similar to this webpack.config.js:
-
-    module.exports = {
-      entry: ['./eventing.js'],
-      output: {
-        path: './',
-        filename: 'bundle.js'
-      },
-      module: {
-        loaders: [
-          {test: /\.css$/, loader: 'style-loader!css-loader'},
-          {
-            test: /\.js$/, loader: 'babel', exclude: /node_modules/,
-            query: {
-              cacheDirectory: true,
-              presets: ['es2015', 'react']
-            }
-          },
-          {test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/, loader: 'url?limit=100000'},
-          {test: /\.json$/, loader: 'json'}
-        ]
-      }
-    };
+    EXAMPLE GOES HERE
         
-### Card Instances
+### Configuration
 
-After the card component is bootstrapped for a container, each instance is initialized with the `initCard` event:
-
-      eventedElement.dispatchEvent(new CustomEvent('initCard', {
-          detail: {
-            eventedElem: eventedElementId,
-            targetElem: "div2",                         // Required
-            userId: "c685a8ed331c70a47dea8812da69c1bd", // Required
-            username: "joe.schmo",                      // Required
-            bio: "This is Joe's bio.",
-            avatar: "images/wired.jpg",
-            locale: "fr-CA"
-          }
-        })
-      );
-
-The following events and data are emitted by each card instance.
+    EXAMPLE GOES HERE
+   
+### Eventing
 
 <table>
     <tr>
         <th>CustomEvent</th><th>detail</th>
     </tr>
-    <tr>
-        <td>card-bioDeleted</td><td>{ userId: [sUserId], username: [sUsername] }</td>
-    </tr>
-    <tr>
-        <td>card-liked</td><td>{ userId: [sUserId], username: [sUsername], likes: [iLikes] }</td>
-    </tr>
-    <tr>
-        <td>card-comment</td><td>{ userId: [sUserId], username: [sUsername], comment: [sComment] }</td>
-    </tr>
 </table>
+
+
+## Contributing
+
+### Overview
+
+This component is constructed using React written in ES6 (and some ES7) and styled with SCSS, all transpiled by Babel.
+
+The project is also set up for unit testing with code coverage, i18n with React Intl, and hot reloading.
+
+### Continuous Integration
+
+To hook up your project to Origami continuous integration, a one-time manual process is currently required. Please send 
+the request to the Pearson Design Accelerator team (pearson-design-accelerator@pearson.com).
+
+### Development Toolchain
+
+- [Node.js](http://nodejs.org) v4+
+- [Ruby](https://www.ruby-lang.org/en/) (Macs typically ship with Ruby by default)
+- [webpack](https://webpack.github.io/)
+    - Babel 6 transpiles ES6 and JSX
+    - Bundle javascript, styles and icon
+    - ESLint configured with .eslintrc
+
+Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
+to manage them.
+
+
+#### Can I see the project working before I change anything?
+
+In your local repo:
+
+    npm install
+    npm run dev
+
+Now open a browser tab to **localhost:8081/demo**, and the bundle is served in memory.
+
+#### Hot Reload
+
+Hot module replacement is activated in the webpack dev server; changes to js/scss are automatically reloaded in the browser.
+
+#### Build
+
+Build the bundle manually at any time.
+
+    npm run build
+
+#### Test
+
+The project is wired to unit test with the Jest framework and Enzyme, a JavaScript testing utility for React that makes 
+it easier to assert, manipulate, and traverse your component's output. Shoot for 100% code coverage.
+
+Note this will automatically run linting prior to executing the test suite.
+
+    npm test    
+
+#### Translations
+
+For text inherent to the component, add translations to JSON files for each locale to /translations. Ensure the 
+component's configuration accepts a locale parameter.
+
+#### Publish to Pearson Public Registry
+
+There is no need to manually tag your project. The release script will handle that and CI publishing to npm for you.
+
+When ready for publishing, execute from your master branch:
+
+    npm run release
+    

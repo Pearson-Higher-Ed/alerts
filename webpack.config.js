@@ -1,12 +1,12 @@
 // [name] under the output section denotes the entry prop names
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './react_components/index.js', './demo/demo-scriptinclude.js'],
-   dist: ['./react_components/index.js']
+   dev: ['webpack/hot/dev-server', './main.js', './demo/demo.js'],
+   dist: ['./main.js']
   },
   output: {
     path: './',
-    filename: 'build/[name].card-component.js',
+    filename: 'build/[name].component-name.js',
     libraryTarget: "umd"
   },
   externals: [
@@ -38,17 +38,16 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.css$/,
-        loader: 'style!css', // CSS is turned into JavaScript with css loader, then embedded as styles using style loader
+        test: /\.scss$/,
+        loader: 'style!css!sass', // sass -> css -> javascript -> inline style
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: /node_modules/,
         query: {
           cacheDirectory: true,
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-0']
         }
       },
       {

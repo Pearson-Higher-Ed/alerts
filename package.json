@@ -1,20 +1,23 @@
 {
-  "name": "es6-react-component",
-  "version": "5.0.0",
-  "description": "Card component with bundled styling targeting Bootstrap 3, evented interaction, and powered by React.",
-  "main": "react_components/index.js",
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./main.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --hot --progress --colors --no-info",
+    "dev": "webpack-dev-server --port 8081 --devtool eval --hot --progress --colors",
+    "pretest": "npm run lint",
     "test": "jest",
     "pretest-cov": "npm run lint",
     "test-cov": "jest --coverage",
     "build": "webpack -p",
     "coveralls": "coveralls < coverage/lcov.info",
-    "lint": "eslint ./react_components/**",
-    "lint-all": "eslint react_components/** __tests__/** demo/demo-scriptinclude.js",
-    "ci": "npm run test-cov && npm run build && npm run coveralls",
+    "lint": "eslint src/js/**",
+    "lint-all": "eslint src/js/** __tests__/** demo/*.js",
+    "gen-changelog": "node ./npm_scripts/gen-changelog.js",
+    "version": "npm run gen-changelog && git add CHANGELOG.md",
+    "ci": "npm run test-cov && npm run build",
     "release": "node ./npm_scripts/release.js",
-    "clean": "rm build/*.js && rimraf coverage"
+    "verify": "node ./npm_scripts/verify.js"
   },
   "jest": {
     "testRunner": "./node_modules/jest-cli/src/testRunners/jasmine/jasmine2",
@@ -26,17 +29,11 @@
       "enzyme"
     ]
   },
-  "author": "Aaron Kaka <aaron.kaka@gmail.com>",
-  "contributors": [
-    {
-      "name": "Deepak Bhagchandani",
-      "email": "deepak2510@gmail.com"
-    }
-  ],
+  "author": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aaronkaka/es6-react-component"
+    "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
     "react-intl": "~2.0.1"
@@ -48,6 +45,7 @@
     "babel-loader": "~6.2.0",
     "babel-preset-es2015": "~6.3.13",
     "babel-preset-react": "~6.3.13",
+    "babel-preset-stage-0": "~6.5.0",
     "coveralls": "~2.11.9",
     "css-loader": "~0.23.0",
     "enzyme": "~2.2.0",
@@ -57,9 +55,11 @@
     "file-loader": "~0.8.5",
     "jest-cli": "~0.9.0",
     "json-loader": "~0.5.4",
+    "node-sass": "^3.4.2",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
+    "sass-loader": "^3.2.0",
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",
@@ -67,8 +67,6 @@
     "webpack-dev-server": "~1.14.0"
   },
   "keywords": [
-    "card",
-    "react-component",
-    "es2015"
+    "pearson-components"
   ]
 }

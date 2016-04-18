@@ -1,6 +1,5 @@
-node_modules
-.idea
 .DS_Store
-coverage
-firebase.json
+.idea
 build/*.js
+coverage
+node_modules
