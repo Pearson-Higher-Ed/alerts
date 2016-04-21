@@ -4,14 +4,20 @@
 
 import React, { PropTypes } from 'react';
 import {intlShape, injectIntl, defineMessages} from 'react-intl';
+
 //
 // Default messages are en-US
 //
 const messages = defineMessages({
+  buttonText: {
+    id: 'buttonText',
+    description : 'this is demo button text',
+    defaultMessage: 'say hello'
+  },
   placeholder: {
     id: 'placeholder',
-    description : 'this is a stub message',
-    defaultMessage: 'Hello world'
+    description : 'this is a demo placeholder',
+    defaultMessage: 'placeholder'
   }
 });
 
@@ -19,14 +25,13 @@ const messages = defineMessages({
 class MyClassName extends React.Component {
 
   //
-  // Add additional prop types to validate the properties passed to this component!
+  // Modify or add prop types to validate the properties passed to this component!
   // This is defined using an ES7 class property (transpiled by Babel Stage 0)
   //
   static propTypes = {
     intl: intlShape.isRequired,
     data: PropTypes.shape({
       elementId: PropTypes.string.isRequired,
-      greeter: PropTypes.string.isRequired,
       locale: PropTypes.string
     })
   };
@@ -36,7 +41,8 @@ class MyClassName extends React.Component {
     super(props);
 
     //
-    // The following state is a demo, and try not to use state if not necessary for your component
+    // FOR DEMO - use state when you need to respond to user input, a server request or the passage of time
+    // See https://facebook.github.io/react/docs/thinking-in-react.html
     //
     this.state = {
       text: ''
@@ -48,23 +54,26 @@ class MyClassName extends React.Component {
   // need to do manual binding of the 'this' context in event handlers or callbacks. React binds all other contexts
   // as expected.
   //
-  // The following event handler is just a demo and should be removed:
-  _change = e => {
-    this.setState({text: e.target.value});
+  // FOR DEMO and should be removed:
+  _change = () => {
+    this.setState({text: this.props.data.greeting});
   };
 
   render() {
 
     const {formatMessage} = this.props.intl;
+    //
+    // FOR DEMO and should be refactored for your purposes:
+    //
     const {text} = this.state;
 
     return (
-      <div>
-        {this.props.data.greeter} says "{formatMessage(messages.placeholder)}"
-
-        <div>
-          Your response? <input type="text" value={text} onInput={this._change} />
-        </div>
+      <div className="pe-inlineblock">
+        <button className="pe-btn pe-btn--primary" onClick={this._change}>{formatMessage(messages.buttonText)}</button>
+        &nbsp;
+        <span className="pe-input">
+          <input type="text" value={text} placeholder={formatMessage(messages.placeholder)} />
+        </span>
       </div>
     )
   }

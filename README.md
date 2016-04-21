@@ -5,16 +5,16 @@
 1. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to remove 
 the need to manually authenticate to GitHub on every network request. This enables the use of any automated npm scripts.
 
-2. Create your new repository in GitHub (open source - default) or, if needed, Pearson BitBucket (private source).
+2. Create your new repository in GitHub (open source - default) or, if necessary, Pearson BitBucket (private source).
 
 3. Perform these steps in your terminal:
 
 
-    git clone https://github.com/Pearson-Higher-Ed/component-archetype.git <name_of_your_new_component>
+    git clone https://github.com/Pearson-Higher-Ed/component-archetype.git [name_of_your_new_component]
     
-    cd <name_of_your_new_component>
+    cd [name_of_your_new_component]
     
-    git remote set-url origin <url_of_new_component_repository>
+    git remote set-url origin [url_of_new_component_repository]
     
     git remote -v
     
@@ -110,11 +110,11 @@ In your local repo:
     npm install
     npm run dev
 
-Now open a browser tab to **localhost:8081/demo**, and the bundle is served in memory.
+Navigate to **localhost:8081/demo** - the bundle is served in memory, which is why you may not see the file in /build.
 
 #### Hot Reload
 
-Hot module replacement is activated in the webpack dev server; changes to js/scss are automatically reloaded in the browser.
+Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the browser.
 
 #### Build
 
@@ -133,12 +133,12 @@ Note this will automatically run linting prior to executing the test suite.
 
 #### Translations
 
-For text inherent to the component, add translations to JSON files for each locale to /translations. Ensure the 
-component's configuration accepts a locale parameter.
+For text inherent to the component (e.g. button text or input placeholder), add JSON translations for each 
+supported locale to the translations folder. Ensure the component's configuration accepts a locale parameter.
 
 #### Publish to Pearson Public Registry
 
-There is no need to manually tag your project. The release script will handle that and CI publishing to npm for you.
+There is no need to manually tag your project. The release script will handle that and CI's publishing to npm for you.
 
 When ready for publishing, execute from your master branch:
 

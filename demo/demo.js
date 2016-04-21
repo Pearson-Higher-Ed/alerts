@@ -7,14 +7,14 @@ function init() {
   document.body.dispatchEvent(new CustomEvent('o.InitMyComponent', {
     detail: {
       elementId: 'demo-target1',
-      greeter: 'Pearson Design Accelerator in Colorado'
+      greeting: 'Hello world!'
     }
   }));
 
   document.body.dispatchEvent(new CustomEvent('o.InitMyComponent', {
     detail: {
       elementId: 'demo-target2',
-      greeter: 'Pearson Design Accelerator in Quebec',
+      greeting: 'Bonjour le monde!',
       locale: 'fr-CA'
     }
   }));
@@ -22,7 +22,7 @@ function init() {
   document.body.dispatchEvent(new CustomEvent('o.InitMyComponent', {
     detail: {
       elementId: 'demo-target3',
-      greeter: 'Not Long For This World',
+      greeting: 'Bonjour le monde!',
       locale: 'fr-CA'
     }
   }));
