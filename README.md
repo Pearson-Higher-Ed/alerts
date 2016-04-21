@@ -48,6 +48,9 @@ Do as described in this section from the consuming application:
 
 ### Bundle (Simplest)
 
+**NOTE: If you choose to use the native CustomEvent for eventing, you must 
+[polyfill](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) for Internet Explorer!**
+
 The transpiled, minified bundle will be available in /node_modules/es6-react-component/build.
 
     EXAMPLE INITIALIZATION GOES HERE

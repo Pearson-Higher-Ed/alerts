@@ -14,7 +14,9 @@ const translations = {
 };
 addLocaleData(frLocaleData);
 
-
+//
+// Change initInstance to initYourComponentName
+//
 export default function initInstance(config) {
 
   const locale = config.locale ? config.locale : 'en';
@@ -27,6 +29,9 @@ export default function initInstance(config) {
   );
 }
 
+//
+// Change removeInstance to initYourComponentName
+//
 export function removeInstance(elementId) {
   ReactDOM.unmountComponentAtNode(document.getElementById(elementId))
 }
