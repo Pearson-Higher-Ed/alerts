@@ -39,8 +39,7 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        loader: 'style!css!sass', // sass -> css -> javascript -> inline style
-        exclude: /node_modules/
+        loader: 'style!css!sass' // sass -> css -> javascript -> inline style
       },
       {
         test: /\.js$/,
@@ -52,13 +51,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(woff|ttf|eot|svg)(\?[a-z0-9]+)?$/,
-        loader: 'url?limit=100000',
-        exclude: /node_modules/
+        loader: 'json'
       }
     ]
   }

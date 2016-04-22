@@ -137,14 +137,14 @@ The project is wired to unit test with the [Jest framework](https://facebook.git
 [Enzyme](http://airbnb.io/enzyme/), a JavaScript testing utility for React that makes it easier to assert, manipulate, 
 and traverse your component's output.
 
-Note this will automatically run linting prior to executing the test suite.
+Linting will run automatically prior to executing the test suite.
 
     npm test    
 
 #### Code Coverage
 
 On GitHub, there is integration with the code coverage service [Coveralls](https://coveralls.io/github/Pearson-Higher-Ed).
-To see the coverage results, execute:
+To see the coverage results locally, execute:
 
     npm run test-cov
     
@@ -155,12 +155,17 @@ Shoot for 100% code coverage.
 For text inherent to the component (e.g. button text or input placeholder), add JSON translations for each supported 
 locale to the translations folder. 
 
-Ensure the component's configuration accepts a `locale` parameter.
+Retain the `locale` configuration parameter.
 
 #### Publish to Pearson Public Registry
 
 Do not manually version or tag your project. Instead, when you are ready to publish an update to npm, manually invoke the
-release script. It handles all of that and invokes CI publishing to npm on behalf of the pearson-ux npm account.
+release script in the master branch. It handles all of that and invokes CI publishing to npm on behalf of the pearson-ux
+ npm account. 
+ 
+Additionally, there is no need to manually maintain a change log - if you follow the 
+[commitizen](https://commitizen.github.io/cz-cli/) conventions for commit messages, a change log will automatically be 
+generated correctly during the release process.
 
     npm run release
     
