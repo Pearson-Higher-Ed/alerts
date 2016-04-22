@@ -1,12 +1,13 @@
 //
-// Change any reference to 'MyClassName' to your real class name!
+// In React, an owner is the component that sets the props of other components, if desired.
+// See https://facebook.github.io/react/docs/multiple-components.html for composability.
 //
 
 import React, { PropTypes } from 'react';
 import {intlShape, injectIntl, defineMessages} from 'react-intl';
 
 //
-// Default messages are en-US
+// Default messages are 'en'
 //
 const messages = defineMessages({
   buttonText: {
@@ -22,7 +23,7 @@ const messages = defineMessages({
 });
 
 
-class MyClassName extends React.Component {
+class ComponentOwner extends React.Component {
 
   //
   // Modify or add prop types to validate the properties passed to this component!
@@ -42,7 +43,6 @@ class MyClassName extends React.Component {
 
     //
     // FOR DEMO - use state when you need to respond to user input, a server request or the passage of time
-    // See https://facebook.github.io/react/docs/thinking-in-react.html
     //
     this.state = {
       text: ''
@@ -80,4 +80,4 @@ class MyClassName extends React.Component {
 
 }
 
-export default injectIntl(MyClassName); // Inject this.props.intl into the component context
+export default injectIntl(ComponentOwner); // Inject this.props.intl into the component context

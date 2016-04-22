@@ -2,7 +2,7 @@
 
 jest.dontMock('../src/js/component-owner.js');
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ComponentOwner from '../src/js/component-owner';
 import {IntlProvider} from 'react-intl';
 import {shallow} from 'enzyme';

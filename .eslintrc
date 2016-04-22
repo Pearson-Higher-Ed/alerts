@@ -16,7 +16,6 @@ rules:
   quotes: [1, single]
   space-after-keywords: 2
   space-before-blocks: 2
-  spaced-comment: [2, always]
 
   ## React
   jsx-quotes: [2, prefer-double]

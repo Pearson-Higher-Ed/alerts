@@ -43,7 +43,7 @@ This component targets the styling in the Pearson Elements SDK.
 
 ## Usage for Consuming Application
 
-See the demo in /node_modules in the component /demo directory for example usage.
+See the demo directory for example usage.
      
 ### Bundle (Simplest)
 
@@ -151,6 +151,8 @@ To see the coverage results locally, execute:
 Shoot for 100% code coverage.
 
 #### Translations
+
+It is expected that applications will pass in translated text for dynamic content.
 
 For text inherent to the component (e.g. button text or input placeholder), add JSON translations for each supported 
 locale to the translations folder. 
