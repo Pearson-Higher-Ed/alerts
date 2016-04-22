@@ -1,13 +1,17 @@
-# REMOVE THIS SECTION ONCE COMPLETE
+/////////////////////////////////////  REMOVE  /////////////////////////////////////
+
+CONTRIBUTORS: DELETE THIS SECTION FROM README WHEN COMPLETE
 
 **Assumption**: You understand how to use Git and have the git CLI correctly installed in your development environment.
 
 1. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to remove 
 the need to manually authenticate to GitHub on every network request. This enables the use of any automated npm scripts.
 
-2. Create your new repository in GitHub (open source - default) or, if necessary, Pearson BitBucket (private source).
+2. Create your new repository in GitHub (open source - default) or, if necessary, Pearson BitBucket (private source). In
+order to be able to create a GitHub repo, send a request to pearson-design-accelerator@pearson.com to be invited to 
+github.com/Pearson-Higher-Ed.
 
-3. Perform these steps in your terminal:
+3. Perform these steps in your development environment:
 
 
     git clone https://github.com/Pearson-Higher-Ed/component-archetype.git [name_of_your_new_component]
@@ -23,8 +27,7 @@ Once you've verified that the remote origin now looks correct for your repo, do 
 
     git push -u origin master
 
-
-/////////////////////////////////// ^ REMOVE ^ ///////////////////////////////////
+//////////////////////////////////// ^ REMOVE ^ ////////////////////////////////////
 
 # New Component Name
 
@@ -34,64 +37,67 @@ This is an executive summary of why my component exists and what it does.
 
 ## External Dependencies
 
-**React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.**
+React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.
 
-Other dependencies:
-
-- <ANY OTHER DEPENDENCIES LISTED HERE>
+This component targets the styling in the Pearson Elements SDK.
 
 ## Usage for Consuming Application
 
-Do as described in this section from the consuming application:
+See the demo in /node_modules in the component /demo directory for example usage.
      
-    > npm i --save <new component> react@latest react-dom@latest
-
 ### Bundle (Simplest)
 
 **NOTE: If you choose to use the native CustomEvent for eventing, you must 
 [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) for Internet Explorer!**
 
-The transpiled, minified bundle will be available in /node_modules/es6-react-component/build.
-
-    EXAMPLE INITIALIZATION GOES HERE
+The transpiled, minified bundle will be available in /node_modules in the component /build directory.
 
 ### or Build
 
-There are use cases where building the component into your application is necessary.
+There are use cases where you might need to roll the component into your application's build process.
 
-Example javascript using CommonJS:
+CommonJS example:
 
-    EXAMPLE GOES HERE
-    
-Example webpack configuration (requires installation of correct dependencies, loaders, and config).
+    COMMONJS EXAMPLE GOES HERE
+        
+Example webpack configuration (requires correct configuration and installation of loader dependencies):
 
     EXAMPLE GOES HERE
         
-### Configuration
+### Component Configuration
 
-    EXAMPLE GOES HERE
+Example:
+
+    {
+        elementId: 'dom-node',
+        locale: 'fr-CA'
+    }
    
 ### Eventing
 
 <table>
     <tr>
-        <th>CustomEvent</th><th>detail</th>
+        <th>Event</th><th>detail</th>
+    </tr
+    <tr>
+        <td></td><td></td>
     </tr>
 </table>
-
 
 ## Contributing
 
 ### Overview
 
-This component is constructed using React written in ES6 (and some ES7) and styled with SCSS, all transpiled by Babel.
+This component is constructed using [React](https://facebook.github.io/react/) written in ES6 (ES2015) and styled with 
+SCSS, all transpiled by [Babel](http://babeljs.io/).
 
-The project is also set up for unit testing with code coverage, i18n with React Intl, and hot reloading.
+The project is also set up for unit testing with code coverage, i18n with 
+[React Intl](https://github.com/yahoo/react-intl/wiki), and hot reloading.
 
 ### Continuous Integration
 
 To hook up your project to Origami continuous integration, a one-time manual process is currently required. Please send 
-the request to the Pearson Design Accelerator team (pearson-design-accelerator@pearson.com).
+the request to pearson-design-accelerator@pearson.com.
 
 ### Development Toolchain
 
@@ -105,7 +111,6 @@ the request to the Pearson Design Accelerator team (pearson-design-accelerator@p
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
 
-
 #### Can I see the project working before I change anything?
 
 In your local repo:
@@ -117,7 +122,8 @@ Navigate to **localhost:8081/demo** - the bundle is served in memory, which is w
 
 #### Hot Reload
 
-Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the browser.
+Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
+browser.
 
 #### Build
 
@@ -127,23 +133,34 @@ Build the bundle manually at any time.
 
 #### Test
 
-The project is wired to unit test with the Jest framework and Enzyme, a JavaScript testing utility for React that makes 
-it easier to assert, manipulate, and traverse your component's output. Shoot for 100% code coverage.
+The project is wired to unit test with the [Jest framework](https://facebook.github.io/jest/) and 
+[Enzyme](http://airbnb.io/enzyme/), a JavaScript testing utility for React that makes it easier to assert, manipulate, 
+and traverse your component's output.
 
 Note this will automatically run linting prior to executing the test suite.
 
     npm test    
 
+#### Code Coverage
+
+On GitHub, there is integration with the code coverage service [Coveralls](https://coveralls.io/github/Pearson-Higher-Ed).
+To see the coverage results, execute:
+
+    npm run test-cov
+    
+Shoot for 100% code coverage.
+
 #### Translations
 
-For text inherent to the component (e.g. button text or input placeholder), add JSON translations for each 
-supported locale to the translations folder. Ensure the component's configuration accepts a locale parameter.
+For text inherent to the component (e.g. button text or input placeholder), add JSON translations for each supported 
+locale to the translations folder. 
+
+Ensure the component's configuration accepts a `locale` parameter.
 
 #### Publish to Pearson Public Registry
 
-There is no need to manually tag your project. The release script will handle that and CI's publishing to npm for you.
-
-When ready for publishing, execute from your master branch:
+Do not manually version or tag your project. Instead, when you are ready to publish an update to npm, manually invoke the
+release script. It handles all of that and invokes CI publishing to npm on behalf of the pearson-ux npm account.
 
     npm run release
     
