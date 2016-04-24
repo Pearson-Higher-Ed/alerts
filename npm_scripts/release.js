@@ -1,5 +1,6 @@
 // Execute this script in the target branch to release to npm!
 
+const log = require('./log');
 const exec = require('./exec');
 const path = require('path');
 const readline = require('readline');
@@ -17,13 +18,16 @@ const syncRemote = (branchName, nextVersion) => {
 
   if (nextVersion) {
     exec(`git push --tags`);
-    console.log(`TravisCI will now release to npm on the tagged commit ${nextVersion} for the pearson-ux account.`);
+    log.secondary(`TravisCI will now release to npm on the tagged commit ${nextVersion} for the pearson-ux account.`);
   }
 };
 const exitFailure = (message) => {
-  console.error(message);
+  log.primaryError(message);
   process.exit(1);
 };
+
+// Verify that governance checks pass
+exec('npm run verify');
 
 // *** Releaser provides the target SEMVER-compliant version ***
 
@@ -40,9 +44,6 @@ stdin.question(`Next version (current is ${currentVersion})? `, (nextVersion) =>
   if (nextVersion.startsWith('v')) {
     nextVersion = nextVersion.slice(1);
   }
-
-  // Verify that governance checks pass
-  exec('npm run verify');
 
   // Ensure unit tests pass before continuing!
   exec('npm test');

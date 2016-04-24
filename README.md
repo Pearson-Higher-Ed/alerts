@@ -101,8 +101,10 @@ the request to pearson-design-accelerator@pearson.com.
 
 ### Development Toolchain
 
+**Note: Bower is disallowed in Origami v2**
+
 - [Node.js](http://nodejs.org) v4+
-- [Ruby](https://www.ruby-lang.org/en/) (Macs typically ship with Ruby by default)
+- [Ruby](https://www.ruby-lang.org/en/) for SCSS (Macs typically ship with Ruby by default)
 - [webpack](https://webpack.github.io/)
     - Babel 6 transpiles ES6 and JSX
     - Bundle javascript, styles and icon
