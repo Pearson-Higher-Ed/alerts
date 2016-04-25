@@ -1,6 +1,6 @@
 /////////////////////////////////////  REMOVE  /////////////////////////////////////
 
-CONTRIBUTORS: DELETE THIS SECTION FROM README WHEN COMPLETE
+CONTRIBUTORS: DELETE THIS SECTION FROM README AFTER COMPLETING THE STEPS
 
 **Assumption**: You understand how to use Git and have the git CLI correctly installed in your development environment.
 
@@ -151,6 +151,12 @@ To see the coverage results locally, execute:
     npm run test-cov
     
 Shoot for 100% code coverage.
+
+#### Governance
+
+Determine if your component passes a series of checks for Origami v2 compliance.
+
+    npm run verify
 
 #### Translations
 
