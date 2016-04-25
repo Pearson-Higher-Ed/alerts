@@ -9,6 +9,21 @@ if (!pkg.name.startsWith('@pearson-components/')) {
   process.exit(1);
 }
 
+if (!pkg.description) {
+  log.primaryError('Package description must be provided.');
+  process.exit(1);
+}
+
+if (!pkg.author) {
+  log.primaryError('Package author must be provided.');
+  process.exit(1);
+}
+
+if (!pkg.repository || !pkg.repository.url || pkg.repository.url === 'https://github.com/Pearson-Higher-Ed/') {
+  log.primaryError('Package repository url must be provided with repo name.');
+  process.exit(1);
+}
+
 if (fs.existsSync(bowerPath)) {
   log.primaryError('No Bower configuration or dependencies allowed.');
   process.exit(1);
