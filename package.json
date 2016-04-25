@@ -16,7 +16,7 @@
     "lint-all": "eslint src/js/** demo/demo.js __tests__/**",
     "gen-changelog": "node ./npm_scripts/gen-changelog.js",
     "version": "npm run gen-changelog && git add CHANGELOG.md",
-    "ci": "npm run test-cov && npm run build",
+    "ci": "npm run verify && npm run test-cov && npm run build",
     "release": "node ./npm_scripts/release.js",
     "verify": "node ./npm_scripts/verify.js"
   },
