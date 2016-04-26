@@ -167,15 +167,18 @@ locale to the translations folder.
 
 Retain the `locale` configuration parameter.
 
-#### Publish to Pearson Public Registry
+#### Publish to Pearson npm Registry
+
+For public packages only, add the following npm script to the package.json:
+
+    "postpublish": "npm access public && echo 'Package scope set to public!'"
 
 Do not manually version or tag your project. Instead, when you are ready to publish an update to npm, manually invoke the
 release script in the master branch. It handles all of that and invokes CI publishing to npm on behalf of the pearson-ux
- npm account. 
- 
+ account.
+
 Additionally, there is no need to manually maintain a change log - if you follow the 
 [commitizen](https://commitizen.github.io/cz-cli/) conventions for commit messages, a change log will automatically be 
 generated correctly during the release process.
 
     npm run release
-    
