@@ -3,25 +3,9 @@
 // See https://facebook.github.io/react/docs/multiple-components.html for composability.
 //
 
-import React, { PropTypes } from 'react';
-import {intlShape, injectIntl, defineMessages} from 'react-intl';
-
-//
-// Default messages are 'en'
-//
-const messages = defineMessages({
-  buttonText: {
-    id: 'buttonText',
-    description : 'this is demo button text',
-    defaultMessage: 'say hello'
-  },
-  placeholder: {
-    id: 'placeholder',
-    description : 'this is a demo placeholder',
-    defaultMessage: 'placeholder'
-  }
-});
-
+import React, {PropTypes} from 'react';
+import {intlShape, injectIntl} from 'react-intl';
+import {messages} from './defaultMessages';
 
 class ComponentOwner extends React.Component {
 

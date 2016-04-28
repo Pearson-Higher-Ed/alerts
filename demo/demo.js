@@ -1,6 +1,7 @@
-'use strict';
+import MyComponent from '../main'; // to demo direct API usage
 
-import MyComponent from '../main'; // for direct API usage
+// When available on npm, consumer usage would be similar to:
+// import MyComponent from '@pearson-components/[component-name]'
 
 function init() {
 
