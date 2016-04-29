@@ -20,9 +20,9 @@ If you are building closed source, the repo belongs in Pearson BitBucket, for wh
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
 
 3. Perform these steps in your development environment:  
-	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git [name_of_your_new_component]  
-	2. cd [name_of_your_new_component]  
-    3. git remote set-url origin [url_of_new_component_repository]  
+	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git **[name_of_your_new_component]**  
+	2. cd **[name_of_your_new_component]**  
+    3. git remote set-url origin **[url_of_new_component_repository]**  
     4. git remote -v  
   
 4. Once you've verified that the remote origin now looks correct for your repo, do the initial push:

@@ -1,4 +1,10 @@
-# How to Consume this Component
+# Usage
+
+You must have [Node v4+](https://nodejs.org) installed in your development toolchain.
+
+Install from npm and save in your package.json:
+
+    npm install @pearson-components/[component-name] --save
 
 ## External Dependencies
 
@@ -6,16 +12,22 @@ React and ReactDOM (v0.14 or v15) are external dependencies required to use this
 
 This component targets the styling in the Pearson Elements SDK.
 
-## Usage for Consuming Application
+If you require the use of polyfills to support browsers like Internet Explorer (e.g. CustomEvent), please use 
+[Polyfill.io](https://cdn.polyfill.io/v2/docs/examples) to construct your polyfill requests for specific features.
 
-See the demo directory for example usage.
+## How to Consume in an Application
+
+See the /demo directory for example usage.
      
 ### Bundle (Simplest)
 
-**NOTE: If you choose to use the native CustomEvent for eventing, you must 
-[polyfill](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) for Internet Explorer!**
-
 The transpiled, minified bundle will be available in /node_modules in the component /build directory.
+
+Eventing example:
+
+```js
+[EXAMPLE GOES HERE]
+```
 
 ### or Build
 
@@ -23,21 +35,20 @@ There are use cases where you might need to roll the component into your applica
 
 CommonJS example:
 
-    [COMMONJS EXAMPLE GOES HERE]
-        
+```js
+[EXAMPLE GOES HERE]
+```
+
 Example webpack configuration (requires correct configuration and installation of loader dependencies):
 
-    [EXAMPLE GOES HERE]
-        
+```js
+[EXAMPLE GOES HERE]
+```
+    
 ### Component Configuration
 
-Example:
+    [CONFIG EXAMPLE GOES HERE]
 
-    {
-        elementId: 'dom-node',
-        locale: 'fr-CA'
-    }
-   
 ### Eventing
 
 <table>

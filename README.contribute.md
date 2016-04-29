@@ -1,4 +1,4 @@
-# Contributing to this Component
+# Contributing
 
 ## Overview
 
@@ -10,8 +10,19 @@ The project is also set up for unit testing with code coverage, i18n with
 
 ## Continuous Integration
 
-To hook up your project to Origami continuous integration, a one-time manual process is currently required. Please send 
-the request to pearson-design-accelerator@pearson.com.
+To hook up your project to Origami continuous integration, a one-time manual process is currently required. 
+
+Please send the request to do this to pearson-design-accelerator@pearson.com.
+
+### GitHub
+
+GitHub repositories will integrate with [Travis CI](https://travis-ci.org/Pearson-Higher-Ed/), which will publish to the
+ **public** scope in Pearson's npm organization.
+
+### BitBucket
+
+BitBucket repositories will integrate with [Solano CI](https://ci.solanolabs.com), which will publish to the **private**
+scope in Pearson's npm organization.
 
 ## Development Toolchain
 
@@ -27,7 +38,9 @@ the request to pearson-design-accelerator@pearson.com.
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
 
-### Can I see the project working before I change anything?
+### Quick Start
+
+See the project working before changing anything!
 
 In your local repo:
 
@@ -36,9 +49,7 @@ In your local repo:
 
 Navigate to **localhost:8081/demo** - the bundle is served in memory, which is why you may not see the file in /build.
 
-### Hot Reload
-
-Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
+**Hot module replacement** is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
 browser.
 
 ### Build
@@ -72,7 +83,7 @@ Determine if your component passes a series of checks for Origami v2 compliance.
 
     npm run verify
 
-### Translations
+### Translations for i18n
 
 It is expected that applications will pass in translated text for dynamic content.
 
