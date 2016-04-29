@@ -1,61 +1,6 @@
-# New Component Name
+# Contributing
 
-## Summary
-
-This is an executive summary of why my component exists and what it does.
-
-## External Dependencies
-
-React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.
-
-This component targets the styling in the Pearson Elements SDK.
-
-## Usage for Consuming Application
-
-See the demo directory for example usage.
-     
-### Bundle (Simplest)
-
-**NOTE: If you choose to use the native CustomEvent for eventing, you must 
-[polyfill](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) for Internet Explorer!**
-
-The transpiled, minified bundle will be available in /node_modules in the component /build directory.
-
-### or Build
-
-There are use cases where you might need to roll the component into your application's build process.
-
-CommonJS example:
-
-    COMMONJS EXAMPLE GOES HERE
-        
-Example webpack configuration (requires correct configuration and installation of loader dependencies):
-
-    EXAMPLE GOES HERE
-        
-### Component Configuration
-
-Example:
-
-    {
-        elementId: 'dom-node',
-        locale: 'fr-CA'
-    }
-   
-### Eventing
-
-<table>
-    <tr>
-        <th>Event</th><th>detail</th>
-    </tr
-    <tr>
-        <td></td><td></td>
-    </tr>
-</table>
-
-## Contributing
-
-### Overview
+## Overview
 
 This component is constructed using [React](https://facebook.github.io/react/) written in ES6 (ES2015) and styled with 
 SCSS, all transpiled by [Babel](http://babeljs.io/).
@@ -63,12 +8,12 @@ SCSS, all transpiled by [Babel](http://babeljs.io/).
 The project is also set up for unit testing with code coverage, i18n with 
 [React Intl](https://github.com/yahoo/react-intl/wiki), and hot reloading.
 
-### Continuous Integration
+## Continuous Integration
 
 To hook up your project to Origami continuous integration, a one-time manual process is currently required. Please send 
 the request to pearson-design-accelerator@pearson.com.
 
-### Development Toolchain
+## Development Toolchain
 
 **Note: Bower is disallowed in Origami v2**
 
@@ -82,7 +27,7 @@ the request to pearson-design-accelerator@pearson.com.
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
 
-#### Can I see the project working before I change anything?
+### Can I see the project working before I change anything?
 
 In your local repo:
 
@@ -91,18 +36,18 @@ In your local repo:
 
 Navigate to **localhost:8081/demo** - the bundle is served in memory, which is why you may not see the file in /build.
 
-#### Hot Reload
+### Hot Reload
 
 Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
 browser.
 
-#### Build
+### Build
 
 Build the bundle manually at any time.
 
     npm run build
 
-#### Test
+### Test
 
 The project is wired to unit test with the [Jest framework](https://facebook.github.io/jest/) and 
 [Enzyme](http://airbnb.io/enzyme/), a JavaScript testing utility for React that makes it easier to assert, manipulate, 
@@ -112,7 +57,7 @@ Linting will run automatically prior to executing the test suite.
 
     npm test    
 
-#### Code Coverage
+### Code Coverage
 
 On GitHub, there is integration with the code coverage service [Coveralls](https://coveralls.io/github/Pearson-Higher-Ed).
 To see the coverage results locally, execute:
@@ -121,13 +66,13 @@ To see the coverage results locally, execute:
     
 Shoot for 100% code coverage.
 
-#### Governance
+### Governance
 
 Determine if your component passes a series of checks for Origami v2 compliance.
 
     npm run verify
 
-#### Translations
+### Translations
 
 It is expected that applications will pass in translated text for dynamic content.
 
@@ -136,7 +81,7 @@ locale to the translations folder.
 
 Retain the `locale` configuration parameter.
 
-#### Publish to Pearson npm Registry
+### Publish to Pearson npm Registry
 
 For public packages only, add the following npm script to the package.json:
 

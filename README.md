@@ -1,4 +1,4 @@
-This is the starting project template for a standalone Origami v2 component.
+Welcome Origami Developer! This is the starting project template for a standalone Origami v2 component.
 
 1. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
@@ -17,4 +17,4 @@ github.com/Pearson-Higher-Ed.
 
     git push -u origin master
 
-5. Replace this README in your new component project with the [provided template](README.md.template).
+5. After completing these steps, discard this README and rename [README.main.md](README.main.md) as "README.md" for your project.
