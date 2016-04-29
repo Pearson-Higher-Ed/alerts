@@ -1,4 +1,4 @@
-# Contributing
+# Contributing to this Component
 
 ## Overview
 

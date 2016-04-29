@@ -1,4 +1,4 @@
-# [Component Name] Usage
+# How to Consume this Component
 
 ## External Dependencies
 
