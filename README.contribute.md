@@ -8,6 +8,11 @@ SCSS, all transpiled by [Babel](http://babeljs.io/).
 The project is also set up for unit testing with code coverage, i18n with 
 [React Intl](https://github.com/yahoo/react-intl/wiki), and hot reloading.
 
+## Polyfill Service
+
+If you require the use of polyfills to support browsers like Internet Explorer, use 
+[Polyfill.io](https://cdn.polyfill.io/v2/docs/examples) to construct your polyfill requests for specific features.
+
 ## Continuous Integration
 
 To hook up your project to Origami continuous integration, a one-time manual process is currently required. 
@@ -77,7 +82,7 @@ To see the coverage results locally, execute:
     
 Shoot for 100% code coverage.
 
-### Governance
+### Spec Compliance
 
 Determine if your component passes a series of checks for Origami v2 compliance.
 

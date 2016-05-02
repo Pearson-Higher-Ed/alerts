@@ -31,7 +31,7 @@ export default class MyComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <ComponentOwner data={config}/>
+        <ComponentOwner data={config} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

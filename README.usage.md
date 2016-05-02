@@ -12,8 +12,19 @@ React and ReactDOM (v0.14 or v15) are external dependencies required to use this
 
 This component targets the styling in the Pearson Elements SDK.
 
-If you require the use of polyfills to support browsers like Internet Explorer (e.g. CustomEvent), please use 
-[Polyfill.io](https://cdn.polyfill.io/v2/docs/examples) to construct your polyfill requests for specific features.
+## Polyfills
+
+The following [Polyfill.io](https://cdn.polyfill.io/v2/docs/examples) features are recommended for consuming this 
+component cross-browser:
+
+```html
+<script src="https://cdn.polyfill.io/v2/polyfill.js?features=CustomEvent,Intl.~locale.en,Intl.~locale.fr"></script>
+```
+
+The CustomEvent polyfill is for Internet Explorer, and the Intl.js polyfill is for Safari. As you support more languages,
+add them to the list of polyfills. 
+
+If your browser already supports a feature, the service will automatically optimize and leave out unnecessary polyfills.
 
 ## How to Consume in an Application
 

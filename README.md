@@ -1,4 +1,4 @@
-## Welcome Origami Developer 
+## Welcome Component Developer
 
 This is the starting project template for a standalone Origami v2 component.
 
