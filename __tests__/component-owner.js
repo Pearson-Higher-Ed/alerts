@@ -1,35 +1,44 @@
-/* global jest describe it expect */
+/* global describe it expect */
 
-jest.dontMock('../src/js/component-owner.js');
-
+import expect from 'expect';
+import expectJSX from 'expect-jsx';
 import React from 'react';
-import ComponentOwner from '../src/js/component-owner';
 import {IntlProvider} from 'react-intl';
-import {shallow} from 'enzyme';
+import {createRenderer} from 'react-addons-test-utils';
+import ComponentOwner from '../src/js/component-owner';
 
-describe('Component Owner Suite', function() {
+expect.extend(expectJSX);
 
-  const messages = {
-    'en-US' : {
-      'placeholder': ''
-    }
-  };
-  const locale = 'en-US';
-  const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
-  const {intl} = intlProvider.getChildContext();
+describe('Component Owner Suite', () => {
+  let renderer;
+  let intlProvider;
 
-  const targetData = {
-  };
-
-  const wrapper = shallow(
-        <ComponentOwner.WrappedComponent
-            data={targetData}
-            intl={intl}
-        />
-  );
-
-  it('creates the component instance', function () {
-    expect(wrapper).toBeDefined();
+  beforeEach(() => {
+    renderer = createRenderer();
+    intlProvider = new IntlProvider({locale: 'en'}, {});
   });
 
+  it('initially renders the component owner', () => {
+
+    const {intl} = intlProvider.getChildContext();
+    const targetData = {
+      elementId: 'test-target',
+      greeting: 'Hello world!'
+    };
+
+    renderer.render(
+      <ComponentOwner.WrappedComponent
+        data={targetData}
+        intl={intl} />
+      , {intl}
+    );
+
+    expect(renderer.getRenderOutput()).toEqualJSX(
+      <div className="pe-inlineblock"><button className="pe-btn pe-btn--primary" onClick={function noRefCheck() {}}>say hello</button>
+        &nbsp;
+        <span className="pe-input"><input type="text" value="" placeholder="placeholder" /></span>
+      </div>
+    );
+
+  });
 });

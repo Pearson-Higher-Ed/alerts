@@ -65,9 +65,8 @@ Build the bundle manually at any time.
 
 ### Test
 
-The project is wired to unit test with the [Jest framework](https://facebook.github.io/jest/) and 
-[Enzyme](http://airbnb.io/enzyme/), a JavaScript testing utility for React that makes it easier to assert, manipulate, 
-and traverse your component's output.
+The project is wired to unit test with the [Mocha](https://mochajs.org/) framework, and can do 
+[shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) with React's test utilities.
 
 Linting will run automatically prior to executing the test suite.
 
