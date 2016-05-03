@@ -14,7 +14,7 @@ import {addLocaleData, IntlProvider} from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import frJson from './translations/fr.json';
 const translations = {
-  'fr-CA' : frJson
+  'fr' : frJson
 };
 
 export default class MyComponent {

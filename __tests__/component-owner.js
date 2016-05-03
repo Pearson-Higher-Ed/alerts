@@ -41,7 +41,7 @@ describe('Component Owner Suite', () => {
     );
   });
 
-  it('renders the correct output when the button is clicked', () => {
+  it('renders the correct text when the button is clicked', () => {
 
     const {intl} = intlProvider.getChildContext();
     const targetData = {

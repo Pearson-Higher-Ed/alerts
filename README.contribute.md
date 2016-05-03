@@ -71,21 +71,12 @@ It is also enabled for the following options:
 
 - [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) with React's test utilities
 
-- Rendering a component into a detached DOM node in the document, using JSDOM
+- Rendering a component into a detached DOM node in the document, using jsdom
 
-- Linting will run automatically prior to executing the test suite.
+Linting will run automatically prior to executing the test suite.
 
 
     npm test    
-
-### Code Coverage
-
-On GitHub, there is integration with the code coverage service [Coveralls](https://coveralls.io/github/Pearson-Higher-Ed).
-To see the coverage results locally, execute:
-
-    npm run test-cov
-    
-Shoot for 100% code coverage.
 
 ### Spec Compliance
 

@@ -4,7 +4,6 @@
 .travis.yml
 build/.gitkeep
 build/dev*.js
-coverage
 npm_scripts
 webpack.config.js
 __tests__
