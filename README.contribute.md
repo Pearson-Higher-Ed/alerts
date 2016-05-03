@@ -65,10 +65,16 @@ Build the bundle manually at any time.
 
 ### Test
 
-The project is wired to unit test with the [Mocha](https://mochajs.org/) framework, and can do 
-[shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) with React's test utilities.
+The project is wired to unit test with the [Mocha](https://mochajs.org/) framework.
 
-Linting will run automatically prior to executing the test suite.
+It is also enabled for the following options:
+
+- [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) with React's test utilities
+
+- Rendering a component into a detached DOM node in the document, using JSDOM
+
+- Linting will run automatically prior to executing the test suite.
+
 
     npm test    
 

@@ -4,7 +4,7 @@ import expect from 'expect';
 import expectJSX from 'expect-jsx';
 import React from 'react';
 import {IntlProvider} from 'react-intl';
-import {createRenderer} from 'react-addons-test-utils';
+import TestUtils from 'react-addons-test-utils';
 import ComponentOwner from '../src/js/component-owner';
 
 expect.extend(expectJSX);
@@ -14,11 +14,11 @@ describe('Component Owner Suite', () => {
   let intlProvider;
 
   beforeEach(() => {
-    renderer = createRenderer();
+    renderer = TestUtils.createRenderer();
     intlProvider = new IntlProvider({locale: 'en'}, {});
   });
 
-  it('initially renders the component owner', () => {
+  it('shallowly renders the component owner', () => {
 
     const {intl} = intlProvider.getChildContext();
     const targetData = {
@@ -39,6 +39,25 @@ describe('Component Owner Suite', () => {
         <span className="pe-input"><input type="text" value="" placeholder="placeholder" /></span>
       </div>
     );
-
   });
+
+  it('renders the correct output when the button is clicked', () => {
+
+    const {intl} = intlProvider.getChildContext();
+    const targetData = {
+      elementId: 'test-target',
+      greeting: 'Hello test!'
+    };
+    const locale = 'en';
+    const translations = {
+      'en' : {}
+    };
+
+    const container = TestUtils.renderIntoDocument(<IntlProvider locale={locale} messages={translations[locale]}><ComponentOwner data={targetData} intl={intl} /></IntlProvider>);
+    const button = TestUtils.findRenderedDOMComponentWithTag(container, 'button');
+    const input =  TestUtils.findRenderedDOMComponentWithTag(container, 'input');
+    TestUtils.Simulate.click(button);
+    expect(input.value).toEqual('Hello test!');
+  });
+
 });
