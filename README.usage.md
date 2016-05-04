@@ -8,9 +8,10 @@ Install from npm and save in your package.json:
 
 ## External Dependencies
 
-React and ReactDOM (v0.14 or v15) are external dependencies required to use this component.
+React and ReactDOM (v0.14 or v15) are external dependencies required to use this component. They are npm-installable or 
+available from third-party CDNs.
 
-This component targets the styling in the Pearson Elements SDK.
+This component targets the styling in the Pearson Elements SDK, which is available in npm as "pearson-elements".
 
 ## Polyfills
 
