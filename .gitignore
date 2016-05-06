@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 build/*.js
-coverage
 node_modules
 fonts
 demo/elements.css

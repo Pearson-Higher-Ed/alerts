@@ -1,35 +1,63 @@
-/* global jest describe it expect */
+/* global describe it expect */
 
-jest.dontMock('../src/js/component-owner.js');
-
+import expect from 'expect';
+import expectJSX from 'expect-jsx';
 import React from 'react';
-import ComponentOwner from '../src/js/component-owner';
 import {IntlProvider} from 'react-intl';
-import {shallow} from 'enzyme';
+import TestUtils from 'react-addons-test-utils';
+import ComponentOwner from '../src/js/component-owner';
 
-describe('Component Owner Suite', function() {
+expect.extend(expectJSX);
 
-  const messages = {
-    'en-US' : {
-      'placeholder': ''
-    }
-  };
-  const locale = 'en-US';
-  const intlProvider = new IntlProvider({locale: locale, messages : messages[locale]}, {});
-  const {intl} = intlProvider.getChildContext();
+describe('Component Owner Suite', () => {
+  let renderer;
+  let intlProvider;
 
-  const targetData = {
-  };
+  beforeEach(() => {
+    renderer = TestUtils.createRenderer();
+    intlProvider = new IntlProvider({locale: 'en'}, {});
+  });
 
-  const wrapper = shallow(
-        <ComponentOwner.WrappedComponent
-            data={targetData}
-            intl={intl}
-        />
-  );
+  it('shallowly renders the component owner', () => {
 
-  it('creates the component instance', function () {
-    expect(wrapper).toBeDefined();
+    const {intl} = intlProvider.getChildContext();
+    const targetData = {
+      elementId: 'test-target',
+      greeting: 'Hello world!'
+    };
+
+    renderer.render(
+      <ComponentOwner.WrappedComponent
+        data={targetData}
+        intl={intl} />
+      , {intl}
+    );
+
+    expect(renderer.getRenderOutput()).toEqualJSX(
+      <div className="pe-inlineblock"><button className="pe-btn pe-btn--primary" onClick={function noRefCheck() {}}>say hello</button>
+        &nbsp;
+        <span className="pe-input"><input type="text" value="" placeholder="placeholder" /></span>
+      </div>
+    );
+  });
+
+  it('renders the correct text when the button is clicked', () => {
+
+    const {intl} = intlProvider.getChildContext();
+    const targetData = {
+      elementId: 'test-target',
+      greeting: 'Hello test!'
+    };
+    const locale = 'en';
+    const translations = {
+      'en' : {}
+    };
+
+    const container = TestUtils.renderIntoDocument(<IntlProvider locale={locale} messages={translations[locale]}><ComponentOwner data={targetData} intl={intl} /></IntlProvider>);
+    const button = TestUtils.findRenderedDOMComponentWithTag(container, 'button');
+    const input =  TestUtils.findRenderedDOMComponentWithTag(container, 'input');
+    TestUtils.Simulate.click(button);
+    expect(input.value).toEqual('Hello test!');
   });
 
 });

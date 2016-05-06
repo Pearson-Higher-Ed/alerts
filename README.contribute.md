@@ -2,11 +2,10 @@
 
 ## Overview
 
-This component is constructed using [React](https://facebook.github.io/react/) written in ES6 (ES2015) and styled with 
-SCSS, all transpiled by [Babel](http://babeljs.io/).
+This component is constructed using [React](https://facebook.github.io/react/) written in ECMAScript 6 (ES2015) and 
+styled with SCSS, all transpiled by [Babel](http://babeljs.io/).
 
-The project is also set up for unit testing with code coverage, i18n with 
-[React Intl](https://github.com/yahoo/react-intl/wiki), and hot reloading.
+The project features unit testing, i18n with [React Intl](https://github.com/yahoo/react-intl/wiki), and hot reloading.
 
 ## Polyfill Service
 
@@ -36,9 +35,9 @@ scope in Pearson's npm organization.
 - [Node.js](http://nodejs.org) v4+
 - [Ruby](https://www.ruby-lang.org/en/) for SCSS (Macs typically ship with Ruby by default)
 - [webpack](https://webpack.github.io/)
+    - Bundles javascript, styles and icon
     - Babel 6 transpiles ES6 and JSX
-    - Bundle javascript, styles and icon
-    - ESLint configured with .eslintrc
+    - [ESLint](http://eslint.org/) configured with .eslintrc
 
 Recommendation: If you are using different node versions on your machine, use [nvm](https://github.com/creationix/nvm) 
 to manage them.
@@ -65,22 +64,19 @@ Build the bundle manually at any time.
 
 ### Test
 
-The project is wired to unit test with the [Jest framework](https://facebook.github.io/jest/) and 
-[Enzyme](http://airbnb.io/enzyme/), a JavaScript testing utility for React that makes it easier to assert, manipulate, 
-and traverse your component's output.
+The project is wired to unit test with the popular [Mocha](https://mochajs.org/) framework and  
+[expect](https://github.com/mjackson/expect) assertion library.
+
+It is also enabled for the following options:
+
+- [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) with React's test utilities
+
+- Rendering a component into a detached DOM node in the document, using [jsdom](http://jaketrent.com/post/testing-react-with-jsdom/)
 
 Linting will run automatically prior to executing the test suite.
 
+
     npm test    
-
-### Code Coverage
-
-On GitHub, there is integration with the code coverage service [Coveralls](https://coveralls.io/github/Pearson-Higher-Ed).
-To see the coverage results locally, execute:
-
-    npm run test-cov
-    
-Shoot for 100% code coverage.
 
 ### Spec Compliance
 
@@ -88,7 +84,7 @@ Determine if your component passes a series of checks for Origami v2 compliance.
 
     npm run verify
 
-### Translations for i18n
+### Translations for Internationalization
 
 It is expected that applications will pass in translated text for dynamic content.
 
@@ -99,7 +95,7 @@ Retain the `locale` configuration parameter.
 
 ### Publish to Pearson npm Registry
 
-For public packages only, add the following npm script to the package.json:
+**For public packages only**, add the following npm script to the package.json:
 
     "postpublish": "npm access public && echo 'Package scope set to public!'"
 

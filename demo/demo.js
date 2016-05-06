@@ -17,7 +17,7 @@ function init() {
   new MyComponent({
     elementId: 'demo-target2',
     greeting: 'Bonjour le monde!',
-    locale: 'fr-CA'
+    locale: 'fr'
   });
 
 }
