@@ -1,6 +1,6 @@
 ## Welcome Component Developer
 
-This is the starting project template for a standalone Origami v2 component.
+This is a comprehensive starter kit for a standalone Origami v2 component.
 
 ## Public or Private?
 
@@ -14,7 +14,7 @@ If you are building closed source, the repo belongs in Pearson BitBucket, for wh
 
 ## Getting Started
 
-1. Create your new repository in GitHub (open source - default) or Pearson BitBucket (private source).
+1. Create your new repository in GitHub (open source - default) or Pearson BitBucket (proprietary or private).
 
 2. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.

@@ -13,7 +13,7 @@ available from a third-party [CDN](https://cdnjs.com/libraries/react/).
 
 This component targets the styling in the [Pearson Elements SDK](https://www.npmjs.com/package/pearson-elements).
 
-## Polyfills
+## Cross-browser Compatibility
 
 The following [Polyfill.io](https://cdn.polyfill.io/v2/docs/examples) service is recommended for consuming this 
 component cross-browser:
