@@ -2,6 +2,8 @@
 
 ## Overview
 
+The use of Bower for dependencies is not sanctioned in Origami v2. Use npm with webpack or browserify instead.
+
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
 | [React](https://facebook.github.io/react/)  |   Fast-rendering, composable client-side components.    | |
@@ -24,7 +26,7 @@ Inform the consumers of this component in [README.usage.md](README.usage.md) of 
 
 To hook up your project to Origami continuous integration, a one-time manual process is currently required. 
 
-Please send the request to do this to: pearson-design-accelerator@pearson.com
+Please send the request to: pearson-design-accelerator@pearson.com or [HipChat](https://pearson.hipchat.com/chat/room/1469228)
 
 ### GitHub
 
@@ -37,14 +39,14 @@ BitBucket repositories will integrate with [Solano CI](https://ci.solanolabs.com
 scope in Pearson's npm organization.
 
 ## Initial Machine Setup
-1. **Install [Git](https://git-scm.com/downloads)**. 
-2. **Install [Node 4.0.0 or greater](https://nodejs.org)** - Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
+1. Install [Git](https://git-scm.com/downloads). 
+2. Install [Node 4.0.0 or greater](https://nodejs.org) - Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
 3. On a Mac? You're all set. If you're on Windows, complete the steps for your OS below.  
 
 **On Windows:**
 
-1. **Install Ruby** as the runtime engine for SCSS.
-2. **Install [Python 2.7](https://www.python.org/downloads/)**. Some node modules may rely on node-gyp, which requires Python on Windows.
+1. Install Ruby as the runtime engine for SCSS.
+2. Install [Python 2.7](https://www.python.org/downloads/). Some node modules may rely on node-gyp, which requires Python on Windows.
 
 **On Chrome browser:**
 
@@ -61,7 +63,7 @@ In your local repo:
 
 Navigate to **localhost:8081/demo** - the bundle is served in memory, which is why you may not see the file in /build.
 
-**Hot module replacement** is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
+Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
 browser.
 
 ### Build
