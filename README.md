@@ -2,6 +2,9 @@
 
 This is a comprehensive starter kit for a standalone Origami v2 component.
 
+**In order to utilize this successfully, you must have solid working knowledge of Facebook's React, a library for 
+building composable user interfaces.**
+
 ## Public or Private?
 
 Your first decision: Are you building an open source or closed source component? By default, Origami components are open
