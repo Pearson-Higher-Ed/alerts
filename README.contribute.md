@@ -6,7 +6,7 @@ The use of Bower for dependencies is not sanctioned in Origami v2. Use npm with 
 
 | **Tech** | **Description** |**Learn More**|
 |----------|-------|---|
-| [React](https://facebook.github.io/react/)  |   Fast-rendering, composable client-side components.    | |
+| [React](https://facebook.github.io/react/)  |   Fast-rendering, composable client-side components.    | [Powering Up with React](https://www.codeschool.com/courses/powering-up-with-react) |
 | [React Intl](https://github.com/yahoo/react-intl/wiki) | API to handle translations, format dates, numbers, and strings. | |
 | [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today.     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](https://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
 | [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes hot reloading via [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html). | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
