@@ -7,17 +7,17 @@ building composable user interfaces.**
 
 ## Public or Private?
 
-Your first decision: Are you building an open source or closed source component? By default, Origami components are open
-unless it was decided with input from the Pearson Design Accelerator team that it should be closed.
+Your first decision: Are you building a public (OSS) or private (internal only) component? By default, Origami 
+components are public unless it was decided otherwise in consultation with the Pearson Design Accelerator team.
 
-If you are building open source, the repo belongs in the Pearson GitHub organization. Send a request to 
-pearson-design-accelerator@pearson.com to be invited to github.com/Pearson-Higher-Ed. You must accept the request to join.
+If you are building open source, the repo belongs in the Pearson GitHub organization. Send a request to be invited with 
+your GitHub username to pearson-design-accelerator@pearson.com. You must accept the resulting email invitation to join.
 
-If you are building closed source, the repo belongs in Pearson BitBucket, for which you should already have an account.
+Otherwise, the repo belongs in Pearson BitBucket, for which you should already have access.
 
 ## Getting Started
 
-1. Create your new repository in GitHub (open source - default) or Pearson BitBucket (proprietary or private).
+1. Create your new repository in github.com/Pearson-Higher-Ed or bitbucket.pearson.com/projects/ORC.
 
 2. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
@@ -34,5 +34,5 @@ If you are building closed source, the repo belongs in Pearson BitBucket, for wh
 
 ## Ready to Develop
 
-After completing the above steps, discard this README and rename [README.main.md](README.main.md) as "README.md" for 
+After completing the above steps, delete this README and rename [README.main.md](README.main.md) as "README.md" for 
 your project. You are ready to begin developing your component!
