@@ -61,14 +61,19 @@ In your local repo:
     npm install
     npm run dev
 
-Navigate to **localhost:8081/demo** - the bundle is served in memory, which is why you may not see the file in /build.
+Navigate to: **localhost:8081/demo** 
 
-Hot module replacement is activated in the webpack dev server; saved changes to src are automatically reloaded in the 
-browser.
+#### Where are the files being served from?
+
+Webpack serves your component in memory when you 'npm run dev'. No physical files are written. When the component is 
+built using 'npm run build', physical files are written to /build.
+
+Additionally, hot module replacement is activated in the webpack dev server; saved changes to /src are automatically 
+reloaded in the browser.
 
 ### Build
 
-Build the bundle manually at any time.
+Build the bundle(s) manually at any time, and minify all JavaScript for production:
 
     npm run build
 
@@ -116,3 +121,11 @@ Additionally, there is no need to manually maintain a change log - if you follow
 generated correctly during the release process.
 
     npm run release
+
+### How do I debug?
+
+Source maps are not configured in the archetype, as it adds a lot of complexity for little gain - feel free to add it to
+your project if desired.
+
+If not, use Chrome dev tools - open the Source tab, look at top/webpack://./, and you will find the non-minified bundled
+files for which you can set breakpoints in Chrome's debugger.
