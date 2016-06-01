@@ -5,9 +5,9 @@ This is a comprehensive starter kit for a standalone Origami v2 component.
 **In order to utilize this successfully, you must have solid working knowledge of Facebook's React, a library for 
 building composable user interfaces.**
 
-This starter kit implements best practices like testing, linting, bundling, and so on. It codifies a long list of 
-decisions that you no longer have to make to get rolling. It saves you from the long, painful process of wiring it all 
-together into an automated development environment and build process.
+This starter kit implements best practices like testing, linting, bundling, transpiling ES6 to ES5, etc. It codifies a 
+long list of decisions that you no longer have to make to get rolling. It saves you from the long, painful process of 
+wiring it all together into an automated development environment and build process.
 
 ## Public or Private?
 

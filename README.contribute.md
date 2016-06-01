@@ -11,7 +11,7 @@ The use of Bower for dependencies is not sanctioned in Origami v2. Use npm with 
 | [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today.     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](https://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
 | [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes hot reloading via [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html). | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
 | [Mocha](http://mochajs.org) | Automated tests with [expect](https://www.npmjs.com/package/expect) for assertions and [React Test Utils](https://facebook.github.io/react/docs/test-utils.html) for DOM testing without a browser. | [Pluralsight Course](https://www.pluralsight.com/courses/testing-javascript) |
-| [ESLint](http://eslint.org/)| Lint JS. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. | |
+| [ESLint](http://eslint.org/)| Lint JavaScript as configured in .eslintrc. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. | |
 | [SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html) | Compiled CSS styles with variables, mixins, and more. | [Pluralsight Course](https://www.pluralsight.com/courses/better-css)|
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
 
@@ -65,10 +65,10 @@ Navigate to: **localhost:8081/demo**
 
 #### Where are the files being served from?
 
-Webpack serves your component in memory when you 'npm run dev'. No physical files are written. When the component is 
-built using 'npm run build', physical files are written to /build.
+Webpack serves your component in memory when you `npm run dev`. No physical files are written. When the component is 
+built using `npm run build`, physical files are written to /build.
 
-Additionally, hot module replacement is activated in the webpack dev server; saved changes to /src are automatically 
+Additionally, Hot Module Replacement is activated in the webpack dev server; saved changes to /src are automatically 
 reloaded in the browser.
 
 ### Build
@@ -118,7 +118,10 @@ release script in the master branch. It handles all of that and invokes CI publi
 
 Additionally, there is no need to manually maintain a change log - if you follow the 
 [commitizen](https://commitizen.github.io/cz-cli/) conventions for commit messages, a change log will automatically be 
-generated correctly during the release process.
+generated during the release process.
+
+Finally, before you run the following command, ensure that you don't have to manually authenticate every time you 
+perform a network operation with Git.
 
     npm run release
 
