@@ -26,7 +26,8 @@ Inform the consumers of this component in [README.usage.md](README.usage.md) of 
 
 To hook up your project to Origami continuous integration, a one-time manual process is currently required. 
 
-Please send the request to: pearson-design-accelerator@pearson.com or [HipChat](https://pearson.hipchat.com/chat/room/1469228)
+Please send your request for one of the following GitHub or BitBucket options to: pearson-design-accelerator@pearson.com 
+or [HipChat](https://pearson.hipchat.com/chat/room/1469228)
 
 ### GitHub
 
