@@ -49,14 +49,12 @@ class ComponentOwner extends React.Component {
     //
     // FOR DEMO and should be refactored for your purposes:
     //
-    const {text} = this.state;
-
     return (
       <div className="pe-inlineblock">
         <button className="pe-btn pe-btn--primary" onClick={this._change}>{formatMessage(messages.buttonText)}</button>
         &nbsp;
         <span className="pe-input">
-          <input type="text" value={text} placeholder={formatMessage(messages.placeholder)} />
+          <input type="text" placeholder={formatMessage(messages.placeholder)} value={this.state.text} />
         </span>
       </div>
     )
