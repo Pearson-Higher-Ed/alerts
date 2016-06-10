@@ -9,7 +9,7 @@ The use of Bower for dependencies is not sanctioned in Origami v2. Use npm with 
 | [React](https://facebook.github.io/react/)  |   Fast-rendering, composable client-side components.    | [Powering Up with React](https://www.codeschool.com/courses/powering-up-with-react) |
 | [React Intl](https://github.com/yahoo/react-intl/wiki) | API to handle translations, format dates, numbers, and strings. | |
 | [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today.     | [ES6 REPL](https://babeljs.io/repl/), [ES6 vs ES5](http://es6-features.org), [ES6 Katas](http://es6katas.org), [Pluralsight course](https://www.pluralsight.com/courses/javascript-fundamentals-es6)    |
-| [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes hot reloading via [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html). | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
+| [Webpack](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes source maps and hot reloading via [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html). | [Quick Webpack How-to](https://github.com/petehunt/webpack-howto) [Pluralsight Course](https://www.pluralsight.com/courses/webpack-fundamentals)|
 | [Mocha](http://mochajs.org) | Automated tests with [expect](https://www.npmjs.com/package/expect) for assertions and [React Test Utils](https://facebook.github.io/react/docs/test-utils.html) for DOM testing without a browser. | [Pluralsight Course](https://www.pluralsight.com/courses/testing-javascript) |
 | [ESLint](http://eslint.org/)| Lint JavaScript as configured in .eslintrc. Reports syntax and style issues. Using [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) for additional React specific linting rules. | |
 | [SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html) | Compiled CSS styles with variables, mixins, and more. | [Pluralsight Course](https://www.pluralsight.com/courses/better-css)|
@@ -48,10 +48,6 @@ scope in Pearson's npm organization.
 
 1. Install Ruby as the runtime engine for SCSS.
 2. Install [Python 2.7](https://www.python.org/downloads/). Some node modules may rely on node-gyp, which requires Python on Windows.
-
-**On Chrome browser:**
-
-Optionally, install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en).
 
 ### Quick Start
 
@@ -128,8 +124,8 @@ perform a network operation with Git.
 
 ### How do I debug?
 
-Source maps are not configured in the archetype, as it adds a lot of complexity for little gain - feel free to add it to
-your project if desired.
+Source maps are enabled for the webpack dev server. Using **Chrome dev tools** - open the "Sources" tab, navigate to 
+`top/webpack://./`, and you will find the original source files for which you can set breakpoints in Chrome's debugger.
 
-If not, use Chrome dev tools - open the Source tab, look at top/webpack://./, and you will find the non-minified bundled
-files for which you can set breakpoints in Chrome's debugger.
+Optionally, install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+for additional React debugging support in Chrome dev tools under the "React" tab.
