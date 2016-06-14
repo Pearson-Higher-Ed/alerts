@@ -127,5 +127,7 @@ perform a network operation with Git.
 Source maps are enabled for the webpack dev server. Using **Chrome dev tools** - open the "Sources" tab, navigate to 
 `top/webpack://./`, and you will find the original source files for which you can set breakpoints in Chrome's debugger.
 
+To take advantage of source maps, you must enable JavaScript source maps in your browser.
+
 Optionally, install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 for additional React debugging support in Chrome dev tools under the "React" tab.
