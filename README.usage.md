@@ -30,6 +30,9 @@ If your browser already supports a feature, this service automatically optimizes
 ## How to Consume in an Application
 
 See the /demo directory for example usage.
+
+The component's original source code and the transpiled bundle are available in the npm installation. The bundled version
+ is exported as a UMD package supporting AMD, CommonJS2, or a global variable.
      
 ### Bundle (Simplest)
 
