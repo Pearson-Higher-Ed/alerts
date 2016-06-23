@@ -26,6 +26,10 @@ const exitFailure = (message) => {
   process.exit(1);
 };
 
+if (branchName !== 'master') {
+  exitFailure('You must be on the master branch in order to execute a release.');
+}
+
 // Verify that governance checks pass
 exec('npm run verify');
 
