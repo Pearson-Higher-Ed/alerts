@@ -6,4 +6,4 @@ build/.gitkeep
 build/dev*.js
 npm_scripts
 webpack.config.js
-__tests__
+test
