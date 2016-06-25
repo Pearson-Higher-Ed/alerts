@@ -23,7 +23,6 @@
     "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
-    "pearson-elements": "^0.7.0",
     "react-intl": "~2.0.1"
   },
   "devDependencies": {
