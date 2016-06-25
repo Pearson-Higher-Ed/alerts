@@ -18,7 +18,7 @@ describe('Component Owner Suite', () => {
     intlProvider = new IntlProvider({locale: 'en'}, {});
   });
 
-  it('shallowly renders the component owner', () => {
+  it('shallowly renders the component owner using React TestUtils', () => {
 
     const {intl} = intlProvider.getChildContext();
     const targetData = {
@@ -41,7 +41,7 @@ describe('Component Owner Suite', () => {
     );
   });
 
-  it('renders the correct text when the button is clicked', () => {
+  it('renders the correct text when the button is clicked, in a document provided by jsdom', () => {
 
     const {intl} = intlProvider.getChildContext();
     const targetData = {

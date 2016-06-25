@@ -1,3 +1,7 @@
+// Use jsdom as an in-JavaScript implementation of the DOM. That means we don’t have to capture a browser in order to
+// unit test, a la Karma. This script is loaded by Mocha at run-time.
+// Credit for this script goes to http://jaketrent.com/post/testing-react-with-jsdom/.
+
 import jsdom from 'jsdom';
 
 // setup the simplest document possible
