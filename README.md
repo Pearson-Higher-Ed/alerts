@@ -1,9 +1,10 @@
 ## Welcome Component Developer
 
-This is a comprehensive starter kit for a standalone Origami v2 component.
+This is a comprehensive starter kit for a **standalone Origami v2 component**. Do not attempt to use it to build an 
+entire application.
 
-**In order to utilize this successfully, you must have solid working knowledge of Facebook's React - a library for 
-building composable user interfaces.**
+In order to utilize this successfully, you **must** have solid working knowledge of Facebook's React - a library for 
+building composable user interfaces. It wouldn't hurt to understand ES2015 (ES6) syntax and concepts either.
 
 This starter kit implements best practices like testing, linting, bundling, transpiling ES6 to ES5, etc. It codifies a 
 long list of decisions that you no longer have to make to get rolling. It saves you from the long, painful process of 
