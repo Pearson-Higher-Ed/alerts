@@ -30,11 +30,13 @@ if (branchName !== 'master') {
   exitFailure('You must be on the master branch in order to execute a release.');
 }
 
+// Ensure unit tests pass before continuing!
+exec('npm test');
+
 // Verify that governance checks pass
 exec('npm run verify');
 
 // *** Releaser provides the target SEMVER-compliant version ***
-
 stdin.question(`Next version (current is ${currentVersion})? `, (nextVersion) => {
 
   if (!semver.valid(nextVersion)) {
@@ -48,9 +50,6 @@ stdin.question(`Next version (current is ${currentVersion})? `, (nextVersion) =>
   if (nextVersion.startsWith('v')) {
     nextVersion = nextVersion.slice(1);
   }
-
-  // Ensure unit tests pass before continuing!
-  exec('npm test');
 
   // Order of operations:
   // 1. Bump the version update in package.json and npm-shrinkwrap.json
