@@ -1,3 +1,40 @@
 ////
 /// Custom SCSS for component-specific styling goes here
 ////
+
+
+header.modalHeader{
+  background-color: 'lightblue';
+  border-bottom: 1px solid gray;
+}
+
+header.h1{
+  border-bottom: none;
+};
+
+#fileLoader{
+  display:none;
+};
+
+.modalCancel{
+  float:right;
+  margin-right: 20px;
+  outline: none;
+  margin-bottom: 10px;
+};
+
+.modalSubmit{
+  float:right;
+  margin-right: 10px;
+  outline: none;
+  margin-bottom: 10px;
+};
+
+.close{
+  float:right;
+  outline: none;
+};
+
+.heading{
+  width:30%;
+};
