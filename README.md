@@ -21,15 +21,16 @@ Otherwise, the repo belongs in Pearson BitBucket, for which you should already h
 
 ## Getting Started
 
-1. Create your new repository in github.com/Pearson-Higher-Ed or bitbucket.pearson.com/projects/ORC.
+1. Create your new repository in github.com/Pearson-Higher-Ed or bitbucket.pearson.com/projects/ORC. **Follow the naming 
+convention: all lowercase, hyphens instead of camel case.**
 
 2. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
 
 3. Perform these steps in your development environment:  
-	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git **[name_of_your_new_component]**  
-	2. cd **[name_of_your_new_component]**  
-    3. git remote set-url origin **[url_of_new_component_repository]**  
+	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git `[name_of_your_new_component]`  
+	2. cd `[name_of_your_new_component]`  
+    3. git remote set-url origin `[url_of_new_component_repository]`  
     4. git remote -v  
 
 4. Once you've verified that the remote origin now looks correct for your repo, do the initial push:
