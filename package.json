@@ -23,8 +23,7 @@
     "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
-    "react-intl": "~2.0.1",
-    "react-modal": "^1.4.0"
+    "react-intl": "~2.0.1"
   },
   "devDependencies": {
     "babel-core": "~6.3.17",

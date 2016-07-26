@@ -1,93 +1,65 @@
-import React, { PropTypes, Component } from 'react';
-import { intlShape, injectIntl }       from 'react-intl';
-// import {messages}                   from './defaultMessages';
-import Modal                           from 'react-modal'
+//
+// In React, an owner is the component that sets the props of other components, if desired.
+// See https://facebook.github.io/react/docs/multiple-components.html for composability.
+//
 
+import React, {PropTypes} from 'react';
+import {intlShape, injectIntl} from 'react-intl';
+import {messages} from './defaultMessages';
 
+class ComponentOwner extends React.Component {
 
-class ComponentOwner extends Component {
-
+  //
+  // Modify or add prop types to validate the properties passed to this component!
+  // This is defined using an ES7 class property (transpiled by Babel Stage 0)
+  //
   static propTypes = {
     intl: intlShape.isRequired,
     data: PropTypes.shape({
       elementId: PropTypes.string.isRequired,
       locale: PropTypes.string
     })
-  }
+  };
 
   constructor(props) {
-    super(props)
+
+    super(props);
+
+    //
+    // FOR DEMO - use state when you need to respond to user input, a server request or the passage of time
+    //
     this.state = {
-      modalIsOpen      : false,
-      customStyles :{
-        overlay : {
-          backgroundColor   : 'rgba(0, 0, 0, 0.7)'
-        },
-        content : {
-          top          : '50%',
-          left         : '50%',
-          right        : 'auto',
-          bottom       : 'auto',
-          marginRight  : '-50%',
-          transform    : 'translate(-50%, -50%)',
-          borderRadius : '0px',
-          padding      : '0px'
-
-        }
-      }}
-
-    this.openModal      = _openModal.bind(this)
-    this.closeModal     = _closeModal.bind(this)
-
+      text: ''
+    };
   }
 
+  //
+  // Note that combining the fat arrow syntax with ES7 class properties (transpiled by Babel Stage 0), we eliminate the
+  // need to do manual binding of the 'this' context in event handlers or callbacks. React binds all other contexts
+  // as expected.
+  //
+  // FOR DEMO and should be removed:
+  _change = () => {
+    this.setState({text: this.props.data.greeting});
+  };
 
   render() {
 
-    // const {formatMessage} = this.props.intl
-
+    const {formatMessage} = this.props.intl;
+    //
+    // FOR DEMO and should be refactored for your purposes:
+    //
     return (
-      <div>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={this.state.customStyles} >
-
-          <div className="modalHeader">
-            <i className="pe-icon--times close-dropdown pointer close" tabIndex="0" onClick={this.closeModal}></i>
-            <h2 className="heading">Basic Title</h2>
-          </div>
-
-          <div className="modalContent">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lorem tellus. Proin a lacus ipsum.
-              Cras scelerisque massa augue, ut efficitur eros dignissim in. Vivamus massa ex, dictum sit amet est
-              at, facilisis venenatis risus. Nullam ipsum diam, ullamcorper ac aliquet sed, sagittis vitae nisi.
-              Curabitur molestie, nisi quis pellentesque interdum, dui sapien finibus justo, vel tempus dolor tortor
-              eu leo. Quisque molestie mi tempus augue consequat porttitor. Proin eget odio sed mi facilisis elementum
-              quis ac elit.
-             </p>
-          </div>
-
-          <span className="modalFooter">
-            <button onClick={console.log('save')} className="modalSave pe-btn pe-btn--primary">Save</button>
-            <button onClick={this.closeModal} className="modalCancel pe-btn">Cancel</button>
-          </span>
-
-        </Modal>
+      <div className="pe-inlineblock">
+        <button className="pe-btn pe-btn--primary" onClick={this._change}>{formatMessage(messages.buttonText)}</button>
+        &nbsp;
+        <span className="pe-input">
+          <input type="text" placeholder={formatMessage(messages.placeholder)} value={this.state.text} />
+        </span>
       </div>
     )
-
   }
 
 }
 
-export default injectIntl(ComponentOwner)
-
-
-
-function _openModal() { this.setState({modalIsOpen: true}) }
-
-function _closeModal() { this.setState({modalIsOpen: false}) }
+export default injectIntl(ComponentOwner); // Inject this.props.intl into the component context
