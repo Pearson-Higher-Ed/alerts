@@ -1,3 +1,31 @@
-////
-/// Custom SCSS for component-specific styling goes here
-////
+.modalHeader{
+  background-color:	#E6E6E6;
+  border-bottom: 1px solid gray;
+};
+
+.modalContent{
+  border-bottom: 1px solid gray;
+};
+
+.modalCancel{
+  float:right;
+  margin-right: 20px;
+  outline: none;
+  margin-bottom: 10px;
+};
+
+.modalSave{
+  float:right;
+  margin-right: 10px;
+  outline: none;
+  margin-bottom: 10px;
+};
+
+.close{
+  float:right;
+  outline: none;
+};
+
+.heading{
+  width:30%;
+};

@@ -1,25 +1,21 @@
-import MyComponent from '../main'; // to demo direct API usage
-
-// When available on npm, consumer usage would be similar to:
-// import MyComponent from '@pearson-components/[component-name]'
+// import TextModal from '../main'; // to demo direct API usage
 
 function init() {
 
   // Demo eventing API
-  document.body.dispatchEvent(new CustomEvent('o.InitMyComponent', {
+  document.body.dispatchEvent(new CustomEvent('o.InitTextModal', {
     detail: {
-      elementId: 'demo-target1',
-      greeting: 'Hello world!'
+      elementId: 'app'
     }
   }));
 
   // Demo direct API
-  new MyComponent({
-    elementId: 'demo-target2',
-    greeting: 'Bonjour le monde!',
-    locale: 'fr'
-  });
+  // new TextModal({
+  //   elementId: 'app'
+  // });
 
 }
+
+
 
 window.onload = init;
