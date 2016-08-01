@@ -40,6 +40,7 @@ Otherwise, the repo belongs in Pearson BitBucket, for which you should already h
 	1. Open ./.travis.yml
 	2. Comment out line 8
 	3. Save and close.
+
 ## Ready to Develop
 
 After completing the above steps, delete this README and rename [README.main.md](README.main.md) as "README.md" for
