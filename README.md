@@ -12,26 +12,29 @@ wiring it all together into an automated development environment and build proce
 ## Public or Private?
 
 Your first decision: Are you building a public (OSS) or private (internal only) component? By default, Origami
-components are public unless it was decided otherwise in consultation with the Pearson Design Accelerator team.
+components are public unless it was decided otherwise in consultation with the Pearson Design Accelerator (PDA) team.
 
-If you are building open source, the repo belongs in the Pearson GitHub organization. Send a request to be invited with
-your GitHub username to pearson-design-accelerator@pearson.com. You must accept the resulting email invitation to join.
+Requests to the PDA team must be sent to pearson-design-accelerator@pearson.com.
 
-Otherwise, the repo belongs in Pearson BitBucket, for which you should already have access.
+If you are building open source, the repo belongs in the **Pearson GitHub** organization. Send a request to be invited 
+with all contributing developers' GitHub usernames to the PDA team. You must accept the resulting email invitation to join.
+
+If it is decided the repo belongs in **Pearson BitBucket**, send a request to the PDA team for all contributing developers
+ to be given write access to bitbucket.pearson.com/projects/PDA.
 
 ## Getting Started
 
-1. Create your new repository in github.com/Pearson-Higher-Ed or bitbucket.pearson.com/projects/ORC. **Follow the naming 
-convention: all lowercase, hyphens instead of camel case.**
+1. Create your new repository in the repository as decided above. **Follow the naming convention: all lowercase, hyphens 
+instead of camel case.**
 
 2. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
 
 3. Perform these steps in your development environment:  
-	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git `[name_of_your_new_component]`  
-	2. cd `[name_of_your_new_component]`  
-    3. git remote set-url origin `[url_of_new_component_repository]`  
-    4. git remote -v  
+	1. git clone https://github.com/Pearson-Higher-Ed/component-archetype.git `name-of-your-new-component`
+	2. cd `name-of-your-new-component`
+    3. git remote set-url origin `url-of-new-component-repository`
+    4. git remote -v
 
 4. Once you've verified that the remote origin now looks correct for your repo, do the initial push:
 
