@@ -14,7 +14,8 @@
     "version": "npm run gen-changelog && git add CHANGELOG.md",
     "ci": "npm test && npm run build",
     "release": "node ./npm_scripts/release.js",
-    "verify": "node ./npm_scripts/verify.js"
+    "verify": "node ./npm_scripts/verify.js",
+    "postinstall": "cp ./node_modules/@pearson-components/npm-scripts/npm_scripts/*.js ./npm_scripts"
   },
   "author": "",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "react-intl": "~2.0.1"
   },
   "devDependencies": {
+    "@pearson-components/npm-scripts": "^0.1.0",
     "babel-core": "~6.3.17",
     "babel-eslint": "~4.1.6",
     "babel-loader": "~6.2.0",
@@ -35,6 +37,7 @@
     "babel-preset-stage-0": "~6.5.0",
     "babel-register": "~6.7.2",
     "colors": "~1.1.2",
+    "conventional-changelog": "~1.1.0",
     "css-loader": "~0.23.0",
     "eslint": "~1.10.3",
     "eslint-loader": "~1.1.1",
@@ -47,7 +50,7 @@
     "json-loader": "~0.5.4",
     "mocha": "~2.4.5",
     "node-sass": "~3.4.2",
-    "pearson-elements": "^0.7.0",
+    "pearson-elements": "^0.10.0",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",

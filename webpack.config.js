@@ -13,6 +13,7 @@ module.exports = {
     filename: 'build/[name].component-name.js',
     libraryTarget: 'umd'
   },
+  devtool: 'cheap-module-source-map',
   externals: [
     {
       'react': {

@@ -3,7 +3,7 @@
 .idea
 .travis.yml
 build/.gitkeep
-build/dev*.js
+build/dev*
 npm_scripts
 webpack.config.js
 test
