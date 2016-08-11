@@ -25,7 +25,9 @@ If it is decided the repo belongs in **Pearson BitBucket**, send a request to th
 
 ## Getting Started
 
-1. Create your new repository as decided above. **Follow the naming convention: all lowercase, hyphens instead of camel case.**
+1. Create your new repository as decided above, using the following naming convention:
+    1. All lowercase characters, and hyphens instead of camel case.
+    2. Do **not** use "component" in the name, as it is redundant.
 
 2. Follow these [directions](https://help.github.com/articles/caching-your-github-password-in-git/#platform-all) to stop
  manually authenticating to GitHub on every network request. This enables the use of automated npm scripts.
