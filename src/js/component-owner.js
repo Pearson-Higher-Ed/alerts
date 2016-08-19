@@ -1,3 +1,4 @@
+// NOTE: There is no need to rename this file.
 //
 // In React, an owner is the component that sets the props of other components, if desired.
 // See https://facebook.github.io/react/docs/multiple-components.html for composability.
