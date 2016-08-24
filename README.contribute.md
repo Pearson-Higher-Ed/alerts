@@ -68,6 +68,17 @@ built using `npm run build`, physical files are written to /build.
 Additionally, Hot Module Replacement is activated in the webpack dev server; saved changes to /src are automatically 
 reloaded in the browser. Changes to the demo/index.html itself, however, do require a manual page refresh.
 
+### Using ElementsSDK
+
+Pearson has created a base styling library to assist developers in creating a user interface with styles 
+that are pre-approved by the design team.  For the purposes of this component archetype the incorporation of 
+ElementsSDK is for the purposes of the demo only, but it is possible that the component archetype demo does 
+not pull in the latest version of ElementsSDK.  Should the demo need to be on the latest ElementsSDK 
+version, please update the package.json file to reflect the current version of [ElementsSDK](https://github.com/Pearson-Higher-Ed/elements)
+
+Additionally, given the scope of ElementsSDK, developers will need to consider if incorporating ElementsSDK 
+into their component as a direct dependency is warranted.  
+
 ### Build
 
 Build the bundle(s) manually at any time, and minify all JavaScript for production:
