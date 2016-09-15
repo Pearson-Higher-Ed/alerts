@@ -1,4 +1,4 @@
-// NOTE: There is no need to rename this file.
+// NOTE: If this is a sub-component for another Origami component, import this file in that project rather than this project's main.js.
 //
 // In React, an owner is the component that sets the props of other components, if desired.
 // See https://facebook.github.io/react/docs/multiple-components.html for composability.

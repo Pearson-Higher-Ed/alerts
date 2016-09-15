@@ -1,4 +1,4 @@
-## Welcome Component Developer [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/component-archetype.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/component-archetype)
+## Origami Starter Kit [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/component-archetype.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/component-archetype)
 
 This is a comprehensive starter kit for a **standalone Origami v2 component**. You should integrate your component into 
 a larger application capable of managing data flow of all available components.

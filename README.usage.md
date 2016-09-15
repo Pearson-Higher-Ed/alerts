@@ -31,8 +31,12 @@ If your browser already supports a feature, this service automatically optimizes
 
 See the /demo directory for example usage.
 
-The component's original source code and the transpiled bundle are available in the npm installation. The bundled version
- is exported as a UMD package supporting AMD, CommonJS2, or a global variable.
+Both the component's original source code and the transpiled UMD bundle are available in the npm installation.
+
+Use the source when you want to use this project as a sub-component dependency that is referenced in the JSX of your 
+parent component.
+
+Use the bundled version when you want to drop in the component on your page and instantiate in a DOM element.
      
 ### Bundle (Simplest)
 
