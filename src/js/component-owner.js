@@ -1,8 +1,10 @@
 // In React, an owner is the component that sets the props of other components, if desired.
 // (see https://facebook.github.io/react/docs/multiple-components.html)
 //
-// NOTE: If this is a sub-component for another Origami component, import this file in that project rather than this
-// project's main.js.
+// NOTE: If you want to reference another Origami component in this file's JSX below, import
+// it's src/js/component-owner.js directly from this project's /node_modules.
+
+import '../scss/component-specific.scss';
 
 import React, {PropTypes} from 'react';
 import {intlShape, injectIntl} from 'react-intl';

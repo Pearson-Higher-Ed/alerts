@@ -2,9 +2,6 @@
 // Change all references to 'MyComponent' in this file to your real component name!
 //
 
-// bundled component styling
-import './main.scss';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ComponentOwner from './src/js/component-owner';
