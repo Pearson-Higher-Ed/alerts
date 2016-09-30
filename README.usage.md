@@ -31,42 +31,24 @@ If your browser already supports a feature, this service automatically optimizes
 
 See the /demo directory for example usage.
 
-Both the component's original source code and the transpiled UMD bundle are available in the npm installation.
-
-Use the source when you want to use this project as a sub-component dependency that is referenced in the JSX of your 
-parent component.
-
-Use the bundled version when you want to drop in the component on your page and instantiate in a DOM element.
-     
-### Bundle (Simplest)
-
-The transpiled, minified bundle will be available in /node_modules in the component /build directory.
+The transpiled, minified bundle will be available in /node_modules/@pearson-components in the component 
+/build directory after you have npm installed this component in your project.
 
 Eventing example:
 
 ```js
-[EXAMPLE GOES HERE]
+[EVENTING EXAMPLE GOES HERE]
 ```
 
-### or Build
-
-There are use cases where you might need to roll the component into your application's build process.
-
-CommonJS example:
+Direct API example:
 
 ```js
-[EXAMPLE GOES HERE]
-```
-
-Example webpack configuration (requires correct configuration and installation of loader dependencies):
-
-```js
-[EXAMPLE GOES HERE]
+[DIRECT API EXAMPLE GOES HERE]
 ```
     
 ### Component Configuration
 
-    [CONFIG EXAMPLE GOES HERE]
+    [CONFIG INFO GOES HERE]
 
 ### Eventing
 

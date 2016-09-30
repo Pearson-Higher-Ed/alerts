@@ -2,7 +2,7 @@
   "name": "",
   "version": "0.0.0",
   "description": "",
-  "main": "./main.js",
+  "main": "./build/dist.component-name.js",
   "scripts": {
     "dev-setup": "node ./npm_scripts/dev-setup.js",
     "dev": "node ./npm_scripts/dev.js",
