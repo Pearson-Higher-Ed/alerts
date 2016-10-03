@@ -1,11 +1,11 @@
 // For output.filename configuration:
 //
-// Change "component-name" in this file to your real component name!
+// CHANGE "component-name" in this file to your real component name!
 // DO NOT CHANGE "[name]", which denotes the entry property names that webpack automatically inserts for you!
 
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './main.js', './demo/demo.js'],
+   dev: ['webpack/hot/dev-server', './demo/demo.js'],
    dist: ['./main.js']
   },
   output: {
