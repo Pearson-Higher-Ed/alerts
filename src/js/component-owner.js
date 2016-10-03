@@ -2,7 +2,7 @@
 // (see https://facebook.github.io/react/docs/multiple-components.html)
 //
 // NOTE: If you want to reference another Origami component in this file's JSX below, import
-// it's src/js/component-owner.js directly from this project's /node_modules.
+// its src/js/component-owner.js directly from this project's /node_modules.
 
 import '../scss/component-specific.scss';
 
