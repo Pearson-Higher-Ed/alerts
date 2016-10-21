@@ -1,9 +1,10 @@
 ## Origami Starter Kit [![Build Status](https://travis-ci.org/Pearson-Higher-Ed/component-archetype.svg?branch=master)](https://travis-ci.org/Pearson-Higher-Ed/component-archetype)
 
-This is a comprehensive starter kit for creating a **standalone Origami v2 component**. You should integrate your component 
-into a larger application capable of managing data flow of all available components.
+This is a comprehensive starter kit for creating a **standalone Origami v2 component (not an app starter kit)**. You 
+should integrate your component into a larger application capable of managing data flow of all available components 
+(out of scope for this repo).
 
-In order to utilize this successfully, you **must** have solid working knowledge of Facebook's React - a library for
+In order to utilize this successfully, you must have solid working knowledge of Facebook's React - a library for
 building composable user interfaces. You should understand ES2015 (ES6) syntax and concepts as well.
 
 This starter kit implements best practices like testing, linting, bundling, transpiling ES6 to ES5, etc. It codifies a
