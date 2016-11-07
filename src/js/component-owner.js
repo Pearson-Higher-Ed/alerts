@@ -2,24 +2,56 @@ import '../scss/component-specific.scss';
 
 import React from 'react';
 
+import Alert from './alert';
+
 class AlertsComponent extends React.Component {
 
   constructor(props) {
-
     super(props);
 
     this.state = {
-      text: ''
+      open: false,
+      opacity: 0
     };
   }
 
-  render() {
+  handleOpen = () => {
+
+    this.setState({ open: true });
+
+    setTimeout(() => {
+      this.setState({ opacity: 1 });
+    }, 20)
+
+  };
+
+  handleClose = () => {
+
+    this.setState({ opacity: 0 });
+
+    setTimeout(() => {
+      this.setState({ open: false });
+    }, 300)
+  };
+
+  renderAlert = () => (
+    <Alert opacity={this.state.opacity} handleClose={this.handleClose} />
+  );
+
+
+  render () {
 
     return (
       <div>
-        <p>test</p>
+        <button onClick={this.handleOpen}>Error</button>
+
+        {this.state.open
+          ? this.renderAlert()
+          : ''
+        }
+
       </div>
-    )
+    );
   }
 
 }

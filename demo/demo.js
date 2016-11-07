@@ -1,4 +1,4 @@
-import AlertsComponent from '../main';
+import MyComponent from '../main';
 
 function init() {
 
@@ -8,7 +8,7 @@ function init() {
     }
   }));
 
-  new AlertsComponent({
+  new MyComponent({
     elementId: 'demo-target2'
   });
 

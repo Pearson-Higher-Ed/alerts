@@ -1,3 +1,26 @@
 body {
   padding: 20px;
 }
+.alert-span {
+  position: fixed;
+  border-top: 6px solid red;
+  border-bottom: 1px solid black;
+  padding: 10px 15px 15px 15px;
+  transition: opacity 0.3s;
+}
+.alert-title {
+  font-size: 14px;
+}
+strong {
+  color: red;
+}
+.alert-body {
+  font-size: 14px;
+}
+.close-title {
+  float: right;
+  font-size: 30px;
+}
+button {
+  margin-right: 20px;
+}
