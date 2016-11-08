@@ -21,7 +21,7 @@ class AlertsComponent extends React.Component {
 
     setTimeout(() => {
       this.setState({ opacity: 1 });
-    }, 20)
+    }, 300)
 
   };
 
@@ -31,7 +31,7 @@ class AlertsComponent extends React.Component {
 
     setTimeout(() => {
       this.setState({ open: false });
-    }, 300)
+    }, 200)
   };
 
   renderAlert = () => (

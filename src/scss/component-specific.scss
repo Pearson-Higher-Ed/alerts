@@ -4,7 +4,6 @@ body {
 .alert-span {
   position: fixed;
   border-top: 6px solid red;
-  border-bottom: 1px solid black;
   padding: 10px 15px 15px 15px;
   transition: opacity 0.3s;
 }
@@ -20,6 +19,9 @@ strong {
 .close-title {
   float: right;
   font-size: 30px;
+}
+.close-title:hover {
+  cursor: pointer;
 }
 button {
   margin-right: 20px;
