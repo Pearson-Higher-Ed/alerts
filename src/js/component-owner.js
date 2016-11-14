@@ -6,8 +6,8 @@ import Alert from './alert';
 
 class AlertsComponent extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       open: false,
@@ -21,7 +21,7 @@ class AlertsComponent extends React.Component {
 
     setTimeout(() => {
       this.setState({ opacity: 1 });
-    }, 300)
+    }, 1)
 
   };
 
@@ -31,13 +31,12 @@ class AlertsComponent extends React.Component {
 
     setTimeout(() => {
       this.setState({ open: false });
-    }, 200)
+    }, 1)
   };
 
   renderAlert = () => (
     <Alert opacity={this.state.opacity} handleClose={this.handleClose} />
   );
-
 
   render () {
 
