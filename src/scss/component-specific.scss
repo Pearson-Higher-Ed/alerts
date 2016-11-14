@@ -2,10 +2,10 @@
   position: fixed;
   border-top: 6px solid red;
   padding: 10px 15px 15px 15px;
-  animation-name: open;
+  animation-name: openAlert;
   animation-duration: 0.3s;
 }
-@keyframes open {
+@keyframes openAlert {
   0% { top: 0px; }
   100% { top: 65px; }
 }
@@ -21,6 +21,17 @@ strong {
 .close-title {
   float: right;
   font-size: 30px;
+}
+.close-title-animation{
+  float:right;
+  font-size: 30px;
+  animation-name: closeAlert;
+  animation-duration: 0.3s;
+}
+
+@keyframes closeAlert {
+  0% { left: 70px; top: 65px; }
+  100% { left: -400px; top: 65px; }
 }
 .close-title:hover {
   cursor: pointer;

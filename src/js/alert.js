@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Alert = (props) => (
-    <span className="alert-span" style={{opacity: props.opacity}}>
+    <span className={`alert-span ${props.closeTitleProp}`} style={{opacity: props.opacity}}>
       <span className="alert-title">
       <strong>Error</strong>
       <span className="close-title" onClick={props.handleClose}>&times;</span>

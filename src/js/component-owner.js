@@ -11,31 +11,26 @@ class AlertsComponent extends React.Component {
 
     this.state = {
       open: false,
-      opacity: 0
+      opacity: 0,
+      closeProp: 'close-title'
     };
   }
 
   handleOpen = () => {
 
-    this.setState({ open: true });
-
-    setTimeout(() => {
-      this.setState({ opacity: 1 });
-    }, 1)
+    this.setState({ open: true, opacity: 1 });
 
   };
 
   handleClose = () => {
 
-    this.setState({ opacity: 0 });
+// Need to figure out a way that when animation finishes it changes state
+    this.setState({ open: true, opacity: 1, closeProp: 'close-title-animation' })
 
-    setTimeout(() => {
-      this.setState({ open: false });
-    }, 1)
   };
 
   renderAlert = () => (
-    <Alert opacity={this.state.opacity} handleClose={this.handleClose} />
+    <Alert opacity={this.state.opacity} handleClose={this.handleClose} closeTitleProp={this.state.closeProp} />
   );
 
   render () {
