@@ -15,7 +15,7 @@
     "ci": "node ./npm_scripts/ci.js",
     "release": "node ./npm_scripts/release.js",
     "verify": "node ./npm_scripts/verify.js",
-    "postinstall": "cp ./node_modules/@pearson-components/npm-scripts/npm_scripts/*.js ./npm_scripts"
+    "postinstall": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js"
   },
   "author": "",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "react-intl": "~2.0.1"
   },
   "devDependencies": {
-    "@pearson-components/npm-scripts": "^0.3.2",
+    "@pearson-components/npm-scripts": "^0.3.6",
     "babel-core": "~6.3.17",
     "babel-eslint": "~4.1.6",
     "babel-loader": "~6.2.0",
@@ -45,6 +45,7 @@
     "expect": "~1.18.0",
     "expect-jsx": "~2.5.1",
     "file-loader": "~0.8.5",
+    "fs-extra": "^1.0.0",
     "ignore-styles": "~5.0.1",
     "intl": "~1.1.0",
     "jsdom": "~8.5.0",

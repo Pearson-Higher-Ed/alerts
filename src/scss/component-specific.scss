@@ -22,11 +22,9 @@ strong {
   float: right;
   font-size: 30px;
 }
-.close-title-animation{
-  float:right;
-  font-size: 30px;
+.close-title-animation {
   animation-name: closeAlert;
-  animation-duration: 0.3s;
+  animation-duration: 0.2s;
 }
 
 @keyframes closeAlert {

@@ -12,20 +12,23 @@ class AlertsComponent extends React.Component {
     this.state = {
       open: false,
       opacity: 0,
-      closeProp: 'close-title'
+      closeProp: ''
     };
   }
 
   handleOpen = () => {
 
-    this.setState({ open: true, opacity: 1 });
+    this.setState({ open: true, opacity: 1, closeProp: 'close-title' });
 
   };
 
   handleClose = () => {
+    this.setState({ closeProp: 'close-title-animation' });
+    const cp = document.getElementById('demo-target1');
 
-// Need to figure out a way that when animation finishes it changes state
-    this.setState({ open: true, opacity: 1, closeProp: 'close-title-animation' })
+    cp.addEventListener('webkitAnimationEnd', () => {
+      this.setState({ open: false, opacity: 0 })
+    }, false);
 
   };
 
