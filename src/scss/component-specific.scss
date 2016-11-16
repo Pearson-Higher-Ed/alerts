@@ -23,6 +23,8 @@ strong {
 .alert-span .close-title {
   float: right;
   font-size: 30px;
+  border: none;
+  background: transparent;
 }
 .close-title-animation {
   animation-name: closeAlert;
@@ -31,9 +33,6 @@ strong {
 @keyframes closeAlert {
   0% { left: 70px; top: 65px; }
   100% { left: -550px; top: 65px; }
-}
-.close-title:hover {
-  cursor: pointer;
 }
 button {
   margin-right: 20px;
