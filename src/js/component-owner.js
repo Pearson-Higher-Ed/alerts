@@ -4,6 +4,8 @@ import React from 'react';
 
 import Alert from './alert';
 
+const someVarName = document.getElementById('demo-target1');
+
 class AlertsComponent extends React.Component {
 
   constructor() {
@@ -23,12 +25,17 @@ class AlertsComponent extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ closeProp: 'close-title-animation' });
-    const cp = document.getElementById('demo-target1');
 
-    cp.addEventListener('webkitAnimationEnd', () => {
-      this.setState({ open: false, opacity: 0 })
-    }, false);
+    const reset = () => {
+      this.setState({ open: false, opacity: 0, closeProp: '' });
+      if (this.state.open === false) {
+        someVarName.removeEventListener('webkitAnimationEnd', reset);
+      }
+    }
+
+    this.setState({ closeProp: 'close-title-animation' });
+
+    someVarName.addEventListener('webkitAnimationEnd', reset);
 
   };
 

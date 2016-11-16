@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AlertsComponent from './src/js/component-owner';
 
-
 export default class MyComponent {
 
   constructor(config) {
@@ -11,7 +10,6 @@ export default class MyComponent {
   }
 
   init(config) {
-
 
     ReactDOM.render(
       <AlertsComponent data={config} />,
