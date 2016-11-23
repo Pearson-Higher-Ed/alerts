@@ -4,7 +4,7 @@ import React from 'react';
 
 import Alert from './alert';
 
-const someVarName = document.getElementById('demo-target1');
+const targetAlert = document.getElementById('demo-target1');
 
 class AlertsComponent extends React.Component {
 
@@ -29,13 +29,13 @@ class AlertsComponent extends React.Component {
     const reset = () => {
       this.setState({ open: false, opacity: 0, closeProp: '' });
       if (this.state.open === false) {
-        someVarName.removeEventListener('webkitAnimationEnd', reset);
+        targetAlert.removeEventListener('webkitAnimationEnd', reset);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    someVarName.addEventListener('webkitAnimationEnd', reset);
+    targetAlert.addEventListener('webkitAnimationEnd', reset);
 
   };
 
@@ -47,12 +47,15 @@ class AlertsComponent extends React.Component {
 
     return (
       <div>
-        <button onClick={this.handleOpen}>Error</button>
+        <button className="test-button" onClick={this.handleOpen}>Error</button>
 
         {this.state.open
           ? this.renderAlert()
           : ''
-        }
+        } <br/><br/><br/><br/>
+
+        <button className="test-button">Success</button>
+
 
       </div>
     );

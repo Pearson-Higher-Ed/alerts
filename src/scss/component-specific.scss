@@ -1,27 +1,29 @@
 @import './variables';
+@import '../../node_modules/pearson-elements/scss/elements.scss';
 
 .alert-span {
   position: fixed;
-  border-top: 6px solid $strawberry-red;
-  padding: 10px 15px 15px 15px;
+  border-top: $alert-top-border $pe-color-strawberry-red;
+  padding: $alert-padding;
   animation-name: openAlert;
-  animation-duration: 0.3s;
+  animation-duration: .3s;
 }
 @keyframes openAlert {
   0% { top: 0px; }
-  100% { top: 65px; }
+  100% { top: 75px; }
 }
 .alert-title {
   font-size: 14px;
 }
 strong {
-  color: $strawberry-red;
+  color: $pe-color-strawberry-red;
 }
 .alert-body {
   font-size: 14px;
 }
 .alert-span .close-title {
   float: right;
+  margin-top: -10px;
   font-size: 30px;
   border: none;
   background: transparent;
@@ -31,9 +33,9 @@ strong {
   animation-duration: .2s;
 }
 @keyframes closeAlert {
-  0% { left: 70px; top: 65px; }
-  100% { left: -550px; top: 65px; }
+  0% { left: 70px; top: 75px; }
+  100% { left: -550px; top: 75px; }
 }
-button {
+.test-button {
   margin-right: 20px;
 }
