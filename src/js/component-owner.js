@@ -26,16 +26,32 @@ class AlertsComponent extends React.Component {
 
   handleClose = () => {
 
+    const whichTransitionEvent = () => {
+      let transition;
+      const transitions = {
+        transition: 'animationend',
+        WebkitTransition: 'webkitAnimationEnd'
+      };
+
+      Object.keys(transitions).forEach(function(transitionKey) {
+        if (targetAlert.style[transitionKey] !== undefined) {
+          transition = transitions[transitionKey];
+        }
+      });
+
+      return transition;
+    };
+
     const reset = () => {
       this.setState({ open: false, opacity: 0, closeProp: '' });
       if (this.state.open === false) {
-        targetAlert.removeEventListener('webkitAnimationEnd', reset);
+        targetAlert.removeEventListener(whichTransitionEvent(), reset);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    targetAlert.addEventListener('webkitAnimationEnd', reset);
+    targetAlert.addEventListener(whichTransitionEvent(), reset);
 
   };
 
@@ -55,8 +71,6 @@ class AlertsComponent extends React.Component {
         } <br/><br/><br/><br/>
 
         <button className="test-button">Success</button>
-
-
       </div>
     );
   }
