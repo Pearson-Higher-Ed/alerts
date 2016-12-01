@@ -1,6 +1,6 @@
-import '../scss/component-specific.scss';
-
 import React from 'react';
+
+import '../scss/component-specific.scss';
 
 import Alert from './alert';
 
@@ -19,9 +19,7 @@ class AlertsComponent extends React.Component {
   }
 
   handleOpen = () => {
-
     this.setState({ open: true, opacity: 1, closeProp: 'close-title' });
-
   };
 
   handleClose = () => {
@@ -32,13 +30,11 @@ class AlertsComponent extends React.Component {
         transition: 'animationend',
         WebkitTransition: 'webkitAnimationEnd'
       };
-
-      Object.keys(transitions).forEach(function(transitionKey) {
+      Object.keys(transitions).forEach((transitionKey) => {
         if (targetAlert.style[transitionKey] !== undefined) {
           transition = transitions[transitionKey];
         }
       });
-
       return transition;
     };
 
@@ -52,7 +48,6 @@ class AlertsComponent extends React.Component {
     this.setState({ closeProp: 'close-title-animation' });
 
     targetAlert.addEventListener(whichTransitionEvent(), reset);
-
   };
 
   renderAlert = () => (
