@@ -3,6 +3,7 @@ import React from 'react';
 import '../scss/component-specific.scss';
 
 import Alert from './alert';
+import Helper from './helper';
 
 const targetAlert = document.getElementById('demo-target1');
 
@@ -24,30 +25,16 @@ class AlertsComponent extends React.Component {
 
   handleClose = () => {
 
-    const whichTransitionEvent = () => {
-      let transition;
-      const transitions = {
-        transition: 'animationend',
-        WebkitTransition: 'webkitAnimationEnd'
-      };
-      Object.keys(transitions).forEach((transitionKey) => {
-        if (targetAlert.style[transitionKey] !== undefined) {
-          transition = transitions[transitionKey];
-        }
-      });
-      return transition;
-    };
-
     const reset = () => {
       this.setState({ open: false, opacity: 0, closeProp: '' });
       if (this.state.open === false) {
-        targetAlert.removeEventListener(whichTransitionEvent(), reset);
+        targetAlert.removeEventListener(Helper.whichTransitionEvent(), reset);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    targetAlert.addEventListener(whichTransitionEvent(), reset);
+    targetAlert.addEventListener(Helper.whichTransitionEvent(), reset);
   };
 
   renderAlert = () => (
