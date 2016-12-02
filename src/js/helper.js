@@ -1,5 +1,5 @@
 const Helper = {
-  whichTransitionEvent: function () {
+  whichTransitionEvent: () => {
     let transition;
     const transitions = {
       transition: 'animationend',
@@ -14,4 +14,4 @@ const Helper = {
   }
 };
 
-module.exports = Helper;
+export default Helper;

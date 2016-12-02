@@ -15,44 +15,56 @@ class AlertsComponent extends React.Component {
     this.state = {
       open: false,
       opacity: 0,
-      closeProp: ''
+      closeProp: '',
+      alertType: '',
+      alertMessage: ''
     };
   }
 
-  handleOpen = () => {
-    this.setState({ open: true, opacity: 1, closeProp: 'close-title' });
+  handleErrorOpen = () => {
+    this.setState({ open: true, opacity: 1, alertType: 'Error',
+            alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.`});
+  };
+
+  handleSuccessOpen = () => {
+    this.setState({ open: true, opacity: 1, alertType: 'Success',
+            alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
   };
 
   handleClose = () => {
-
-    const reset = () => {
-      this.setState({ open: false, opacity: 0, closeProp: '' });
+    const removeEL = () => {
+      this.setState({ open: false, opacity: 0, closeProp: '', alertType: '', alertMessage: '' });
       if (this.state.open === false) {
-        targetAlert.removeEventListener(Helper.whichTransitionEvent(), reset);
+        targetAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    targetAlert.addEventListener(Helper.whichTransitionEvent(), reset);
+    targetAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
   };
 
   renderAlert = () => (
-    <Alert opacity={this.state.opacity} handleClose={this.handleClose} closeTitleProp={this.state.closeProp} />
+    <Alert
+      opacity={this.state.opacity}
+      handleClose={this.handleClose}
+      closeTitleProp={this.state.closeProp}
+      whichAlertProp={this.state.alertType}
+      alertMessage={this.state.alertMessage}
+    />
   );
 
   render () {
 
     return (
       <div>
-        <button className="test-button" onClick={this.handleOpen}>Error</button>
-
+        <button className="test-button" onClick={this.handleErrorOpen}>Error</button>
         {this.state.open
           ? this.renderAlert()
           : ''
         } <br/><br/><br/><br/>
 
-        <button className="test-button">Success</button>
+        <button className="test-button" onClick={this.handleSuccessOpen}>Success</button>
       </div>
     );
   }
