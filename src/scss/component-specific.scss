@@ -15,7 +15,7 @@
 }
 @keyframes openAlert {
   0% { top: 0px; }
-  100% { top: 75px; }
+  100% { top: 60px; }
 }
 .Error-title {
   color: $pe-color-strawberry-red;
@@ -26,7 +26,6 @@
 .close-title {
   float: right;
   margin-top: -10px;
-  font-size: 30px;
   border: none;
   background: transparent;
 }
@@ -35,8 +34,8 @@
   animation-duration: .2s;
 }
 @keyframes closeAlert {
-  0% { left: 70px; top: 75px; }
-  100% { left: -550px; top: 75px; }
+  0% { left: 70px; top: 60px; }
+  100% { left: -550px; top: 60px; }
 }
 .test-button {
   margin-right: 20px;
