@@ -4,6 +4,19 @@
     <title>Alerts Demo</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="elements.css">
+    <script src="../src/js/icon.js">
+    var pe_ajax = new XMLHttpRequest();
+    pe_ajax.open("GET", "../node_modules/pearson-elements/dist/icons/p-icons-sprite-1.1.svg", true);
+    pe_ajax.responseType = "document";
+    pe_ajax.onload = function(e) {
+      document.body.insertBefore(
+        pe_ajax.responseXML.documentElement,
+        document.body.childNodes[0]
+      );
+    }
+    pe_ajax.send();
+  </script>
+
 </head>
 <body>
     <!-- Customize the demo for your component -->
