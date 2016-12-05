@@ -4,18 +4,6 @@
     <title>Alerts Demo</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="elements.css">
-    <script src="../src/js/icon.js">
-    var pe_ajax = new XMLHttpRequest();
-    pe_ajax.open("GET", "../node_modules/pearson-elements/dist/icons/p-icons-sprite-1.1.svg", true);
-    pe_ajax.responseType = "document";
-    pe_ajax.onload = function(e) {
-      document.body.insertBefore(
-        pe_ajax.responseXML.documentElement,
-        document.body.childNodes[0]
-      );
-    }
-    pe_ajax.send();
-  </script>
 
 </head>
 <body>
@@ -23,6 +11,23 @@
     <h1>Alerts Demo</h1>
     <p>Styled using the Elements SDK.</p>
     <div id="demo-target1"></div>
+
+    <div id="demo-target2"></div>
+
+    <script>
+      if (document.body.children[0].nodeName != 'svg') {
+        var pe_ajax = new XMLHttpRequest();
+        pe_ajax.open("GET", "/icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.responseType = "document";
+        pe_ajax.onload = function(e) {
+          document.body.insertBefore(
+            pe_ajax.responseXML.documentElement,
+            document.body.childNodes[0]
+          );
+        }
+        pe_ajax.send();
+      }
+    </script>
 
     <!-- External dependencies for React -->
     <script src="../node_modules/react/dist/react.js"></script>
