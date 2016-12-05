@@ -3,23 +3,25 @@
 
 .alert-span {
   position: fixed;
-  border-top: $alert-top-border $pe-color-strawberry-red;
   padding: $alert-padding;
   animation-name: openAlert;
   animation-duration: .3s;
+}
+#Error {
+  border-top: $alert-top-border $pe-color-strawberry-red;
+}
+#Success {
+  border-top: $alert-top-border $pe-color-digital-grass-green;
 }
 @keyframes openAlert {
   0% { top: 0px; }
   100% { top: 75px; }
 }
-.alert-title {
-  font-size: 14px;
-}
-strong {
+.Error-title {
   color: $pe-color-strawberry-red;
 }
-.alert-body {
-  font-size: 14px;
+.Success-title {
+  color: $pe-color-digital-grass-green;
 }
 .close-title {
   float: right;

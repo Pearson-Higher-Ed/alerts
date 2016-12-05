@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Alert = (props) => (
-  <span className={`alert-span ${props.closeTitleProp}`} role="alert" style={{opacity: props.opacity}}>
-    <strong>{props.whichAlertProp}</strong>
+  <span className={`alert-span ${props.closeTitleProp}`} id={`${props.whichAlertProp}`} role="alert" style={{opacity: props.opacity}}>
+    <strong className={`pe-label ${props.whichAlertProp}-title`}>{props.whichAlertProp}</strong>
       <button className="close-title" onClick={props.handleClose} aria-label="Close alert" >&times;</button><br/>
-      <span className="alert-body">
+      <span className="pe-copy">
         {props.alertMessage}
       </span>
   </span>

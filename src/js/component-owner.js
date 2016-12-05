@@ -23,7 +23,7 @@ class AlertsComponent extends React.Component {
 
   handleErrorOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Error',
-            alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.`});
+            alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
   };
 
   handleSuccessOpen = () => {
