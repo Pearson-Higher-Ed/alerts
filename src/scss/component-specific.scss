@@ -3,6 +3,8 @@
 
 .alert-span {
   position: fixed;
+  top: 50px;
+  left: 45px;
   padding: $alert-padding;
   animation-name: openAlert;
   animation-duration: .3s;
@@ -13,9 +15,13 @@
 #Success {
   border-top: $alert-top-border $pe-color-digital-grass-green;
 }
+svg {
+  height: 0;
+  width: 0;
+}
 @keyframes openAlert {
   0% { top: 0px; }
-  100% { top: 60px; }
+  100% { top: 50px; }
 }
 .Error-title {
   color: $pe-color-strawberry-red;
@@ -26,6 +32,7 @@
 .close-title {
   float: right;
   margin-top: -10px;
+  padding-top: 10px;
   border: none;
   background: transparent;
 }
@@ -34,8 +41,8 @@
   animation-duration: .2s;
 }
 @keyframes closeAlert {
-  0% { left: 70px; top: 60px; }
-  100% { left: -550px; top: 60px; }
+  0% { left: 45px; top: 50px; }
+  100% { left: -550px; top: 50px; }
 }
 .test-button {
   margin-right: 20px;

@@ -23,12 +23,12 @@ class AlertsComponent extends React.Component {
 
   handleErrorOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Error',
-            alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
+        alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
   };
 
   handleSuccessOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Success',
-            alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
+        alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
   };
 
   handleClose = () => {
