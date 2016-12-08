@@ -4,7 +4,8 @@
 .alert-span {
   position: fixed;
   top: 50px;
-  left: 45px;
+  left: 40px;
+  background-color: $pe-color-white;
   padding: $alert-padding;
   animation-name: openAlert;
   animation-duration: .3s;
@@ -41,7 +42,7 @@ svg {
   animation-duration: .2s;
 }
 @keyframes closeAlert {
-  0% { left: 45px; top: 50px; }
+  0% { top: 50px; }
   100% { left: -550px; top: 50px; }
 }
 .test-button {

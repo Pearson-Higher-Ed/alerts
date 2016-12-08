@@ -5,7 +5,8 @@ import '../scss/component-specific.scss';
 import Alert from './alert';
 import Helper from './helper';
 
-const targetAlert = document.getElementById('demo-target1');
+const errorAlert = document.getElementById('demo-target1');
+const successAlert = document.getElementById('demo-target2');
 
 class AlertsComponent extends React.Component {
 
@@ -21,6 +22,13 @@ class AlertsComponent extends React.Component {
     };
   }
 
+componentDidUpdate = () => {
+  const findAlert = document.querySelector('[data-reactroot] .alert-span');
+  if (findAlert) {
+    console.log(findAlert);
+  }
+}
+
   handleErrorOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Error',
         alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
@@ -35,13 +43,15 @@ class AlertsComponent extends React.Component {
     const removeEL = () => {
       this.setState({ open: false, opacity: 0, closeProp: '', alertType: '', alertMessage: '' });
       if (this.state.open === false) {
-        targetAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
+        errorAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
+        successAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    targetAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
+    errorAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
+    successAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
   };
 
   renderAlert = () => (
@@ -52,7 +62,9 @@ class AlertsComponent extends React.Component {
       whichAlertProp={this.state.alertType}
       alertMessage={this.state.alertMessage}
     />
+
   );
+
 
   render () {
 
@@ -62,8 +74,7 @@ class AlertsComponent extends React.Component {
         {this.state.open
           ? this.renderAlert()
           : ''
-        } <br/><br/><br/><br/>
-
+        }<br/>
         <button className="test-button" onClick={this.handleSuccessOpen}>Success</button>
       </div>
     );
