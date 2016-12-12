@@ -22,12 +22,12 @@ class AlertsComponent extends React.Component {
     };
   }
 
-componentDidUpdate = () => {
-  const findAlert = document.querySelector('[data-reactroot] .alert-span');
-  if (findAlert) {
-    console.log(findAlert);
-  }
-}
+  componentDidUpdate = () => {
+    const findAlert1 = document.querySelector('div#demo-target1 [data-reactroot] .alert-span');
+    const findAlert2 = document.querySelector('div#demo-target2 [data-reactroot] .alert-span');
+    if (findAlert1 && findAlert2) { findAlert2.style.top = '165px'; }
+    if (!findAlert1 && findAlert2) { findAlert2.style.top = '50px'; }
+  };
 
   handleErrorOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Error',
@@ -62,20 +62,18 @@ componentDidUpdate = () => {
       whichAlertProp={this.state.alertType}
       alertMessage={this.state.alertMessage}
     />
-
   );
-
 
   render () {
 
     return (
       <div>
-        <button className="test-button" onClick={this.handleErrorOpen}>Error</button>
+        <button onClick={this.handleErrorOpen}>Error</button>
         {this.state.open
           ? this.renderAlert()
           : ''
         }<br/>
-        <button className="test-button" onClick={this.handleSuccessOpen}>Success</button>
+        <button onClick={this.handleSuccessOpen}>Success</button>
       </div>
     );
   }

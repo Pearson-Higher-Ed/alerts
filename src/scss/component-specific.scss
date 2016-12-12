@@ -11,10 +11,10 @@
   animation-duration: .3s;
 }
 #Error {
-  border-top: $alert-top-border $pe-color-strawberry-red;
+  border-top: $alert-border-top $pe-color-strawberry-red;
 }
 #Success {
-  border-top: $alert-top-border $pe-color-digital-grass-green;
+  border-top: $alert-border-top $pe-color-digital-grass-green;
 }
 svg {
   height: 0;
@@ -44,7 +44,4 @@ svg {
 @keyframes closeAlert {
   0% { top: 50px; }
   100% { left: -550px; top: 50px; }
-}
-.test-button {
-  margin-right: 20px;
 }
