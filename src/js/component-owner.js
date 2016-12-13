@@ -5,9 +5,6 @@ import '../scss/component-specific.scss';
 import Alert from './alert';
 import Helper from './helper';
 
-const errorAlert = document.getElementById('demo-target1');
-const successAlert = document.getElementById('demo-target2');
-
 class AlertsComponent extends React.Component {
 
   constructor() {
@@ -23,8 +20,8 @@ class AlertsComponent extends React.Component {
   }
 
   componentDidUpdate = () => {
-    const findAlert1 = document.querySelector('div#demo-target1 [data-reactroot] .alert-span');
-    const findAlert2 = document.querySelector('div#demo-target2 [data-reactroot] .alert-span');
+    const findAlert1 = document.querySelector('#demo-target1 [data-reactroot] .alert-span');
+    const findAlert2 = document.querySelector('#demo-target2 [data-reactroot] .alert-span');
     if (findAlert1 && findAlert2) { findAlert2.style.top = '165px'; }
     if (!findAlert1 && findAlert2) { findAlert2.style.top = '50px'; }
   };
@@ -40,18 +37,21 @@ class AlertsComponent extends React.Component {
   };
 
   handleClose = () => {
+    const alert1 = document.getElementById('demo-target1');
+    const alert2 = document.getElementById('demo-target2');
+
     const removeEL = () => {
       this.setState({ open: false, opacity: 0, closeProp: '', alertType: '', alertMessage: '' });
       if (this.state.open === false) {
-        errorAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
-        successAlert.removeEventListener(Helper.whichTransitionEvent(), removeEL);
+        alert1.removeEventListener(Helper.whichTransitionEvent(), removeEL);
+        alert2.removeEventListener(Helper.whichTransitionEvent(), removeEL);
       }
     }
 
     this.setState({ closeProp: 'close-title-animation' });
 
-    errorAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
-    successAlert.addEventListener(Helper.whichTransitionEvent(), removeEL);
+    alert1.addEventListener(Helper.whichTransitionEvent(), removeEL);
+    alert2.addEventListener(Helper.whichTransitionEvent(), removeEL);
   };
 
   renderAlert = () => (
