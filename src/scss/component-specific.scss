@@ -21,7 +21,7 @@ svg {
   width: 0;
 }
 @keyframes openAlert {
-  0% { top: 0px; }
+  0% { top: -75px; }
   100% { top: 50px; }
 }
 .Error-title {
@@ -42,6 +42,6 @@ svg {
   animation-duration: .2s;
 }
 @keyframes closeAlert {
-  0% { }
+  0% {}
   100% { left: -550px; }
 }
