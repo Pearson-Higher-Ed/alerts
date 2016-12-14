@@ -1,10 +1,10 @@
 @import './variables';
 @import '../../node_modules/pearson-elements/scss/elements.scss';
 
-.alert-span {
+.pe-template__static-small {
   position: fixed;
   top: 50px;
-  left: 40px;
+  left: 35px;
   background-color: $pe-color-white;
   padding: $alert-padding;
   animation-name: openAlert;

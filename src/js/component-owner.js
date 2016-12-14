@@ -20,8 +20,8 @@ class AlertsComponent extends React.Component {
   }
 
   componentDidUpdate = () => {
-    const findAlert1 = document.querySelector('#demo-target1 [data-reactroot] .alert-span');
-    const findAlert2 = document.querySelector('#demo-target2 [data-reactroot] .alert-span');
+    const findAlert1 = document.querySelector('#demo-target1 [data-reactroot] .pe-template__static-small');
+    const findAlert2 = document.querySelector('#demo-target2 [data-reactroot] .pe-template__static-small');
     if (findAlert1 && findAlert2) { findAlert2.style.top = '165px'; }
     if (!findAlert1 && findAlert2) { findAlert2.style.top = '50px'; }
   };

@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from './icon';
 
 const Alert = (props) => (
-  <span className={`alert-span ${props.closeTitleProp}`} id={`${props.whichAlertProp}`} role="alert" style={{opacity: props.opacity}}>
+  <span className={`pe-template__static-small ${props.closeTitleProp}`} id={`${props.whichAlertProp}`} role="alert" style={{opacity: props.opacity}}>
     <strong className={`pe-label ${props.whichAlertProp}-title`}>{props.whichAlertProp}</strong>
       <button className="close-title" onClick={props.handleClose} aria-label="Close alert">
         <Icon name="remove-lg-18" />
