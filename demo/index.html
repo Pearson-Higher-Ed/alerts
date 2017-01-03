@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="elements.css">
 </head>
 <body>
-    <!-- Customize the demo for your component -->
     <h1>Alerts Demo</h1>
     <p>Styled using the Elements SDK.</p>
     <h4>Instance 1</h4>
@@ -15,7 +14,7 @@
     <div id="demo-target2"></div>
 
     <script>
-      if (document.body.children[0].nodeName != 'svg') {
+      if (document.body.children[0].nodeName !== 'svg') {
         var pe_ajax = new XMLHttpRequest();
         pe_ajax.open("GET", "../node_modules/pearson-elements/dist/icons/p-icons-sprite-1.1.svg", true);
         pe_ajax.responseType = "document";

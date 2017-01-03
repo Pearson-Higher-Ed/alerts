@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AlertsComponent from './src/js/component-owner';
+import { IntlProvider } from 'react-intl';
 
 export default class MyComponent {
 
@@ -11,8 +12,12 @@ export default class MyComponent {
 
   init(config) {
 
+    const locale = config.locale ? config.locale : 'en';
+
     ReactDOM.render(
-      <AlertsComponent data={config} />,
+      <IntlProvider locale={locale}>
+        <AlertsComponent data={config} />
+      </IntlProvider>,
       document.getElementById(config.elementId)
     );
   }

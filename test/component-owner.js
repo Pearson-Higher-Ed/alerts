@@ -1,5 +1,3 @@
-/* global describe it expect */
-
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 import React from 'react';

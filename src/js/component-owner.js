@@ -22,18 +22,18 @@ class AlertsComponent extends React.Component {
   componentDidUpdate = () => {
     const findAlert1 = document.querySelector('#demo-target1 [data-reactroot] .pe-template__static-small');
     const findAlert2 = document.querySelector('#demo-target2 [data-reactroot] .pe-template__static-small');
-    if (findAlert1 && findAlert2) { findAlert2.style.top = '165px'; }
+    if (findAlert1 && findAlert2) { findAlert2.style.top = '170px'; }
     if (!findAlert1 && findAlert2) { findAlert2.style.top = '50px'; }
   };
 
   handleErrorOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Error',
-        alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
+      alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
   };
 
   handleSuccessOpen = () => {
     this.setState({ open: true, opacity: 1, alertType: 'Success',
-        alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
+      alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
   };
 
   handleClose = () => {
@@ -72,7 +72,7 @@ class AlertsComponent extends React.Component {
         {this.state.open
           ? this.renderAlert()
           : ''
-        }<br/>
+        }
         <button onClick={this.handleSuccessOpen}>Success</button>
       </div>
     );
