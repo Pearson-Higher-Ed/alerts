@@ -16,7 +16,10 @@ export default class MyComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale}>
-        <AlertsComponent data={config} />
+        <div>
+          <AlertsComponent data={config} alertType="Error" alertMessage="Error test message" />
+          <AlertsComponent data={config} alertType="Success" alertMessage="Success test message" />
+        </div>
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

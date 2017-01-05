@@ -1,17 +1,26 @@
-import React from 'react';
-
 import '../scss/component-specific.scss';
 
+import React, { PropTypes, Component} from 'react';
+import { intlShape, injectIntl } from 'react-intl';
 import Alert from './alert';
 import Helper from './helper';
 
-class AlertsComponent extends React.Component {
+class AlertsComponent extends Component {
 
-  constructor() {
+  static propTypes = {
+    intl: intlShape.isRequired,
+    data: PropTypes.shape({
+      locale: PropTypes.string,
+      alertType: PropTypes.string,
+      alertMessage: PropTypes.string
+    })
+  }
+
+  constructor(props) {
     super();
 
     this.state = {
-      open: false,
+      alertIsOpen: false,
       opacity: 0,
       closeProp: '',
       alertType: '',
@@ -26,14 +35,14 @@ class AlertsComponent extends React.Component {
     if (!findAlert1 && findAlert2) { findAlert2.style.top = '50px'; }
   };
 
-  handleErrorOpen = () => {
-    this.setState({ open: true, opacity: 1, alertType: 'Error',
-      alertMessage: `Uh oh, we weren't able to verify your email address. Try resending the email.` });
+  handleErrorOpen = (props) => {
+    this.setState({ alertIsOpen: true, opacity: 1, alertType: this.props.alertType,
+      alertMessage: this.props.alertMessage });
   };
 
-  handleSuccessOpen = () => {
-    this.setState({ open: true, opacity: 1, alertType: 'Success',
-      alertMessage: 'Your email was verified! Your old address may receive messages for up to 48 hours while we update our systems.' });
+  handleSuccessOpen = (props) => {
+    this.setState({ alertIsOpen: true, opacity: 1, alertType: this.props.alertType,
+      alertMessage: this.props.alertMessage });
   };
 
   handleClose = () => {
@@ -41,8 +50,8 @@ class AlertsComponent extends React.Component {
     const alert2 = document.getElementById('demo-target2');
 
     const removeEL = () => {
-      this.setState({ open: false, opacity: 0, closeProp: '', alertType: '', alertMessage: '' });
-      if (this.state.open === false) {
+      this.setState({ alertIsOpen: false, opacity: 0, closeProp: '', alertType: '', alertMessage: '' });
+      if (this.state.alertIsOpen === false) {
         alert1.removeEventListener(Helper.whichTransitionEvent(), removeEL);
         alert2.removeEventListener(Helper.whichTransitionEvent(), removeEL);
       }
@@ -69,7 +78,7 @@ class AlertsComponent extends React.Component {
     return (
       <div>
         <button onClick={this.handleErrorOpen}>Error</button>
-        {this.state.open
+        {this.state.alertIsOpen
           ? this.renderAlert()
           : ''
         }
@@ -80,4 +89,4 @@ class AlertsComponent extends React.Component {
 
 }
 
-export default AlertsComponent;
+export default injectIntl(AlertsComponent);
