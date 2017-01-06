@@ -2,7 +2,7 @@ import React from 'react';
 import Icon  from './icon';
 
 const Alert = (props) => (
-  <li
+  <span
     key       = {props.key}
     className = {`pe-alert pe-template__static-small ${props.closeTitleProp}`}
     id        = {`${props.alertType}`}
@@ -19,7 +19,7 @@ const Alert = (props) => (
         {props.alertMessage}
       </span>
 
-  </li>
+  </span>
 )
 
 export default Alert;

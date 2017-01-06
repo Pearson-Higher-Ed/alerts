@@ -8,6 +8,7 @@ export default class AlertsComponent {
   constructor(config) {
 
     this.init(config);
+
   }
 
   init(config) {

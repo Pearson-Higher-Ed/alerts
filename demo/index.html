@@ -20,8 +20,10 @@
       function buttonHandler(type){
           // To trigger an alert... dispatch 'triggerAlert' with valid type and message
           document.body.dispatchEvent(new CustomEvent('triggerAlert', {
-            alertType   : type,
-            alertMessage: type + ' test message'
+              "detail":{
+                "alertType"   : type,
+                "alertMessage": type + ' test message'
+              }
           }));
         console.log(type + " alertTriggered!")
       }
