@@ -10,8 +10,22 @@
     <p>Styled using the Elements SDK.</p>
     <h4>Instance 1</h4>
     <div id="demo-target1"></div>
-    <h4>Instance 2</h4>
-    <div id="demo-target2"></div>
+
+    <button onclick="buttonHandler('succes')">Success Alert!</button>
+    <br />
+    <br />
+    <button onclick="buttonHandler('error')">Error Alert!</button>
+
+    <script>
+      function buttonHandler(type){
+          // To trigger an alert... dispatch 'triggerAlert' with valid type and message
+          document.body.dispatchEvent(new CustomEvent('triggerAlert', {
+            alertType   : type,
+            alertMessage: type + ' test message'
+          }));
+        console.log(type + " alertTriggered!")
+      }
+    </script>
 
     <script>
       if (document.body.children[0].nodeName !== 'svg') {
@@ -36,6 +50,6 @@
     <!-- Locally hosted demo server -->
     <script src="http://localhost:8081/webpack-dev-server.js"></script>
     <!-- Demo build of component -->
-    <script src="../build/dev.component-name.js"></script>
+    <script src="../build/dev.alerts.js"></script>
 </body>
 </html>

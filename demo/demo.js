@@ -1,4 +1,4 @@
-import MyComponent from '../main';
+
 
 function init() {
 
@@ -6,11 +6,8 @@ function init() {
     detail: {
       elementId: 'demo-target1'
     }
-  }));
 
-  new MyComponent({
-    elementId: 'demo-target2'
-  });
+  }));
 
 }
 

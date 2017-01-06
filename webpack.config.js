@@ -1,16 +1,11 @@
-// For output.filename configuration:
-//
-// CHANGE "component-name" in this file to your real component name!
-// DO NOT CHANGE "[name]", which denotes the entry property names that webpack automatically inserts for you!
-
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './demo/demo.js'],
+   dev: ['webpack/hot/dev-server', './demo/demo.js', './main.js'],
    dist: ['./main.js']
   },
   output: {
     path: './',
-    filename: 'build/[name].component-name.js',
+    filename: 'build/[name].alerts.js',
     libraryTarget: 'umd'
   },
   devtool: 'cheap-module-source-map',

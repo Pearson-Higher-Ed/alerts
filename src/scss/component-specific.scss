@@ -1,6 +1,10 @@
 @import './variables';
 @import '../../node_modules/pearson-elements/scss/elements.scss';
 
+.pe-alert {
+  margin-top: 30px;
+}
+
 .pe-template__static-small {
   position: fixed;
   top: 50px;
@@ -10,39 +14,49 @@
   animation-name: openAlert;
   animation-duration: .3s;
 }
+
 #Error {
   border-top: $alert-border-top $pe-color-strawberry-red;
 }
+
 #Success {
   border-top: $alert-border-top $pe-color-digital-grass-green;
 }
+
 svg {
   height: 0;
   width: 0;
 }
+
 @keyframes openAlert {
   0% { top: -75px; }
   100% { top: 50px; }
 }
+
 .Error-title {
   color: $pe-color-strawberry-red;
 }
+
 .Success-title {
   color: $pe-color-digital-grass-green;
 }
+
 .pe-copy {
   display: block;
   padding-top: 8px;
 }
+
 .close-title {
   float: right;
   border: none;
   background: transparent;
 }
+
 .close-title-animation {
   animation-name: closeAlert;
   animation-duration: .2s;
 }
+
 @keyframes closeAlert {
   0% {}
   100% { left: -510px; }

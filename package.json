@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "Alerts",
   "version": "0.0.0",
-  "description": "",
-  "main": "./build/dist.component-name.js",
+  "description": "Component to render alerts",
+  "main": "./build/dist.alerts.js",
   "scripts": {
     "dev-setup": "node ./npm_scripts/dev-setup.js",
     "dev": "node ./npm_scripts/dev.js",
@@ -16,13 +16,13 @@
     "ci": "node ./npm_scripts/ci.js",
     "release": "node ./npm_scripts/release.js",
     "verify": "node ./npm_scripts/verify.js",
-    "postinstall": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js"
+    "copy-utils": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js"
   },
-  "author": "",
+  "author": "Pearson Design Accelerator",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pearson-Higher-Ed/"
+    "url": "https://github.com/Pearson-Higher-Ed/alerts"
   },
   "dependencies": {
     "react-intl": "~2.0.1"
@@ -53,7 +53,7 @@
     "json-loader": "~0.5.4",
     "mocha": "~2.4.5",
     "node-sass": "~3.7.0",
-    "pearson-elements": "^1.0.5",
+    "pearson-elements": "^1.1.0",
     "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
