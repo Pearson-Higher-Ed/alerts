@@ -29,21 +29,18 @@ class ComponentOwner extends Component {
   }
 
 
-  componentDidMount() {
-    const { alertList } = this.state;
-    document.body.addEventListener( 'triggerAlert', e => {
-      const a = alertList
-      a.push(e.detail)
-      this.setState({alertList:a})
-    });
+  componentWillMount() {
+    document.body.addEventListener( 'triggerAlert',
+      e => this.setState({ alertList:this.state.alertList.concat([e.detail]) })
+    );
   }
 
 
   render () {
+
     const { alertList } = this.state;
-    // console.log(alertList instanceof Array)
-    // console.log(alertList.forEach(a => console.log(a)))
     return alertList.length > 0 ? this.renderAlert(alertList) : null;
+
   }
 
 
@@ -56,17 +53,23 @@ export default injectIntl(ComponentOwner);
 
 
 function _renderAlert (alertList) {
+  const alertsToRender = [];
+
   alertList.forEach((alert, index) => {
-    return (
-      <Alert
-        key            = {index}
-        opacity        = {1}
-        closeTitleProp = {this.state.closeProp}
-        alertType      = {alert.alertType}
-        alertMessage   = {alert.alertMessage}
-        handleClose    = {this.handleClose}
-      />
-  )})
+    alertsToRender.push(
+        <Alert
+          index          = {index}
+          opacity        = {1}
+          closeTitleProp = {this.state.closeProp}
+          alertType      = {alert.alertType}
+          alertMessage   = {alert.alertMessage}
+          handleClose    = {this.handleClose}
+        />
+      )
+  })
+
+  return <ul>{alertsToRender}</ul>;
+
 }
 
 
@@ -83,7 +86,6 @@ function _handleClose() {
   this.setState({
     closeProp    : 'close-title-animation',
     opacity      : 0,
-    // closeProp    : '',
     alertType    : '',
     alertMessage : ''
   });
