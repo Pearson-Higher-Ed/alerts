@@ -3,6 +3,11 @@
 
 .pe-alert {
   margin-top: 30px;
+  list-style:none;
+}
+
+.alertList {
+  right: 0;
 }
 
 .pe-template__static-small {
@@ -15,11 +20,11 @@
   animation-duration: .3s;
 }
 
-#Error {
+li[id^="alert-error"] {
   border-top: $alert-border-top $pe-color-strawberry-red;
 }
 
-#Success {
+li[id^="alert-success"] {
   border-top: $alert-border-top $pe-color-digital-grass-green;
 }
 
@@ -33,11 +38,11 @@ svg {
   100% { top: 50px; }
 }
 
-.Error-title {
+.error-title {
   color: $pe-color-strawberry-red;
 }
 
-.Success-title {
+.success-title {
   color: $pe-color-digital-grass-green;
 }
 

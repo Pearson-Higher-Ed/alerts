@@ -1,30 +1,23 @@
 import React, { Component }      from 'react';
-import { intlShape, injectIntl } from 'react-intl';
-import Alert                     from './alert';
-import Helper                    from './helper';
-
-import '../scss/component-specific.scss';
+import Alert                     from './Alert';
 
 
 
-class ComponentOwner extends Component {
-
-  static propTypes = { intl: intlShape.isRequired }
+class AlertList extends Component {
 
 
   constructor(props) {
     super(props);
 
     this.state = {
-      opacity      : 0,
+      opacity      : 1,
       closeProp    : '',
-      alertType    : '',
-      alertMessage : '',
       alertList    : []
     };
 
     this.handleClose  = _handleClose.bind(this);
     this.renderAlert  = _renderAlert.bind(this);
+    this.whichTransitionEvent = _whichTransitionEvent.bind(this);
 
   }
 
@@ -39,7 +32,8 @@ class ComponentOwner extends Component {
   render () {
 
     const { alertList } = this.state;
-    return alertList.length > 0 ? this.renderAlert(alertList) : null;
+    return <ul className={"alertList"}>{alertList.length > 0 ? this.renderAlert(alertList) : null}</ul>;
+
 
   }
 
@@ -48,7 +42,7 @@ class ComponentOwner extends Component {
 
 
 
-export default injectIntl(ComponentOwner);
+export default AlertList;
 
 
 
@@ -58,8 +52,9 @@ function _renderAlert (alertList) {
   alertList.forEach((alert, index) => {
     alertsToRender.push(
         <Alert
+          key            = {`pe-alert-${alert.alertType}-${index}`}
           index          = {index}
-          opacity        = {1}
+          opacity        = {this.state.opacity}
           closeTitleProp = {this.state.closeProp}
           alertType      = {alert.alertType}
           alertMessage   = {alert.alertMessage}
@@ -68,26 +63,37 @@ function _renderAlert (alertList) {
       )
   })
 
-  return <ul>{alertsToRender}</ul>;
+  return alertsToRender;
+
+}
+
+function _whichTransitionEvent () {
+
+  let transition;
+
+  const transitions = {
+    transition: 'animationend',
+    WebkitTransition: 'webkitAnimationEnd'
+  };
+
+  Object.keys(transitions).forEach(transitionKey => {
+    if (document.getElementById('demo-target1').style[transitionKey] !== undefined) {
+      transition = transitions[transitionKey];
+    }
+  });
+
+  return transition;
 
 }
 
 
 function _handleClose() {
 
-  const alert1 = document.getElementById('demo-target1');
-
-  const removeEL = () => {
-    if (this.state.alertIsOpen === false) {
-      alert1.removeEventListener(Helper.whichTransitionEvent(), removeEL);
-    }
-  }
+  this.whichTransitionEvent();
 
   this.setState({
     closeProp    : 'close-title-animation',
-    opacity      : 0,
-    alertType    : '',
-    alertMessage : ''
+    opacity      : 0
   });
 
 };

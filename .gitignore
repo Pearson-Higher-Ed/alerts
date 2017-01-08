@@ -9,3 +9,4 @@ build/dev*
 build/dist*
 npm_scripts/*.js
 yarn.lock
+coverage

@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ComponentOwner from './src/js/component-owner';
+import ReactDOM         from 'react-dom';
+import AlertList        from './src/js/AlertList';
 import { IntlProvider } from 'react-intl';
+
+import './src/scss/component-specific.scss';
 
 export default class AlertsComponent {
 
@@ -17,7 +18,7 @@ export default class AlertsComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale}>
-          <ComponentOwner data={config} />
+          <AlertList data={config} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

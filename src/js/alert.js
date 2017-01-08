@@ -3,21 +3,23 @@ import Icon  from './icon';
 
 const Alert = (props) => (
   <li
-    key       = {props.index}
     className = {`pe-alert pe-template__static-small ${props.closeTitleProp}`}
-    id        = {`${props.alertType}`}
+    id        = {`alert-${props.alertType}-${props.index}`}
     role      = "alert"
-    style     = {{opacity: props.opacity}}>
+    style     = {{opacity: props.opacity}}
+    >
 
-    <strong className={`pe-label ${props.alertType}-title`}>{props.alertType}</strong>
+    <strong className={`pe-label ${props.alertType}-title`}>
+      {props.alertType}
+    </strong>
 
-      <button className="close-title" onClick={props.handleClose} aria-label="Close alert">
-        <Icon name="remove-lg-18" />
-      </button><br/>
+    <button className="close-title" onClick={props.handleClose} aria-label="Close alert">
+      <Icon name="remove-lg-18" />
+    </button><br/>
 
-      <span className="pe-copy">
-        {props.alertMessage}
-      </span>
+    <span className="pe-copy">
+      {props.alertMessage}
+    </span>
 
   </li>
 )
