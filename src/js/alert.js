@@ -3,7 +3,7 @@ import Icon  from './icon';
 
 const Alert = (props) => (
   <li
-    className = {`pe-alert pe-template__static-small ${props.closeTitleProp}`}
+    className = {`pe-alert ${props.closeTitleProp}`}
     id        = {`alert-${props.alertType}-${props.index}`}
     role      = "alert"
     style     = {{opacity: props.opacity}}

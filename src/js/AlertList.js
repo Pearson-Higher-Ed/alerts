@@ -24,7 +24,7 @@ class AlertList extends Component {
 
   componentWillMount() {
     document.body.addEventListener( 'triggerAlert',
-      e => this.setState({ alertList:this.state.alertList.concat([e.detail]) })
+      e => this.setState({ alertList:this.state.alertList.concat(e.detail.alertList) })
     );
   }
 

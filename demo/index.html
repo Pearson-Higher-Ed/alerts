@@ -21,8 +21,10 @@
           // To trigger an alert... dispatch 'triggerAlert' with valid type and message
           document.body.dispatchEvent(new CustomEvent('triggerAlert', {
               "detail":{
-                "alertType"   : type,
-                "alertMessage": type + ' test message'
+                "alertList":[{
+                  "alertType"   : type,
+                  "alertMessage": type + ' test message'
+                }]
               }
           }));
         console.log(type + " alertTriggered!")
