@@ -1,5 +1,5 @@
-import React, { Component }      from 'react';
-import Alert                     from './Alert';
+import React, { Component } from 'react';
+import Alert                from './Alert';
 
 
 
@@ -17,7 +17,6 @@ class AlertList extends Component {
 
     this.handleClose  = _handleClose.bind(this);
     this.renderAlert  = _renderAlert.bind(this);
-    this.whichTransitionEvent = _whichTransitionEvent.bind(this);
 
   }
 
@@ -25,6 +24,10 @@ class AlertList extends Component {
   componentWillMount() {
     document.body.addEventListener( 'triggerAlert',
       e => this.setState({ alertList:this.state.alertList.concat(e.detail.alertList) })
+    );
+
+    document.body.addEventListener( 'clearAlert',
+      () => this.setState({ alertList:[] })
     );
   }
 
@@ -67,29 +70,19 @@ function _renderAlert (alertList) {
 
 }
 
-function _whichTransitionEvent () {
 
-  let transition;
+function _handleClose() {
 
   const transitions = {
     transition: 'animationend',
     WebkitTransition: 'webkitAnimationEnd'
   };
 
-  Object.keys(transitions).forEach(transitionKey => {
+  transitions.map(transitionKey => {
     if (document.getElementById('demo-target1').style[transitionKey] !== undefined) {
-      transition = transitions[transitionKey];
+      transitions[transitionKey];
     }
   });
-
-  return transition;
-
-}
-
-
-function _handleClose() {
-
-  this.whichTransitionEvent();
 
   this.setState({
     closeProp    : 'close-title-animation',

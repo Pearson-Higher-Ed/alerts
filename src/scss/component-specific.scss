@@ -1,12 +1,11 @@
 @import './variables';
-@import '../../node_modules/pearson-elements/scss/elements.scss';
 
 .pe-alert {
   margin-top: 30px;
   list-style:none;
   animation-name: openAlert;
   animation-duration: .3s;
-  background-color: $pe-color-white;
+  background-color: #ffffff;
   padding: $alert-padding;
 }
 
@@ -18,11 +17,11 @@
 
 
 li[id^="alert-error"] {
-  border-top: $alert-border-top $pe-color-strawberry-red;
+  border-top: $alert-border-top #db0020;
 }
 
 li[id^="alert-success"] {
-  border-top: $alert-border-top $pe-color-digital-grass-green;
+  border-top: $alert-border-top #038238;
 }
 
 svg {
@@ -36,11 +35,11 @@ svg {
 }
 
 .error-title {
-  color: $pe-color-strawberry-red;
+  color: #db0020;
 }
 
 .success-title {
-  color: $pe-color-digital-grass-green;
+  color: #038238;
 }
 
 .pe-copy {

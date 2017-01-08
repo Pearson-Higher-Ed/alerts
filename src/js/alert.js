@@ -1,6 +1,8 @@
 import React from 'react';
 import Icon  from './icon';
 
+
+
 const Alert = (props) => (
   <li
     className = {`pe-alert ${props.closeTitleProp}`}
@@ -23,5 +25,7 @@ const Alert = (props) => (
 
   </li>
 )
+
+
 
 export default Alert;

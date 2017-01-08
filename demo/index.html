@@ -6,27 +6,41 @@
     <link rel="stylesheet" type="text/css" href="elements.css">
 </head>
 <body>
-    <h1>Alerts Demo</h1>
-    <p>Styled using the Elements SDK.</p>
-    <h4>Instance 1</h4>
+
     <div id="demo-target1"></div>
 
-    <button onclick="buttonHandler('success')">Success Alert!</button>
+    <h1>Alerts Demo</h1>
+    <p>Styled using the Elements SDK.</p>
+
+    <button onclick="buttonHandler('success')">Success Alert</button>
     <br />
     <br />
-    <button onclick="buttonHandler('error')">Error Alert!</button>
+    <button onclick="buttonHandler('error')">Error Alert</button>
+    <br />
+    <br />
+    <br />
+    <br />
+    <button onclick="buttonHandler('clear')">Clear Alert</button>
 
     <script>
-      function buttonHandler(type){
+      function buttonHandler(type) {
           // To trigger an alert... dispatch 'triggerAlert' with valid type and message
-          document.body.dispatchEvent(new CustomEvent('triggerAlert', {
-              "detail":{
-                "alertList":[{
-                  "alertType"   : type,
-                  "alertMessage": type + ' test message'
-                }]
-              }
-          }));
+
+          if(type == 'success' || type == 'error') {
+            document.body.dispatchEvent(new CustomEvent('triggerAlert', {
+                "detail":{
+                  "alertList":[{
+                    "alertType"   : type,
+                    "alertMessage": type + ' test message'
+                  }]
+                }
+            }));
+          }
+
+          if(type == 'clear') {
+            document.body.dispatchEvent(new CustomEvent('clearAlert'));
+          }
+
         console.log(type + " alertTriggered!")
       }
     </script>
