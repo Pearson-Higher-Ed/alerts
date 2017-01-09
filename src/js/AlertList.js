@@ -49,13 +49,12 @@ export default AlertList;
 
 function _handleClose (currentIndex) {
 
-  // apply style and decrement array...
-  this.setState({
-    dismissAlert:'close-title-animation',
-    alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[currentIndex] )
-  });
+  const { alertList } = this.state;
 
-  this.state.alertList.forEach(((a, i) => console.log(i + ' ' + a)))
+  this.setState({
+    dismissAlert : 'close-title-animation',
+    alertList    : alertList.filter((e, index, a) => a[index] !== a[currentIndex])
+  });
 
 }
 
