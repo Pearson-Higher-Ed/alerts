@@ -11,10 +11,16 @@
         text-align: center;
         font-size: 40px;
       }
-      .target {margin-left:20px;}
+      .target {
+        margin-left:20px;
+      }
       .rightContent{
         float:right;
         width:40%;
+        margin-right:20px;
+      }
+      .buttonGroup{
+        margin-top:175px;
       }
     </style>
 </head>
@@ -38,15 +44,17 @@
       </p>
     </div>
 
-    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('success')">Success Alert</button>
-    <br />
-    <br />
-    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('error')">Error Alert</button>
-    <br />
-    <br />
-    <br />
-    <br />
-    <button class="target pe-btn_cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
+    <div class="buttonGroup">
+      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('success')">Success Alert</button>
+      <br />
+      <br />
+      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('error')">Error Alert</button>
+      <br />
+      <br />
+      <br />
+      <br />
+      <button class="target pe-btn_cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
+    </div>
 
     <script>
       function buttonHandler(type) {
