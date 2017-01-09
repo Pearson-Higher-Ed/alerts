@@ -4,14 +4,15 @@
   margin-top: 30px;
   list-style:none;
   animation-name: openAlert;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   background-color: #ffffff;
   padding: $alert-padding;
 }
 
 .alertList {
+  position:fixed;
   width:35%;
-  float:right;
+  right:0;
   margin-right:2%;
 }
 

@@ -50,12 +50,13 @@ export default AlertList;
 
 
 function _renderAlert (alertList) {
+
   const alertsToRender = [];
 
   alertList.forEach((alert, index) => {
     alertsToRender.push(
         <Alert
-          key            = {`pe-alert-${alert.alertType}-${index}`}
+          key            = {index}
           index          = {index}
           opacity        = {this.state.opacity}
           closeTitleProp = {this.state.closeProp}
