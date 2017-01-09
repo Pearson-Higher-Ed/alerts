@@ -5,20 +5,43 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="elements.css" />
     <style>
+      .banner {
+        width:100%;
+        height:50px;
+        text-align: center;
+        font-size: 40px;
+      }
       .target {margin-left:20px;}
+      .rightContent{
+        float:right;
+        width:40%;
+      }
     </style>
 </head>
 <body>
 
+    <div class="banner"><h1>Pearson Design Accelerator</h1></div>
     <div id="demo-target1"></div>
+
 
     <h1 class="target">Alerts Demo</h1>
     <p class="target">Styled using the Elements SDK.</p>
 
-    <button class="target pe-btn__primary" onclick="buttonHandler('success')">Success Alert</button>
+    <div class="rightContent">
+      <h3>Alerts Event API</h3>
+      <p>
+        The Alerts Component works on an evented API.
+        Dispatch an event of 'triggerAlert' with the alertType
+        and alertMessage to display an alert.
+        Dispatch an event of 'clearAlert' to delete all events from
+        queue. Click the buttons on the left to dispatch an event.
+      </p>
+    </div>
+
+    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('success')">Success Alert</button>
     <br />
     <br />
-    <button class="target pe-btn__primary" onclick="buttonHandler('error')">Error Alert</button>
+    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('error')">Error Alert</button>
     <br />
     <br />
     <br />
