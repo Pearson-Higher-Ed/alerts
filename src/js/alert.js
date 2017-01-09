@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon  from './icon';
 
-
 const Alert = (props) => (
       <li
         className = {`pe-alert ${props.dismissAlert}`}

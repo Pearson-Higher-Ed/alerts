@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import Alert                from './Alert';
 
-
-
 class AlertList extends Component {
-
 
   constructor(props) {
     super(props);
@@ -19,7 +16,6 @@ class AlertList extends Component {
 
   }
 
-
   componentWillMount() {
     document.body.addEventListener( 'triggerAlert',
       e => this.setState({ alertList:this.state.alertList.concat(e.detail.alertList) })
@@ -30,7 +26,6 @@ class AlertList extends Component {
     );
   }
 
-
   render () {
 
     const { alertList } = this.state;
@@ -38,14 +33,9 @@ class AlertList extends Component {
 
   }
 
-
 }
 
-
-
 export default AlertList;
-
-
 
 function _handleClose (currentIndex) {
 
@@ -57,8 +47,6 @@ function _handleClose (currentIndex) {
   });
 
 }
-
-
 
 function _renderAlert (alertList) {
 
