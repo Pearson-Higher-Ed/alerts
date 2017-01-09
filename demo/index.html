@@ -3,29 +3,44 @@
 <head>
     <title>Alerts Demo</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="elements.css">
+    <link rel="stylesheet" type="text/css" href="elements.css" />
+    <style>
+      .target {margin-left:20px;}
+    </style>
 </head>
 <body>
 
     <div id="demo-target1"></div>
 
-    <h1>Alerts Demo</h1>
-    <p>Styled using the Elements SDK.</p>
+    <h1 class="target">Alerts Demo</h1>
+    <p class="target">Styled using the Elements SDK.</p>
 
-    <button onclick="buttonHandler('success')">Success Alert</button>
+    <button class="target pe-btn__primary" onclick="buttonHandler('success')">Success Alert</button>
     <br />
     <br />
-    <button onclick="buttonHandler('error')">Error Alert</button>
+    <button class="target pe-btn__primary" onclick="buttonHandler('error')">Error Alert</button>
     <br />
     <br />
     <br />
     <br />
-    <button onclick="buttonHandler('clear')">Clear Alert</button>
+    <button class="target pe-btn_cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
 
     <script>
       function buttonHandler(type) {
-          // To trigger an alert... dispatch 'triggerAlert' with valid type and message
-
+// ========EVENT API FOR INTERACTING WITH THE COMPONENT=========================
+//
+// To trigger an alert...
+// - dispatch 'triggerAlert' event with valid type and message
+//   valid type is success or error... so far.
+// - dispatch 'clearAlert' to clear the array of events
+//
+// ** Consumer must polyfill CustomEvent **
+// -----------------------------------------------------------------------------
+// @param detail       <Object> on event (ie. ref e.detail)
+// @param alertList    <Array>  array of event Objects (ie. [{},{},...])
+// @param alertType    <String> 'success' || 'error'
+// @param alertMessage <String> 'user specified string'
+// -----------------------------------------------------------------------------
           if(type == 'success' || type == 'error') {
             document.body.dispatchEvent(new CustomEvent('triggerAlert', {
                 "detail":{
@@ -40,7 +55,7 @@
           if(type == 'clear') {
             document.body.dispatchEvent(new CustomEvent('clearAlert'));
           }
-
+// =============================================================================
         console.log(type + " alertTriggered!")
       }
     </script>
