@@ -13,6 +13,7 @@
   position:fixed;
   width:35%;
   right:0;
+  top:0;
   margin-right:2%;
 }
 
@@ -31,7 +32,7 @@ svg {
 }
 
 @keyframes openAlert {
-  0% { top: 0px; }
+  0% { top: 200px; }
   100% { top: 0px; }
 }
 

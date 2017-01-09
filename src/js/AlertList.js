@@ -10,13 +10,12 @@ class AlertList extends Component {
     super(props);
 
     this.state = {
-      opacity      : 1,
-      closeProp    : '',
-      alertList    : []
+      alertList : [],
+      dismissAlert : ''
     };
 
-    this.handleClose  = _handleClose.bind(this);
-    this.renderAlert  = _renderAlert.bind(this);
+    this.renderAlert = _renderAlert.bind(this);
+    this.handleClose = _handleClose.bind(this);
 
   }
 
@@ -37,7 +36,6 @@ class AlertList extends Component {
     const { alertList } = this.state;
     return <ul className={"alertList"}>{alertList.length > 0 ? this.renderAlert(alertList) : null}</ul>;
 
-
   }
 
 
@@ -49,6 +47,20 @@ export default AlertList;
 
 
 
+function _handleClose (currentIndex) {
+
+  // apply style and decrement array...
+  this.setState({
+    dismissAlert:'close-title-animation',
+    alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[currentIndex] )
+  });
+
+  this.state.alertList.forEach(((a, i) => console.log(i + ' ' + a)))
+
+}
+
+
+
 function _renderAlert (alertList) {
 
   const alertsToRender = [];
@@ -56,13 +68,12 @@ function _renderAlert (alertList) {
   alertList.forEach((alert, index) => {
     alertsToRender.push(
         <Alert
-          key            = {index}
-          index          = {index}
-          opacity        = {this.state.opacity}
-          closeTitleProp = {this.state.closeProp}
-          alertType      = {alert.alertType}
-          alertMessage   = {alert.alertMessage}
-          handleClose    = {this.handleClose}
+          index        = {index}
+          key          = {index}
+          alertType    = {alert.alertType}
+          alertMessage = {alert.alertMessage}
+          dismissAlert = {this.state.dismissAlert}
+          handleClose  = {this.handleClose}
         />
       )
   })
@@ -70,24 +81,3 @@ function _renderAlert (alertList) {
   return alertsToRender;
 
 }
-
-
-function _handleClose() {
-
-  const transitions = {
-    transition: 'animationend',
-    WebkitTransition: 'webkitAnimationEnd'
-  };
-
-  transitions.map(transitionKey => {
-    if (document.getElementById('demo-target1').style[transitionKey] !== undefined) {
-      transitions[transitionKey];
-    }
-  });
-
-  this.setState({
-    closeProp    : 'close-title-animation',
-    opacity      : 0
-  });
-
-};
