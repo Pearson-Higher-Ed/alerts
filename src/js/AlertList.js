@@ -10,7 +10,8 @@ class AlertList extends Component {
     super(props);
 
     this.state = {
-      alertList : [],
+
+      alertList    : [],
       dismissAlert : ''
     };
 
@@ -31,6 +32,11 @@ class AlertList extends Component {
   }
 
 
+  // componentWillUnmount() {
+  //   this.setState({alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentIndex])})
+  // }
+
+
   render () {
 
     const { alertList } = this.state;
@@ -49,11 +55,9 @@ export default AlertList;
 
 function _handleClose (currentIndex) {
 
-  const { alertList } = this.state;
-
   this.setState({
     dismissAlert : 'close-title-animation',
-    alertList    : alertList.filter((e, index, a) => a[index] !== a[currentIndex])
+    alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[currentIndex])
   });
 
 }

@@ -18,7 +18,7 @@ export default class AlertsComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale}>
-          <AlertList data={config} />
+          <AlertList />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );
