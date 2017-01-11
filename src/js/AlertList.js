@@ -13,8 +13,9 @@ class AlertList extends Component {
       alertList : []
     };
 
-    this.renderAlert = _renderAlert.bind(this);
-    this.handleClose = _handleClose.bind(this);
+    this.renderAlert   = _renderAlert.bind(this);
+    this.handleClose   = _handleClose.bind(this);
+    this.generateAlert = _generateAlert.bind(this);
 
   }
 
@@ -29,10 +30,9 @@ class AlertList extends Component {
     );
   }
 
-
-  // componentWillUnmount() {
-  //   this.setState({alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentIndex])})
-  // }
+  componentDidMount() {
+    this.state.alertList = this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentIndex]);
+  }
 
 
   render () {
@@ -66,41 +66,34 @@ function _renderAlert (alertList) {
   const alertsToRender = [];
 
   alertList.forEach((alert, index) => {
-
     if (this.state.currentCloseIndex === index) {
-
-      alertsToRender.push(
-          <Alert
-            index        = {index}
-            key          = {index}
-            alertType    = {alert.alertType}
-            alertMessage = {alert.alertMessage}
-            dismissAlert = {this.state.dismissAlert}
-            handleClose  = {this.handleClose}
-          />
-      )
+      const dismiss = this.state.dismissAlert;
+      this.generateAlert(alert, dismiss, index, alertsToRender);
 
     } else {
-
-      alertsToRender.push(
-          <Alert
-            index        = {index}
-            key          = {index}
-            alertType    = {alert.alertType}
-            alertMessage = {alert.alertMessage}
-            dismissAlert = ""
-            handleClose  = {this.handleClose}
-          />
-      )
+      const dismiss = '';
+      this.generateAlert(alert, dismiss, index, alertsToRender);
     }
-
-
 
   })
 
   this.state.dismissAlert = '';
-  // this.state.alertList = this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentCloseIndex])
+
 
   return alertsToRender;
 
+}
+
+
+function _generateAlert (alert, dismiss, index, alertsToRender) {
+  alertsToRender.push(
+      <Alert
+        index        = {index}
+        key          = {index}
+        alertType    = {alert.alertType}
+        alertMessage = {alert.alertMessage}
+        dismissAlert = {dismiss}
+        handleClose  = {this.handleClose}
+      />
+  )
 }
