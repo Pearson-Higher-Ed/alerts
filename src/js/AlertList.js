@@ -10,9 +10,7 @@ class AlertList extends Component {
     super(props);
 
     this.state = {
-
-      alertList    : [],
-      dismissAlert : ''
+      alertList : []
     };
 
     this.renderAlert = _renderAlert.bind(this);
@@ -56,12 +54,11 @@ export default AlertList;
 function _handleClose (currentIndex) {
 
   this.setState({
-    dismissAlert : 'close-title-animation',
-    alertList:this.state.alertList.filter((e, index, a) => a[index] !== a[currentIndex])
+    dismissAlert      : 'close-title-animation',
+    currentCloseIndex : currentIndex
   });
 
 }
-
 
 
 function _renderAlert (alertList) {
@@ -69,17 +66,40 @@ function _renderAlert (alertList) {
   const alertsToRender = [];
 
   alertList.forEach((alert, index) => {
-    alertsToRender.push(
-        <Alert
-          index        = {index}
-          key          = {index}
-          alertType    = {alert.alertType}
-          alertMessage = {alert.alertMessage}
-          dismissAlert = {this.state.dismissAlert}
-          handleClose  = {this.handleClose}
-        />
+
+    if (this.state.currentCloseIndex === index) {
+
+      alertsToRender.push(
+          <Alert
+            index        = {index}
+            key          = {index}
+            alertType    = {alert.alertType}
+            alertMessage = {alert.alertMessage}
+            dismissAlert = {this.state.dismissAlert}
+            handleClose  = {this.handleClose}
+          />
       )
+
+    } else {
+
+      alertsToRender.push(
+          <Alert
+            index        = {index}
+            key          = {index}
+            alertType    = {alert.alertType}
+            alertMessage = {alert.alertMessage}
+            dismissAlert = ""
+            handleClose  = {this.handleClose}
+          />
+      )
+    }
+
+
+
   })
+
+  this.state.dismissAlert = '';
+  // this.state.alertList = this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentCloseIndex])
 
   return alertsToRender;
 
