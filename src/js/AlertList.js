@@ -2,98 +2,48 @@ import React, { Component } from 'react';
 import Alert                from './Alert';
 
 
-
 class AlertList extends Component {
-
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      alertList : []
-    };
+    this.state = { alertList : [] };
 
-    this.renderAlert   = _renderAlert.bind(this);
-    this.handleClose   = _handleClose.bind(this);
-    this.generateAlert = _generateAlert.bind(this);
+    this.renderAlert = _renderAlert.bind(this);
+    this.handleClose = _handleClose.bind(this);
 
+    document.body.addEventListener( 'triggerAlert', e => this.setState( {alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.addEventListener( 'clearAlert', () => this.setState({ alertList:[] }) );
   }
-
-
-  componentWillMount() {
-    document.body.addEventListener( 'triggerAlert',
-      e => this.setState({ alertList:this.state.alertList.concat(e.detail.alertList) })
-    );
-
-    document.body.addEventListener( 'clearAlert',
-      () => this.setState({ alertList:[] })
-    );
-  }
-
-  componentDidMount() {
-    this.state.alertList = this.state.alertList.filter((e, index, a) => a[index] !== a[this.state.currentIndex]);
-  }
-
 
   render () {
+    const { alertList, closeIndex } = this.state;
 
-    const { alertList } = this.state;
-    return <ul className={"alertList"}>{alertList.length > 0 ? this.renderAlert(alertList) : null}</ul>;
-
+    return <ul className="alertList">{this.renderAlert(alertList, closeIndex)}</ul>;
   }
 
-
 }
-
 
 
 export default AlertList;
 
 
-
 function _handleClose (currentIndex) {
-
-  this.setState({
-    dismissAlert      : 'close-title-animation',
-    currentCloseIndex : currentIndex
-  });
-
+  this.setState({ closeIndex : currentIndex });
 }
 
-
-function _renderAlert (alertList) {
-
-  const alertsToRender = [];
-
-  alertList.forEach((alert, index) => {
-    if (this.state.currentCloseIndex === index) {
-      const dismiss = this.state.dismissAlert;
-      this.generateAlert(alert, dismiss, index, alertsToRender);
-
-    } else {
-      const dismiss = '';
-      this.generateAlert(alert, dismiss, index, alertsToRender);
-    }
-
-  })
-
-  this.state.dismissAlert = '';
-
-
-  return alertsToRender;
-
-}
-
-
-function _generateAlert (alert, dismiss, index, alertsToRender) {
-  alertsToRender.push(
-      <Alert
-        index        = {index}
-        key          = {index}
-        alertType    = {alert.alertType}
-        alertMessage = {alert.alertMessage}
-        dismissAlert = {dismiss}
-        handleClose  = {this.handleClose}
-      />
-  )
+function _renderAlert (alertList, closeIndex) {
+  const alertListFiltered = alertList.filter((e, index) => index !== closeIndex)
+  this.state.closeIndex   = undefined;
+  this.state.alertList    = alertListFiltered;
+  return alertListFiltered.map((alert, index) =>
+    <Alert
+      index        = {index}
+      closeIndex   = {closeIndex}
+      key          = {index}
+      alertType    = {alert.alertType}
+      alertMessage = {alert.alertMessage}
+      handleClose  = {this.handleClose}
+    />
+  );
 }

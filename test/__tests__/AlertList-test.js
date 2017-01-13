@@ -16,7 +16,7 @@ describe('AlertList', () => {
       this.wrapper = shallow(<AlertList>Test Alert</AlertList>);
     });
 
-    it('should render the Alert', function() {
+    it('should render the AlertList', function() {
       expect(this.wrapper.node.type).toEqual('ul');
     });
 
