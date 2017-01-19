@@ -1,5 +1,6 @@
 import ReactDOM         from 'react-dom';
 import AlertList        from './src/js/AlertList';
+import { IntlProvider } from 'react-intl';
 
 import './src/scss/component-specific.scss';
 
@@ -13,8 +14,12 @@ export default class AlertsComponent {
 
   init(config) {
 
+    const locale = config.locale ? config.locale : 'en';
+
     ReactDOM.render(
-      <AlertList />,
+      <IntlProvider locale={locale}>
+        <AlertList />
+      </IntlProvider>,
       document.getElementById(config.elementId)
     );
   }

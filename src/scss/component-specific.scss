@@ -4,15 +4,13 @@
   position:relative;
   margin-top: 20px;
   list-style:none;
-  //animation-name: openAlert;
-  //animation-duration: 0.3s;
   background-color: #ffffff;
   padding: $alert-padding;
 }
 
 .alertList {
   position:fixed;
-  //width:35%;
+  width:35%;
   margin-right:2%;
 }
 
@@ -29,11 +27,6 @@ svg {
   height: 0;
   width: 0;
 }
-
-//@keyframes openAlert {
-//  0% { top: -700px; }
-//  100% { top: 0px; }
-//}
 
 .error-title {
   color: #db0020;
@@ -53,24 +46,6 @@ svg {
   border: none;
   background: transparent;
 }
-
-//.close-title-animation {
-//  position:relative;
-//  margin-top: 30px;
-//  list-style:none;
-//  background-color: #ffffff;
-//  padding: $alert-padding;
-//  animation-name: closeAlert;
-//  animation-duration: 1.2s;
-//}
-
-//@keyframes closeAlert {
-//  0% { right: 0px;}
-//  100% { right: 1500px;}
-//}
-
-
-//=========================================
 
 .transition-enter {
   transform:   translate(0,-250px);

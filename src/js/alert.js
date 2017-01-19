@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Icon                 from './icon';
 
-
 class Alert extends Component {
 
   constructor(props) {
@@ -36,6 +35,5 @@ class Alert extends Component {
   }
 
 }
-
 
 export default Alert;
