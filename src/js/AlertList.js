@@ -7,12 +7,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class AlertList extends Component {
 
-  static propTypes = {
-    intl: intlShape.isRequired,
-    data: PropTypes.shape({
-      locale: PropTypes.string
-    })
-  };
+  // static propTypes = {
+  //   intl: intlShape.isRequired,
+  //   data: PropTypes.shape({
+  //     locale: PropTypes.string
+  //   })
+  // };
 
   constructor(props) {
     super(props);
@@ -43,8 +43,8 @@ class AlertList extends Component {
 }
 
 
-export default injectIntl(AlertList);
-
+// export default injectIntl(AlertList);
+export default AlertList;
 
 function _handleClose (closeIndex) {
   const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
