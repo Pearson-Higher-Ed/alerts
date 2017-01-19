@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Icon                 from './icon';
 
+
 class Alert extends Component {
 
   constructor(props) {
@@ -12,7 +13,7 @@ class Alert extends Component {
     const { index, alertType, alertMessage, handleClose } = this.props;
 
     return (
-            <div
+            <li
               className = {'pe-alert'}
               id        = {`alert-${alertType}-${index}`}
               role      = "alert"
@@ -30,7 +31,7 @@ class Alert extends Component {
                 {alertMessage}
               </span>
 
-            </div>
+            </li>
           )
   }
 
