@@ -2,10 +2,10 @@
 // Component-specific.scss with the naming convention
 // transitionName-lifecyclehook
 import React, { Component, PropTypes }    from 'react';
-import Alert                   from './Alert';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { intlShape, injectIntl } from 'react-intl';
-import { messages } from '../../translations/defaultMessages';
+import Alert                              from './Alert';
+import ReactCSSTransitionGroup            from 'react-addons-css-transition-group';
+import { intlShape, injectIntl }          from 'react-intl';
+import { messages }                       from '../../translations/defaultMessages';
 
 class AlertList extends Component {
 
@@ -55,10 +55,11 @@ function _handleClose (closeIndex) {
 
 function _renderAlert (alertList) {
   const { intl } = this.props;
+  console.log(alertList, 'asgd');
 
   return alertList.map((alert, index) =>
 
-  (this.state.alertList[(this.state.alertList.length) - 1].alertType) === 'success' ?
+  (this.state.alertList[index].alertType) === 'success' ?
 
     <Alert
       key          = {index}
