@@ -22,7 +22,7 @@ class AlertList extends Component {
   render () {
     return (
       <ReactCSSTransitionGroup
-        component              = "div"
+        component              = "ul"
         className              = "alertList"
         transitionName         = "transition"
         transitionEnterTimeout = {300}
