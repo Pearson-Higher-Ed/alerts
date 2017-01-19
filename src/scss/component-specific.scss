@@ -2,7 +2,7 @@
 
 .pe-alert {
   position:relative;
-  margin-top: 30px;
+  margin-top: 20px;
   list-style:none;
   animation-name: openAlert;
   animation-duration: 0.3s;
@@ -13,8 +13,6 @@
 .alertList {
   position:fixed;
   width:35%;
-  right:0;
-  top:0;
   margin-right:2%;
 }
 

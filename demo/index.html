@@ -29,7 +29,6 @@
     <div class="banner"><h1>Pearson Design Accelerator</h1></div>
     <div id="demo-target1"></div>
 
-
     <h1 class="target">Alerts Demo</h1>
     <p class="target">Styled using the Elements SDK.</p>
 
@@ -57,8 +56,6 @@
     </div>
 
 
-
-
     <script>
       function buttonHandler(type) {
 // ========EVENT API FOR INTERACTING WITH THE COMPONENT=========================
@@ -75,7 +72,7 @@
 // @param alertType    <String> 'success' || 'error'
 // @param alertMessage <String> 'user specified string'
 // -----------------------------------------------------------------------------
-          if(type == 'success' || type == 'error') {
+          if(type === 'success' || type === 'error') {
             document.body.dispatchEvent(new CustomEvent('triggerAlert', {
                 "detail":{
                   "alertList":[{
@@ -86,16 +83,13 @@
             }));
           }
 
-          if(type == 'clear') {
+          if(type === 'clear') {
             document.body.dispatchEvent(new CustomEvent('clearAlert'));
           }
 // =============================================================================
         console.log(type + " alertTriggered!")
       }
     </script>
-
-
-
 
 
     <script>
