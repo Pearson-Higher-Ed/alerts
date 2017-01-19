@@ -54,7 +54,7 @@ function _renderAlert (alertList, closeIndex) {
       closeIndex   = {closeIndex}
       key          = {index}
       alertType    = {intl.formatMessage(messages.successAlert)}
-      alertMessage = {intl.formatMessage(messages.successAlert)}
+      alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
     />
 
@@ -65,7 +65,7 @@ function _renderAlert (alertList, closeIndex) {
       closeIndex   = {closeIndex}
       key          = {index}
       alertType    = {intl.formatMessage(messages.errorAlert)}
-      alertMessage = {intl.formatMessage(messages.errorAlert)}
+      alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
     />
   );
