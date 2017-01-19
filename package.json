@@ -8,7 +8,7 @@
     "dev": "node ./npm_scripts/dev.js",
     "start": "npm run dev",
     "pretest": "node ./npm_scripts/pretest.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage --watchAll",
     "build": "node ./npm_scripts/build.js",
     "lint": "node ./npm_scripts/lint.js",
     "gen-changelog": "node ./npm_scripts/gen-changelog.js",
@@ -46,6 +46,8 @@
     "verbose": true
   },
   "dependencies": {
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
     "react-intl": "~2.0.1"
   },
   "devDependencies": {

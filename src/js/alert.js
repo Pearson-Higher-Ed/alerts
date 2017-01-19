@@ -1,29 +1,40 @@
-import React from 'react';
-import Icon  from './icon';
+import React, { Component } from 'react';
+import Icon                 from './icon';
 
+class Alert extends Component {
 
-const Alert = (props) =>  (
-        <li
-          className = {(props.index !== props.closeIndex) ? `pe-alert` : `pe-alert pe-alert close-title-animation`}
-          id        = {`alert-${props.alertType}-${props.index}`}
-          role      = "alert"
-          >
+  constructor(props) {
+    super(props)
+  }
 
-          <strong className={`pe-label ${props.alertType}-title`}>
-            {props.alertType}
-          </strong>
+  render () {
 
-          <button className="close-title" onClick={() => props.handleClose(props.index)} aria-label="Close alert">
-            <Icon name="remove-lg-18" />
-          </button><br/>
+    const { index, alertType, alertMessage, handleClose } = this.props;
 
-          <span className="pe-copy">
-            {props.alertMessage}
-          </span>
+    return (
+            <div
+              className = {'pe-alert'}
+              id        = {`alert-${alertType}-${index}`}
+              role      = "alert"
+              >
 
-        </li>
-      )
+              <strong className={`pe-label ${alertType}-title`}>
+                {alertType}
+              </strong>
 
+              <button className="close-title" onClick={() => handleClose(index)} aria-label="Close alert">
+                <Icon name="remove-lg-18" />
+              </button><br/>
+
+              <span className="pe-copy">
+                {alertMessage}
+              </span>
+
+            </div>
+          )
+  }
+
+}
 
 
 export default Alert;

@@ -20,5 +20,9 @@ describe('AlertList', () => {
       expect(this.wrapper.node.type).toEqual('ul');
     });
 
+    it('should handle close', function() {
+      console.log(this.wrapper.renderer._instance._instance.handleClose)
+    })
+
   });
 });
