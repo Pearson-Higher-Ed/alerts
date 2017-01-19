@@ -1,11 +1,11 @@
 import expect             from 'expect';
 import expectJSX          from 'expect-jsx';
 import React              from 'react';
-import { createRenderer } from 'react-addons-test-utils';
 import Alert              from '../../src/js/Alert';
 import Icon               from '../../src/js/icon';
 import { shallow }        from 'enzyme';
 import { jsdom }          from 'jsdom';
+import { createRenderer } from 'react-addons-test-utils';
 
 expect.extend(expectJSX);
 
@@ -21,43 +21,30 @@ describe('Alert', () => {
       expect(this.wrapper.node.type).toEqual('li');
     });
 
-    it('should render Alert', () => {
+    it('should click close button', () => {
 
-    const index = 1;
-    const closeIndex = 1;
-    const alertType = 'success';
-    const alertMessage = 'hi';
-    const handleClose = () => {};
-    const hasClicked = false;
+      let hasClicked     = false;
+      let renderer       = createRenderer();
 
-    let renderer = createRenderer();
+      const index        = 1;
+      const closeIndex   = 1;
+      const alertType    = 'success';
+      const alertMessage = 'hi';
+      const handleClose  = () => hasClicked = true;
 
-    renderer.render(<Alert
-      index        = {index}
-      closeIndex   = {closeIndex}
-      key          = {index}
-      alertType    = {alertType}
-      alertMessage = {alertMessage}
-      handleClose  = {handleClose}
-    />);
+      renderer.render(<Alert
+        index        = {index}
+        closeIndex   = {closeIndex}
+        key          = {index}
+        alertType    = {alertType}
+        alertMessage = {alertMessage}
+        handleClose  = {handleClose}
+      />);
 
-    let actualElement = renderer.getRenderOutput();
-    let actualElementClicked = renderer.getRenderOutput().props.onClick();
+      let actualElement = renderer.getRenderOutput();
+      let actualElementClicked = actualElement.props.children[1].props.onClick();
 
-    // expect(actualElement).toEqualJSX(
-    //   <li
-    //     className = {(index !== closeIndex) ? `pe-alert` : `pe-alert pe-alert close-title-animation`}
-    //     id        = {`alert-${alertType}-${index}`}
-    //     role      = "alert">
-    //     <strong className={`pe-label ${alertType}-title`}>{alertType}</strong>
-    //     <button className="close-title" onClick={handleClose} aria-label="Close alert">
-    //       <Icon name="remove-lg-18" />
-    //     </button><br/>
-    //     <span className="pe-copy">{alertMessage}</span>
-    //
-    //   </li>
-    // );
-
+      expect(hasClicked).toBe(true)
 
   });
 

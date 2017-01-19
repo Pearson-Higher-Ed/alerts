@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import Alert                from './Alert';
-
+// Lifecycle interface for ReactCSSTransitionGroup located in
+// Component-specific.scss with the naming convention
+// transitionName-lifecyclehook
+import React, { Component }    from 'react';
+import Alert                   from './Alert';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class AlertList extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { alertList : [] };
+    this.state = { alertList: [] };
 
     this.renderAlert = _renderAlert.bind(this);
     this.handleClose = _handleClose.bind(this);
@@ -17,9 +20,17 @@ class AlertList extends Component {
   }
 
   render () {
-    const { alertList, closeIndex } = this.state;
-
-    return <ul className="alertList">{this.renderAlert(alertList, closeIndex)}</ul>;
+    return (
+      <ReactCSSTransitionGroup
+        component              = "div"
+        className              = "alertList"
+        transitionName         = "transition"
+        transitionEnterTimeout = {300}
+        transitionLeaveTimeout = {2800}
+        >
+        {this.renderAlert(this.state.alertList)}
+      </ReactCSSTransitionGroup>
+    )
   }
 
 }
@@ -28,19 +39,16 @@ class AlertList extends Component {
 export default AlertList;
 
 
-function _handleClose (currentIndex) {
-  this.setState({ closeIndex : currentIndex });
+function _handleClose (closeIndex) {
+  const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
+  this.setState({ closeIndex, alertList:alertListFiltered });
 }
 
-function _renderAlert (alertList, closeIndex) {
-  const alertListFiltered = alertList.filter((e, index) => index !== closeIndex)
-  this.state.closeIndex   = undefined;
-  this.state.alertList    = alertListFiltered;
-  return alertListFiltered.map((alert, index) =>
+function _renderAlert (alertList) {
+  return alertList.map((alert, index) =>
     <Alert
-      index        = {index}
-      closeIndex   = {closeIndex}
       key          = {index}
+      index        = {index}
       alertType    = {alert.alertType}
       alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
