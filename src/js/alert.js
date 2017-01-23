@@ -4,17 +4,13 @@ import Icon                 from './icon';
 
 class Alert extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render () {
 
     const { index, alertType, alertMessage, handleClose } = this.props;
 
     return (
             <li
-              className = {'pe-alert'}
+              className = "pe-alert"
               id        = {`alert-${alertType}-${index}`}
               role      = "alert"
               >

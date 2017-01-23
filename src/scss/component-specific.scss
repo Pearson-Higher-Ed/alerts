@@ -4,8 +4,8 @@
   position:relative;
   margin-top: 30px;
   list-style:none;
-  //animation-name: openAlert;
-  //animation-duration: 0.3s;
+  animation-name: openAlert;
+  animation-duration: 0.3s;
   background-color: #ffffff;
   padding: $alert-padding;
 }
@@ -32,10 +32,10 @@ svg {
   width: 0;
 }
 
-//@keyframes openAlert {
-//  0% { top: -700px; }
-//  100% { top: 0px; }
-//}
+@keyframes openAlert {
+  0% { top: -700px; }
+  100% { top: 0px; }
+}
 
 .error-title {
   color: #db0020;
@@ -56,35 +56,35 @@ svg {
   background: transparent;
 }
 
-//.close-title-animation {
-//  position:relative;
-//  margin-top: 30px;
-//  list-style:none;
-//  background-color: #ffffff;
-//  padding: $alert-padding;
-//  animation-name: closeAlert;
-//  animation-duration: 1.2s;
-//}
+.close-title-animation {
+  position:relative;
+  margin-top: 30px;
+  list-style:none;
+  background-color: #ffffff;
+  padding: $alert-padding;
+  animation-name: closeAlert;
+  animation-duration: 1.2s;
+}
 
-//@keyframes closeAlert {
-//  0% { right: 0px;}
-//  100% { right: 1500px;}
-//}
+@keyframes closeAlert {
+  0% { right: 0px;}
+  100% { right: 1500px;}
+}
 
 
 //=========================================
 
-.transition-enter {
-  transform:   translate(0,-250px);
-  transform: translate3d(0,-250px,0);
-}
-.transition-enter.transition-enter-active {
-	transform:   translate(0,0);
-	transform: translate3d(0,0,0);
-	transition-property: transform;
-	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-}
+//.transition-enter {
+//  transform:   translate(0,-250px);
+//  transform: translate3d(0,-250px,0);
+//}
+//.transition-enter.transition-enter-active {
+//	transform:   translate(0,0);
+//	transform: translate3d(0,0,0);
+//	transition-property: transform;
+//	transition-duration: 300ms;
+//	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+//}
 .transition-leave {
   opacity:0;
 	transform:   translate(0,0,0);

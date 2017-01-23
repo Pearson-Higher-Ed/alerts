@@ -15,21 +15,16 @@ class AlertList extends Component {
     this.renderAlert = _renderAlert.bind(this);
     this.handleClose = _handleClose.bind(this);
 
-    document.body.addEventListener( 'triggerAlert', e => this.setState( {alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.addEventListener( 'triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
     document.body.addEventListener( 'clearAlert', () => this.setState({ alertList:[] }) );
   }
 
   render () {
+    console.log(this.state.e)
     return (
-      <ReactCSSTransitionGroup
-        component              = "ul"
-        className              = "alertList"
-        transitionName         = "transition"
-        transitionEnterTimeout = {300}
-        transitionLeaveTimeout = {2800}
-        >
+      <ul className="alertList" >
         {this.renderAlert(this.state.alertList)}
-      </ReactCSSTransitionGroup>
+      </ul>
     )
   }
 
