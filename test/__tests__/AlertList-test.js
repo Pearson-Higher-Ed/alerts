@@ -3,29 +3,35 @@ import expectJSX   from 'expect-jsx';
 import React       from 'react';
 import TestUtils   from 'react-addons-test-utils';
 import AlertList   from '../../src/js/AlertList';
-import { shallow } from 'enzyme';
 import { jsdom }   from 'jsdom';
+import { IntlProvider } from 'react-intl';
+import { mountWithIntl } from '../utils/intl-enzyme-test-helper.js';
 
 expect.extend(expectJSX);
 
 describe('AlertList', () => {
   describe('Basic AlertList Test', () => {
-    beforeEach(function() {
-      global.window = jsdom(undefined, { url: 'about:blank' }).defaultView;
-      global.document = global.window.document;
-      this.wrapper = shallow(<AlertList>Test Alert</AlertList>);
+
+    global.window = jsdom(undefined, { url: 'about:blank' }).defaultView;
+    global.document = global.window.document;
+    const intlProvider = new IntlProvider({locale: 'en'}, {});
+    const { intl } = intlProvider.getChildContext();
+    const targetData = {
+      elementId: 'test-target'
+
+    }
+    const wrapper = mountWithIntl(
+      <AlertList.WrappedComponent data={targetData} intl={intl} />,
+      {targetData}
+    );
+
+    it('has correct intl', () => {
+      expect(wrapper.node.props.intl.locale).toEqual('en');
     });
 
-    it('should render the AlertList', function() {
-      expect(this.wrapper.node.type.displayName).toEqual('ReactCSSTransitionGroup');
-    });
-
-    it('should handle close', function() {
-      // test close
-    })
-
-    it('should render alerts', function() {
-      // test alert render
+    it('does something', () => {
+      console.log(wrapper.node, 'NOOOOOOOOOOOOOOOODDDDEEEEEEEE');
+      console.log(wrapper.nodes, 'FINDDDDDDDDDDDDDDDD');
     })
 
   });
