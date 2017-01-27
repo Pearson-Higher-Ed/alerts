@@ -79,6 +79,7 @@
             document.body.dispatchEvent(new CustomEvent('triggerAlert', {
                 "detail":{
                   "alertList":[{
+                    "id"          : new Date().getTime(),
                     "alertType"   : type,
                     "alertMessage": type + ' test message'
                   }]

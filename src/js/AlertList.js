@@ -22,9 +22,9 @@ class AlertList extends Component {
   render () {
     console.log(this.state.e)
     return (
-      <ul className="alertList" >
+      <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={800} className="alertList" >
         {this.renderAlert(this.state.alertList)}
-      </ul>
+      </ReactCSSTransitionGroup>
     )
   }
 
@@ -42,7 +42,7 @@ function _handleClose (closeIndex) {
 function _renderAlert (alertList) {
   return alertList.map((alert, index) =>
     <Alert
-      key          = {index}
+      key          = {alert.id}
       index        = {index}
       alertType    = {alert.alertType}
       alertMessage = {alert.alertMessage}
