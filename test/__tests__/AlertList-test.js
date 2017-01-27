@@ -17,7 +17,8 @@ describe('AlertList', () => {
     });
 
     it('should render the AlertList', function() {
-      expect(this.wrapper.node.type).toEqual('ul');
+      console.log(this.wrapper)
+      expect(this.wrapper.node.type).toEqual('Object');
     });
 
     it('should handle close', function() {
