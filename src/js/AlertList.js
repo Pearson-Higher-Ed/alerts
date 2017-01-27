@@ -30,7 +30,7 @@ class AlertList extends Component {
 
   render () {
     return (
-      <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={800} className="alertList" >
+      <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={300} transitionLeaveTimeout={800} className="alertList">
         {this.renderAlert(this.state.alertList)}
       </ReactCSSTransitionGroup>
     )
@@ -52,22 +52,13 @@ function _renderAlert (alertList) {
 
   return alertList.map((alert, index) =>
 
-  (this.state.alertList[index].alertType) === 'success' ?
-
-    <Alert
-      key          = {index}
-      index        = {index}
-      alertType    = {intl.formatMessage(messages.successAlert)}
-      alertMessage = {alert.alertMessage}
-      handleClose  = {this.handleClose}
-    />
-
-    :
-
     <Alert
       key          = {alert.id}
       index        = {index}
-      alertType    = {intl.formatMessage(messages.errorAlert)}
+      alertType    = {(this.state.alertList[index].alertType) === 'success' ?
+      intl.formatMessage(messages.successAlert)
+      :
+      intl.formatMessage(messages.errorAlert)}
       alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
     />
