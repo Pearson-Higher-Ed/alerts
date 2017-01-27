@@ -29,7 +29,6 @@ class AlertList extends Component {
   }
 
   render () {
-    console.log(this.state.e)
     return (
       <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={500} transitionLeaveTimeout={800} className="alertList" >
         {this.renderAlert(this.state.alertList)}
@@ -50,7 +49,6 @@ function _handleClose (closeIndex) {
 
 function _renderAlert (alertList) {
   const { intl } = this.props;
-  console.log(alertList, 'asgd');
 
   return alertList.map((alert, index) =>
 
