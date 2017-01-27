@@ -15,7 +15,9 @@ If you are a contributor to this component's development, see guidance on [contr
 
 To view the demo:
 
-* clone the repo.
+* git clone
+
+  `https://github.com/Pearson-Higher-Ed/alerts.git`
 * install the dependencies:
 
   `npm i`
@@ -36,7 +38,7 @@ Dispatch `clearAlert` to clear the array of events.
 ## Polyfills
 
 The Alerts Component works on an evented API which uses `CustomEvent`.  Dispatch an event of
-'triggerAlert' with the alertType and alertMessage to display an alert.
+`triggerAlert` with the `alertType` and `alertMessage` to display an alert.
 Dispatch an event of 'clearAlert' to delete all events from queue.
 
 Due to the use of `CustomEvent`, the use of a polyfill is needed to support IE:

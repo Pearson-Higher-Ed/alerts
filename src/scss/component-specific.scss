@@ -10,9 +10,26 @@
 
 .alertList {
   position:fixed;
-  width:35%;
-  margin-left: 5%;
-  margin-right:5%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+@media only screen and (min-width: 1201px) {
+  .alertList {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .alertList {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .alertList {
+    width: 80%;
+  }
 }
 
 li[id^="alert-error"] {
@@ -51,6 +68,7 @@ svg {
   transform:   translate(0,-250px);
   transform: translate3d(0,-250px,0);
 }
+
 .transition-enter.transition-enter-active {
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
@@ -58,6 +76,7 @@ svg {
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
+
 .transition-leave {
 	transform:   translate(0,0,0);
 	transform: translate3d(0,0,0);
@@ -65,6 +84,7 @@ svg {
 	transition-duration: 800ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
+
 .transition-leave.transition-leave-active {
 	transform:   translate(-1450px,0);
 	transform: translate3d(-1450px,0,0);
