@@ -17,12 +17,15 @@ describe('AlertList', () => {
     });
 
     it('should render the AlertList', function() {
-      console.log(this.wrapper)
-      expect(this.wrapper.node.type).toEqual('Object');
+      expect(this.wrapper.node.type.displayName).toEqual('ReactCSSTransitionGroup');
     });
 
     it('should handle close', function() {
-      console.log(this.wrapper.renderer._instance._instance.handleClose)
+      // test close
+    })
+
+    it('should render alerts', function() {
+      // test alert render
     })
 
   });

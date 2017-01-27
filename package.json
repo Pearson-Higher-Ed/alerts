@@ -8,7 +8,7 @@
     "dev": "node ./npm_scripts/dev.js",
     "start": "npm run dev",
     "pretest": "node ./npm_scripts/pretest.js",
-    "test": "jest --coverage --watchAll",
+    "test": "jest --coverage",
     "build": "node ./npm_scripts/build.js",
     "lint": "node ./npm_scripts/lint.js",
     "gen-changelog": "node ./npm_scripts/gen-changelog.js",
