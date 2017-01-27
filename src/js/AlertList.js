@@ -1,70 +1,67 @@
-import React, { Component } from 'react';
-import Alert                from './Alert';
+// Lifecycle interface for ReactCSSTransitionGroup located in
+// Component-specific.scss with the naming convention
+// transitionName-lifecyclehook
+import React, { Component, PropTypes }    from 'react';
+import Alert                              from './Alert';
+import ReactCSSTransitionGroup            from 'react-addons-css-transition-group';
+import { intlShape, injectIntl }          from 'react-intl';
+import { messages }                       from '../../translations/defaultMessages';
 
 class AlertList extends Component {
+
+  static propTypes = {
+    intl: intlShape.isRequired,
+    data: PropTypes.shape({
+      locale: PropTypes.string
+    })
+  };
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      alertList : [],
-      dismissAlert : ''
-    };
+    this.state = { alertList: [] };
 
     this.renderAlert = _renderAlert.bind(this);
     this.handleClose = _handleClose.bind(this);
 
-  }
-
-  componentWillMount() {
-    document.body.addEventListener( 'triggerAlert',
-      e => this.setState({ alertList:this.state.alertList.concat(e.detail.alertList) })
-    );
-
-    document.body.addEventListener( 'clearAlert',
-      () => this.setState({ alertList:[] })
-    );
+    document.body.addEventListener( 'triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.addEventListener( 'clearAlert', () => this.setState({ alertList:[] }) );
   }
 
   render () {
-
-    const { alertList } = this.state;
-    return <ul className={"alertList"}>{alertList.length > 0 ? this.renderAlert(alertList) : null}</ul>;
-
+    return (
+      <ReactCSSTransitionGroup transitionName="transition" transitionEnterTimeout={300} transitionLeaveTimeout={800} className="alertList">
+        {this.renderAlert(this.state.alertList)}
+      </ReactCSSTransitionGroup>
+    )
   }
 
 }
 
-export default AlertList;
 
-function _handleClose (currentIndex) {
+export default injectIntl(AlertList);
 
-  const { alertList } = this.state;
 
-  this.setState({
-    dismissAlert : 'close-title-animation',
-    alertList    : alertList.filter((e, index, a) => a[index] !== a[currentIndex])
-  });
-
+function _handleClose (closeIndex) {
+  const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
+  this.setState({ closeIndex, alertList:alertListFiltered });
 }
 
+
 function _renderAlert (alertList) {
+  const { intl } = this.props;
 
-  const alertsToRender = [];
+  return alertList.map((alert, index) =>
 
-  alertList.forEach((alert, index) => {
-    alertsToRender.push(
-        <Alert
-          index        = {index}
-          key          = {index}
-          alertType    = {alert.alertType}
-          alertMessage = {alert.alertMessage}
-          dismissAlert = {this.state.dismissAlert}
-          handleClose  = {this.handleClose}
-        />
-      )
-  })
-
-  return alertsToRender;
-
+    <Alert
+      key          = {alert.id}
+      index        = {index}
+      alertType    = {(this.state.alertList[index].alertType) === 'success' ?
+      intl.formatMessage(messages.successAlert)
+      :
+      intl.formatMessage(messages.errorAlert)}
+      alertMessage = {alert.alertMessage}
+      handleClose  = {this.handleClose}
+    />
+  );
 }

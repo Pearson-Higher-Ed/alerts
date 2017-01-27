@@ -16,9 +16,17 @@ describe('AlertList', () => {
       this.wrapper = shallow(<AlertList>Test Alert</AlertList>);
     });
 
-    it('should render the Alert', function() {
-      expect(this.wrapper.node.type).toEqual('ul');
+    it('should render the AlertList', function() {
+      expect(this.wrapper.node.type.displayName).toEqual('ReactCSSTransitionGroup');
     });
+
+    it('should handle close', function() {
+      // test close
+    })
+
+    it('should render alerts', function() {
+      // test alert render
+    })
 
   });
 });

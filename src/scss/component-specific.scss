@@ -1,10 +1,9 @@
 @import './variables';
 
 .pe-alert {
-  margin-top: 30px;
+  position:relative;
+  margin-top: 20px;
   list-style:none;
-  animation-name: openAlert;
-  animation-duration: 0.3s;
   background-color: #ffffff;
   padding: $alert-padding;
 }
@@ -12,9 +11,8 @@
 .alertList {
   position:fixed;
   width:35%;
-  right:0;
-  top:0;
-  margin-right:2%;
+  margin-left: 5%;
+  margin-right:5%;
 }
 
 li[id^="alert-error"] {
@@ -28,11 +26,6 @@ li[id^="alert-success"] {
 svg {
   height: 0;
   width: 0;
-}
-
-@keyframes openAlert {
-  0% { top: 200px; }
-  100% { top: 0px; }
 }
 
 .error-title {
@@ -54,12 +47,25 @@ svg {
   background: transparent;
 }
 
-.close-title-animation {
-  animation-name: closeAlert;
-  animation-duration: .2s;
+.transition-enter {
+  transform:   translate(0,-250px);
+  transform: translate3d(0,-250px,0);
 }
-
-@keyframes closeAlert {
-  0% {}
-  100% { left: -510px; }
+.transition-enter.transition-enter-active {
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+.transition-leave {
+	transform:   translate(0,0,0);
+	transform: translate3d(0,0,0);
+  transition-property: transform;
+	transition-duration: 800ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+.transition-leave.transition-leave-active {
+	transform:   translate(-1450px,0);
+	transform: translate3d(-1450px,0,0);
 }

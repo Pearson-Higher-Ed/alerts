@@ -51,8 +51,10 @@
       <br />
       <br />
       <br />
-      <button class="target pe-btn_cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
+      <br />
+      <button class="target pe-btn__cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
     </div>
+
 
     <script>
       function buttonHandler(type) {
@@ -74,6 +76,7 @@
             document.body.dispatchEvent(new CustomEvent('triggerAlert', {
                 "detail":{
                   "alertList":[{
+                    "id"          : new Date().getTime(),
                     "alertType"   : type,
                     "alertMessage": type + ' test message'
                   }]
@@ -88,6 +91,7 @@
         console.log(type + " alertTriggered!")
       }
     </script>
+
 
     <script>
       if (document.body.children[0].nodeName !== 'svg') {
