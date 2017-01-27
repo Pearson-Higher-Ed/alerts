@@ -29,9 +29,8 @@ describe('AlertList', () => {
       expect(wrapper.node.props.intl.locale).toEqual('en');
     });
 
-    it('does something', () => {
-      console.log(wrapper.node, 'NOOOOOOOOOOOOOOOODDDDEEEEEEEE');
-      console.log(wrapper.nodes, 'FINDDDDDDDDDDDDDDDD');
+    it('has correct intial state', () => {
+      expect(wrapper.node.state).toEqual({ alertList: [] });
     })
 
   });
