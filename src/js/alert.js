@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Icon                 from './icon';
 
-
 class Alert extends Component {
 
   render () {
@@ -32,6 +31,5 @@ class Alert extends Component {
   }
 
 }
-
 
 export default Alert;

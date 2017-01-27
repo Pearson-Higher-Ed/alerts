@@ -2,19 +2,15 @@
 
 .pe-alert {
   position:relative;
-  margin-top: 30px;
+  margin-top: 20px;
   list-style:none;
-  //animation-name: openAlert;
-  //animation-duration: 0.3s;
   background-color: #ffffff;
   padding: $alert-padding;
 }
 
 .alertList {
   position:fixed;
-  //width:35%;
-  right:0;
-  top:0;
+  width:35%;
   margin-right:2%;
 }
 
@@ -31,11 +27,6 @@ svg {
   height: 0;
   width: 0;
 }
-
-//@keyframes openAlert {
-//  0% { top: -700px; }
-//  100% { top: 0px; }
-//}
 
 .error-title {
   color: #db0020;
@@ -56,6 +47,7 @@ svg {
   background: transparent;
 }
 
+<<<<<<< HEAD
 .close-title-animation {
   position:relative;
   margin-top: 30px;
@@ -74,6 +66,8 @@ svg {
 
 //=========================================
 
+=======
+>>>>>>> 90c27201518ebec64da81868be79384721f74b7f
 .transition-enter {
   transform:   translate(0,-250px);
   transform: translate3d(0,-250px,0);
