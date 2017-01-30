@@ -24,10 +24,27 @@ To view the demo:
 
 ## Triggering an Alert
 
-To trigger an alert, dispatch the `triggerAlert` event with valid `alertType` and `alertMessage`.
-Valid `alertType`'s are currently strings of 'success' or 'error'.
-`alertMessage` accepts a string for your message.
+To trigger an alert, dispatch the `triggerAlert` event with valid `alertType`, `alertMessage`
+and a unique `id` for each instance of the alert. Valid `alertType`'s are
+currently strings of 'success' or 'error'. `alertMessage` accepts a string for your message.
+
+For example:
+
+  `document.body.dispatchEvent(new CustomEvent('triggerAlert', {
+      "detail":{
+        "alertList":[{
+          "id"          : new Date().getTime(),
+          "alertType"   : "success",
+          "alertMessage": "your alert message here"
+        }]
+      }
+  }));`
+
 Dispatch `clearAlert` to clear the array of events.
+
+For example:
+
+  `document.body.dispatchEvent(new CustomEvent('clearAlert'));`
 
 ## Polyfills
 
