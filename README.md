@@ -5,12 +5,6 @@
 The Alerts component presents important feedback or information to users either
 in response to their actions or upon page load.
 
-## Next Step
-
-If you are a consumer of this component, see guidance on [usage](README.usage.md).
-
-If you are a contributor to this component's development, see guidance on [contributing](README.contribute.md).
-
 ## Getting started
 
 To view the demo:
@@ -30,8 +24,8 @@ To view the demo:
 
 ## Triggering an Alert
 
-To trigger an alert dispatch the `triggerAlert` event with valid `alertType` and `alertMessage`.
-Valid `alertType` are currently strings of 'success' or 'error'.
+To trigger an alert, dispatch the `triggerAlert` event with valid `alertType` and `alertMessage`.
+Valid `alertType`'s are currently strings of 'success' or 'error'.
 `alertMessage` accepts a string for your message.
 Dispatch `clearAlert` to clear the array of events.
 
@@ -39,9 +33,8 @@ Dispatch `clearAlert` to clear the array of events.
 
 The Alerts Component works on an evented API which uses `CustomEvent`.  Dispatch an event of
 `triggerAlert` with the `alertType` and `alertMessage` to display an alert.
-Dispatch an event of 'clearAlert' to delete all events from queue.
 
-Due to the use of `CustomEvent`, the use of a polyfill is needed to support IE:
+Due to the use of `CustomEvent`, a polyfill is needed to support IE:
 
 ```
 <script src="https://cdn.polyfill.io/v2/polyfill.js?features=CustomEvent</script>
@@ -62,4 +55,8 @@ The demo's HTML page combines these:
 <script src="https://cdn.polyfill.io/v2/polyfill.js?features=CustomEvent,Intl.~locale.en,Intl.~locale.fr"></script>
 ```
 
-Be sure to add whichever polyfills you need to the page rendering this component.
+Add whichever polyfills you need to the page rendering this component.
+
+## Next Step
+
+If you are a contributor to this component's development, see guidance on [contributing](README.contribute.md).
