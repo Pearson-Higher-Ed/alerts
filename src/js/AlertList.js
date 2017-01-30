@@ -32,9 +32,10 @@ class AlertList extends Component {
     return (
       <ReactCSSTransitionGroup
         component="ul"
+        role="alert"
         transitionName="transition"
         transitionEnterTimeout={300}
-        transitionLeaveTimeout={200} 
+        transitionLeaveTimeout={200}
         className="alertList">
         {this.renderAlert(this.state.alertList)}
       </ReactCSSTransitionGroup>

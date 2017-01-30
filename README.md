@@ -30,7 +30,9 @@ currently strings of 'success' or 'error'. `alertMessage` accepts a string for y
 
 For example:
 
-  `document.body.dispatchEvent(new CustomEvent('triggerAlert', {
+```js
+
+  document.body.dispatchEvent(new CustomEvent('triggerAlert', {
       "detail":{
         "alertList":[{
           "id"          : new Date().getTime(),
@@ -38,7 +40,9 @@ For example:
           "alertMessage": "your alert message here"
         }]
       }
-  }));`
+  }));
+
+```
 
 Dispatch `clearAlert` to clear the array of events.
 
