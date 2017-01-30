@@ -13,8 +13,6 @@
 
 .alertList {
   position:fixed;
-  margin-left: -1.5%;
-  margin-right: 4%;
 }
 
 @media only screen and (min-width: 1201px) {
@@ -29,11 +27,13 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .alertList {
-    width: 80%;
+@media only screen and (max-width: 768px) {
+  ul.alertList {
+    width: 100%;
+    -webkit-padding-start: 0;
   }
 }
+
 
 li[id^="alert-error"] {
   border-top: $alert-border-top #db0020;
