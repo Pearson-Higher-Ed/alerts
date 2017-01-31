@@ -4,15 +4,15 @@
   &:first-child {
     margin-top: 50px !important;
   }
-  position:relative;
+  position: relative;
   margin-top: 20px;
-  list-style:none;
+  list-style: none;
   background-color: #ffffff;
   padding: $alert-padding;
 }
 
 .alertList {
-  position:fixed;
+  position: fixed;
 }
 
 @media only screen and (min-width: 769px) {

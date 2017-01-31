@@ -48,7 +48,11 @@ Dispatch `clearAlert` to clear the array of events.
 
 For example:
 
-  `document.body.dispatchEvent(new CustomEvent('clearAlert'));`
+```js
+
+  document.body.dispatchEvent(new CustomEvent('clearAlert'));
+
+```
 
 ## Polyfills
 
