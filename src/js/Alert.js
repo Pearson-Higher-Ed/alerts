@@ -12,7 +12,6 @@ class Alert extends Component {
             <li
               className = "pe-alert"
               id        = {`alert-${alertType}-${index}`}
-              role      = "alert"
               >
 
               <strong className={`pe-label ${alertType}-title`}>
