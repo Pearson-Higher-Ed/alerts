@@ -33,6 +33,7 @@ class AlertList extends Component {
       <div role="alert">
         <ReactCSSTransitionGroup
           component="ul"
+          aria-live="polite"
           transitionName="transition"
           transitionEnterTimeout={300}
           transitionLeaveTimeout={200}
