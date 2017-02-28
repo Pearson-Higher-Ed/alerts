@@ -15,6 +15,8 @@ To view the demo:
 * install the dependencies:
 
   `npm i`
+  `npm run copy-utils`
+  `npm run build`
 * start the server:
 
   `npm start`
