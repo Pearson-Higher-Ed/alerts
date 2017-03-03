@@ -14,8 +14,8 @@ To view the demo:
   `https://github.com/Pearson-Higher-Ed/alerts.git`
 * install the dependencies:
 
-  `npm i`
-  `npm run copy-utils`
+  `npm i` <br />
+  `npm run copy-utils` <br />
   `npm run build`
 * start the server:
 
