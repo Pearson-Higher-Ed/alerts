@@ -16,7 +16,8 @@
     "ci": "node ./npm_scripts/ci.js",
     "release": "node ./npm_scripts/release.js",
     "verify": "node ./npm_scripts/verify.js",
-    "copy-utils": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js"
+    "copy-utils": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js",
+    "postpublish": "npm access public && echo 'Package scope set to public!'"
   },
   "author": "Pearson Design Accelerator",
   "license": "MIT",
