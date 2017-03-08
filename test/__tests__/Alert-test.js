@@ -2,7 +2,7 @@ import expect             from 'expect';
 import expectJSX          from 'expect-jsx';
 import React              from 'react';
 import Alert              from '../../src/js/Alert';
-import Icon               from '../../src/js/icon';
+import Icon               from '../../src/js/Icon';
 import { shallow }        from 'enzyme';
 import { jsdom }          from 'jsdom';
 import { createRenderer } from 'react-addons-test-utils';
