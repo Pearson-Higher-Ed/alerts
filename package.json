@@ -1,5 +1,5 @@
 {
-  "name": "Alerts",
+  "name": "@pearson-components/alerts",
   "version": "0.0.0",
   "description": "Component to render alerts",
   "main": "./build/dist.alerts.js",
