@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Icon                 from './icon';
-
+import Icon                 from './Icon';
 
 class Alert extends Component {
 
@@ -12,7 +11,6 @@ class Alert extends Component {
             <li
               className = "pe-alert"
               id        = {`alert-${alertType}-${index}`}
-              role      = "alert"
               >
 
               <strong className={`pe-label ${alertType}-title`}>
