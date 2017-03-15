@@ -28,11 +28,11 @@
   }
 }
 
-li[id^="alert-error"] {
+li[id^="alert-Error"] {
   border-top: $alert-border-top #db0020;
 }
 
-li[id^="alert-success"] {
+li[id^="alert-Success"] {
   border-top: $alert-border-top #038238;
 }
 
@@ -41,11 +41,11 @@ svg {
   width: 0;
 }
 
-.error-title {
+.Error-title {
   color: #db0020;
 }
 
-.success-title {
+.Success-title {
   color: #038238;
 }
 

@@ -28,7 +28,7 @@ describe('Alert', () => {
 
       const index        = 1;
       const closeIndex   = 1;
-      const alertType    = 'success';
+      const alertType    = 'Success';
       const alertMessage = 'hi';
       const handleClose  = () => hasClicked = true;
 

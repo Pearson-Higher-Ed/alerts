@@ -64,7 +64,7 @@ function _renderAlert (alertList) {
     <Alert
       key          = {alert.id}
       index        = {index}
-      alertType    = {(this.state.alertList[index].alertType) === 'success' ?
+      alertType    = {(this.state.alertList[index].alertType) === 'Success' ?
       intl.formatMessage(messages.successAlert)
       :
       intl.formatMessage(messages.errorAlert)}
