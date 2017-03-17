@@ -28,7 +28,7 @@ To view the demo:
 
 To trigger an alert, dispatch the `triggerAlert` event with valid `alertType`, `alertMessage`
 and a unique `id` for each instance of the alert. Valid `alertType`'s are
-currently strings of 'success' or 'error'. `alertMessage` accepts a string for your message.
+currently strings of 'Success' or 'Error'. `alertMessage` accepts a string for your message.
 
 For example:
 
@@ -38,7 +38,7 @@ For example:
       "detail":{
         "alertList":[{
           "id"          : new Date().getTime(),
-          "alertType"   : "success",
+          "alertType"   : "Success",
           "alertMessage": "your alert message here"
         }]
       }

@@ -9,6 +9,7 @@
   list-style: none;
   background-color: #ffffff;
   padding: $alert-padding;
+  box-shadow: 0 1px 1px 1px #f5f5f5;
 }
 
 .alertList {
@@ -28,11 +29,11 @@
   }
 }
 
-li[id^="alert-error"] {
+li[id^="alert-Error"] {
   border-top: $alert-border-top #db0020;
 }
 
-li[id^="alert-success"] {
+li[id^="alert-Success"] {
   border-top: $alert-border-top #038238;
 }
 
@@ -41,11 +42,11 @@ svg {
   width: 0;
 }
 
-.error-title {
+.Error-title {
   color: #db0020;
 }
 
-.success-title {
+.Success-title {
   color: #038238;
 }
 

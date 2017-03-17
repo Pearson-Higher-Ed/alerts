@@ -2,13 +2,13 @@ import { defineMessages } from 'react-intl';
 
 export const messages = defineMessages({
   successAlert: {
-    id: 'success',
-    description: 'success',
-    defaultMessage: 'success'
+    id: 'Success',
+    description: 'Success',
+    defaultMessage: 'Success'
   },
   errorAlert: {
-    id: 'error',
-    description: 'error',
-    defaultMessage: 'error'
+    id: 'Error',
+    description: 'Error',
+    defaultMessage: 'Error'
   }
 });
