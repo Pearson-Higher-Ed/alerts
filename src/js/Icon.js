@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Icon = (props) => {
 
   const icon_class = 'pe-icon--' + props.name;
