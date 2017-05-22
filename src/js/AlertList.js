@@ -6,7 +6,6 @@ import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
 import ReactCSSTransitionGroup    from 'react-addons-css-transition-group';
 import { intlShape, injectIntl }  from 'react-intl';
-import { messages }               from '../../translations/defaultMessages';
 
 class AlertList extends Component {
 
@@ -56,17 +55,14 @@ function _handleClose (closeIndex) {
 }
 
 function _renderAlert (alertList) {
-  const { intl } = this.props;
 
   return alertList.map((alert, index) =>
 
     <Alert
       key          = {alert.id}
       index        = {index}
-      alertType    = {(this.state.alertList[index].alertType) === 'Success' ?
-      intl.formatMessage(messages.successAlert)
-      :
-      intl.formatMessage(messages.errorAlert)}
+      alertType    = {this.state.alertList[index].alertType}
+      alertTitle   = {alert.alertTitle}
       alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
     />
