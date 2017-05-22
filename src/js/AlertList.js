@@ -1,11 +1,12 @@
 // Lifecycle interface for ReactCSSTransitionGroup located in
 // Component-specific.scss with the naming convention
 // transitionName-lifecyclehook
-import React, { Component, PropTypes }    from 'react';
-import Alert                              from './Alert';
-import ReactCSSTransitionGroup            from 'react-addons-css-transition-group';
-import { intlShape, injectIntl }          from 'react-intl';
-import { messages }                       from '../../translations/defaultMessages';
+import React, { Component }       from 'react';
+import PropTypes                  from 'prop-types';
+import Alert                      from './Alert';
+import ReactCSSTransitionGroup    from 'react-addons-css-transition-group';
+import { intlShape, injectIntl }  from 'react-intl';
+import { messages }               from '../../translations/defaultMessages';
 
 class AlertList extends Component {
 
@@ -24,8 +25,8 @@ class AlertList extends Component {
     this.renderAlert = _renderAlert.bind(this);
     this.handleClose = _handleClose.bind(this);
 
-    document.body.addEventListener( 'triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
-    document.body.addEventListener( 'clearAlert', () => this.setState({ alertList:[] }) );
+    document.body.addEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.addEventListener('clearAlert', () => this.setState({ alertList:[] }) );
   }
 
   render () {
@@ -46,7 +47,6 @@ class AlertList extends Component {
 
 }
 
-
 export default injectIntl(AlertList);
 
 
@@ -54,7 +54,6 @@ function _handleClose (closeIndex) {
   const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
   this.setState({ closeIndex, alertList:alertListFiltered });
 }
-
 
 function _renderAlert (alertList) {
   const { intl } = this.props;
