@@ -26,9 +26,9 @@ To view the demo:
 
 ## Triggering an Alert
 
-To trigger an alert, dispatch the `triggerAlert` event with valid `alertType`, `alertMessage`
-and a unique `id` for each instance of the alert. Valid `alertType`'s are
-currently strings of 'Success', 'Error' and 'Information'. `alertTitle` and `alertMessage` accept strings.
+To trigger an alert, dispatch the `triggerAlert` event with valid `alertType`,
+`alertTitle`, `alertMessage` and a unique `id` for each instance of the alert.
+Valid `alertType`'s are currently strings of 'Success', 'Error' and 'Information'. `alertTitle` and `alertMessage` accept strings.
 
 For example:
 
