@@ -9,11 +9,11 @@
   list-style: none;
   background-color: #FFF;
   padding: $alert-padding;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
 }
 
 .alertList {
   position: fixed;
+  margin: 0;
 }
 
 @media only screen and (min-width: 769px) {
@@ -29,12 +29,21 @@
   }
 }
 
+%border-extend {
+  border-bottom: $alert-border-nonLeft;
+  border-top: $alert-border-nonLeft;
+  border-right: $alert-border-nonLeft;
+  box-shadow: $alert-box-shadow;
+}
+
 li[id^="alert-Error"] {
+  @extend %border-extend;
   border-left: $alert-border-left #db0020;
 }
 
 li[id^="alert-Success"],
 li[id^="alert-Information"] {
+  @extend %border-extend;
   border-left: $alert-border-left #19A5A3;
 }
 
