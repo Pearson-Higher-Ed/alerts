@@ -19,17 +19,11 @@ export default class Alert extends Component {
 
                 <div className="alert-content-container">
                   {alertType === 'Error' ? <span className="error-svg">
-                                             <svg focusable="false"
-                                                  className="pe-icon--warning-24">
-                                                  <use xlinkHref="#warning-24"></use>
-                                             </svg>
+                                             <Icon name="warning-24" />
                                            </span>
                                          :null}
                   {alertType === 'Success' ? <span className="success-svg">
-                                               <svg focusable="false"
-                                                    className="pe-icon--check-sm-24">
-                                                    <use xlinkHref="#check-sm-24"></use>
-                                               </svg>
+                                               <Icon name="check-sm-24" />
                                              </span>
                                            :null}
                   <div className={`alert-content-${infoCheck}`}>
