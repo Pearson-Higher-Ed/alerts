@@ -22,12 +22,12 @@
 
 .alert-content- {
   margin-left: 12px;
-  padding: 2px 2px 0 0;
+  padding: 4px 12px 0 0;
 }
 
 .alert-content-info {
   margin: 0;
-  padding: 2px 2px 0 0;
+  padding: 4px 12px 0 0;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 490px) {
   .alertList {
     width: auto;
   }
@@ -82,12 +82,13 @@ svg {
 .error-svg {
   color: #db0020;
   display: inline;
-  margin-top: 7px;
+  margin-top: 9px;
 }
 
 .success-svg {
   color: #19A5A3;
   display: inline;
+  margin-top: 5px;
 }
 
 .alert-content-container {
@@ -106,9 +107,6 @@ svg {
 
 .close-title {
   float: right;
-  border: none;
-  background: transparent;
-  padding: 0;
 }
 
 .transition-enter {

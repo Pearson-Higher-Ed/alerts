@@ -8,10 +8,10 @@ export default class Alert extends Component {
     const { index, alertType, alertMessage, handleClose, alertTitle } = this.props;
     const infoCheck = alertType === 'Information' ? 'info' :'';
 
-    return (<li className = "pe-alert"
+    return (<li className ="pe-alert"
                 id = {`alert-${alertType}-${index}`}>
 
-                <button className="close-title"
+                <button className="pe-icon--btn close-title"
                         onClick={() => handleClose(index)}
                         aria-label="Close alert">
                   <Icon name="remove-sm-24" />
@@ -19,17 +19,17 @@ export default class Alert extends Component {
 
                 <div className="alert-content-container">
                   {alertType === 'Error' ? <span className="error-svg">
-                                             <Icon name="warning-24" />
+                                             <Icon name="warning-18" />
                                            </span>
                                          :null}
                   {alertType === 'Success' ? <span className="success-svg">
-                                               <Icon name="check-sm-24" />
+                                               <Icon name="check-sm-18" />
                                              </span>
                                            :null}
                   <div className={`alert-content-${infoCheck}`}>
-                    <h4 className="pe-label alert-title">
+                    <h2 className="pe-label alert-title">
                       <strong>{alertTitle}</strong>
-                    </h4>
+                    </h2>
                     <p className="pe-paragraph alert-text">
                       {alertMessage}
                     </p>
