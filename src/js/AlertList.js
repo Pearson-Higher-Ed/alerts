@@ -1,10 +1,10 @@
-// Lifecycle interface for ReactCSSTransitionGroup located in
+// Lifecycle interface for CSSTransitionGroup located in
 // Component-specific.scss with the naming convention
 // transitionName-lifecyclehook
 import React, { Component }       from 'react';
 import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
-import ReactCSSTransitionGroup    from 'react-addons-css-transition-group';
+import { CSSTransitionGroup }    from 'react-transition-group';
 import { intlShape, injectIntl }  from 'react-intl';
 
 class AlertList extends Component {
@@ -31,7 +31,7 @@ class AlertList extends Component {
   render () {
     return (
       <div role="alert">
-        <ReactCSSTransitionGroup
+        <CSSTransitionGroup
           component="ul"
           aria-live="polite"
           transitionName="transition"
@@ -39,7 +39,7 @@ class AlertList extends Component {
           transitionLeaveTimeout={200}
           className="alertList">
           {this.renderAlert(this.state.alertList)}
-        </ReactCSSTransitionGroup>
+        </CSSTransitionGroup>
       </div>
     )
   }
