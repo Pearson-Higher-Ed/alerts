@@ -30,7 +30,7 @@
   padding: 4px 12px 0 0;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (max-width: 767px) {
   .alertList {
     width: 440px;
     padding: 0 25px;
@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 490px) {
+@media (max-width: 490px) {
   .alertList {
     width: auto;
   }
