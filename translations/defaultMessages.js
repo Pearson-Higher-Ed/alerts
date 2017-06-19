@@ -10,5 +10,15 @@ export const messages = defineMessages({
     id: 'Error',
     description: 'Error',
     defaultMessage: 'Error'
+  },
+  warningAlert: {
+    id: 'Warning',
+    description: 'Warning',
+    defaultMessage: 'Warning'
+  },
+  informationAlert: {
+    id: 'Information',
+    description: 'Information',
+    defaultMessage: 'Information'
   }
 });

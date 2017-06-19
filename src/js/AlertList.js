@@ -1,11 +1,11 @@
-// Lifecycle interface for ReactCSSTransitionGroup located in
+// Lifecycle interface for CSSTransitionGroup located in
 // Component-specific.scss with the naming convention
 // transitionName-lifecyclehook
-import React, { Component, PropTypes }    from 'react';
-import Alert                              from './Alert';
-import ReactCSSTransitionGroup            from 'react-addons-css-transition-group';
-import { intlShape, injectIntl }          from 'react-intl';
-import { messages }                       from '../../translations/defaultMessages';
+import React, { Component }       from 'react';
+import PropTypes                  from 'prop-types';
+import Alert                      from './Alert';
+import { CSSTransitionGroup }    from 'react-transition-group';
+import { intlShape, injectIntl }  from 'react-intl';
 
 class AlertList extends Component {
 
@@ -24,14 +24,14 @@ class AlertList extends Component {
     this.renderAlert = _renderAlert.bind(this);
     this.handleClose = _handleClose.bind(this);
 
-    document.body.addEventListener( 'triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
-    document.body.addEventListener( 'clearAlert', () => this.setState({ alertList:[] }) );
+    document.body.addEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.addEventListener('clearAlert', () => this.setState({ alertList:[] }) );
   }
 
   render () {
     return (
       <div role="alert">
-        <ReactCSSTransitionGroup
+        <CSSTransitionGroup
           component="ul"
           aria-live="polite"
           transitionName="transition"
@@ -39,13 +39,12 @@ class AlertList extends Component {
           transitionLeaveTimeout={200}
           className="alertList">
           {this.renderAlert(this.state.alertList)}
-        </ReactCSSTransitionGroup>
+        </CSSTransitionGroup>
       </div>
     )
   }
 
 }
-
 
 export default injectIntl(AlertList);
 
@@ -55,19 +54,15 @@ function _handleClose (closeIndex) {
   this.setState({ closeIndex, alertList:alertListFiltered });
 }
 
-
 function _renderAlert (alertList) {
-  const { intl } = this.props;
 
   return alertList.map((alert, index) =>
 
     <Alert
       key          = {alert.id}
       index        = {index}
-      alertType    = {(this.state.alertList[index].alertType) === 'Success' ?
-      intl.formatMessage(messages.successAlert)
-      :
-      intl.formatMessage(messages.errorAlert)}
+      alertType    = {this.state.alertList[index].alertType}
+      alertTitle   = {alert.alertTitle}
       alertMessage = {alert.alertMessage}
       handleClose  = {this.handleClose}
     />

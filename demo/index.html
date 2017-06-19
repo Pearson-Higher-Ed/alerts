@@ -3,6 +3,7 @@
 <head>
     <title>Alerts Demo</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="elements.css" />
     <style>
       .banner {
@@ -22,6 +23,9 @@
       .buttonGroup {
         margin-top: 175px;
       }
+      h1 {
+        margin: 0;
+      }
     </style>
 </head>
 <body>
@@ -36,7 +40,7 @@
       <h3>Alerts Event API</h3>
       <p>
         The Alerts Component works on an evented API.
-        Dispatch an event of 'triggerAlert' with the alertType
+        Dispatch an event of 'triggerAlert' with the alertType, alertTitle
         and alertMessage to display an alert.
         Dispatch an event of 'clearAlert' to delete all events from
         queue. Click the buttons on the left to dispatch an event.
@@ -44,17 +48,19 @@
     </div>
 
     <div class="buttonGroup">
-      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Success')">Success Alert</button>
+      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Success')">Success</button>
       <br />
       <br />
-      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Error')">Error Alert</button>
+      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Error')">Error/Warning</button>
+      <br />
+      <br />
+      <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Information')">Information</button>
       <br />
       <br />
       <br />
       <br />
       <button class="target pe-btn__cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
     </div>
-
 
     <script>
       function buttonHandler(type) {
@@ -69,16 +75,17 @@
 // -----------------------------------------------------------------------------
 // @param detail       <Object> on event (ie. ref e.detail)
 // @param alertList    <Array>  array of event Objects (ie. [{},{},...])
-// @param alertType    <String> 'Success' || 'Error'
+// @param alertType    <String> 'Success' || 'Error' || 'Information'
 // @param alertMessage <String> 'user specified string'
 // -----------------------------------------------------------------------------
-          if(type === 'Success' || type === 'Error') {
+          if(type === 'Success' || type === 'Error' || type === 'Information') {
             document.body.dispatchEvent(new CustomEvent('triggerAlert', {
                 "detail":{
                   "alertList":[{
                     "id"          : new Date().getTime(),
                     "alertType"   : type,
-                    "alertMessage": type + ' test message'
+                    "alertTitle"  : "Test title",
+                    "alertMessage": type + ' message. Adding more text to see it wrap to the second line!'
                   }]
                 }
             }));
@@ -108,8 +115,9 @@
     </script>
 
     <!-- External dependencies for React -->
-    <script src="../node_modules/react/dist/react.js"></script>
-    <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
     <!-- CustomEvent polyfill is for IE, Intl.js polyfill is for Safari -->
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=CustomEvent,Intl.~locale.en,Intl.~locale.fr"></script>
     <!-- Locally hosted demo server -->

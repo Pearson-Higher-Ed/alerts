@@ -1,34 +1,43 @@
 import React, { Component } from 'react';
 import Icon                 from './Icon';
 
-class Alert extends Component {
+export default class Alert extends Component {
 
   render () {
 
-    const { index, alertType, alertMessage, handleClose } = this.props;
+    const { index, alertType, alertMessage, handleClose, alertTitle } = this.props;
+    const infoCheck = alertType === 'Information' ? 'info' :'';
 
-    return (
-            <li
-              className = "pe-alert"
-              id        = {`alert-${alertType}-${index}`}
-              >
+    return (<li className ="pe-alert"
+                id = {`alert-${alertType}-${index}`}>
 
-              <strong className={`pe-label ${alertType}-title`}>
-                {alertType}
-              </strong>
+                <button className="pe-icon--btn close-title"
+                        onClick={() => handleClose(index)}
+                        aria-label="Close alert">
+                  <Icon name="remove-sm-24" />
+                </button><br/>
 
-              <button className="close-title" onClick={() => handleClose(index)} aria-label="Close alert">
-                <Icon name="remove-lg-18" />
-              </button><br/>
-
-              <span className="pe-copy">
-                {alertMessage}
-              </span>
+                <div className="alert-content-container">
+                  {alertType === 'Error' ? <span className="error-svg">
+                                             <Icon name="warning-18" />
+                                           </span>
+                                         :null}
+                  {alertType === 'Success' ? <span className="success-svg">
+                                               <Icon name="check-sm-18" />
+                                             </span>
+                                           :null}
+                  <div className={`alert-content-${infoCheck}`}>
+                    <h2 className="pe-label alert-title">
+                      <strong>{alertTitle}</strong>
+                    </h2>
+                    <p className="pe-paragraph alert-text">
+                      {alertMessage}
+                    </p>
+                  </div>
+                </div>
 
             </li>
-          )
+          );
   }
 
-}
-
-export default Alert;
+};
