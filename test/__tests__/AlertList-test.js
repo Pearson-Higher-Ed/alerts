@@ -28,10 +28,5 @@ describe('AlertList', () => {
     it('has correct intl', () => {
       expect(wrapper.node.props.intl.locale).toEqual('en');
     });
-
-    it('has correct intial state', () => {
-      expect(wrapper.node.state).toEqual({ alertList: [] });
-    })
-
   });
 });

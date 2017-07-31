@@ -1,4 +1,5 @@
 import ReactDOM         from 'react-dom';
+import AlertListManager from './src/js/AlertListManager';
 import AlertList        from './src/js/AlertList';
 import { IntlProvider } from 'react-intl';
 import Alert from './src/js/Alert';
@@ -20,7 +21,7 @@ export default class AlertsComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale}>
-        <AlertList />
+        <AlertListManager />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );
@@ -30,4 +31,4 @@ export default class AlertsComponent {
 
 document.body.addEventListener('o.InitAlertsComponent', e => new AlertsComponent(e.detail));
 
-export { Alert, AlertsComponent, AlertList, Icon };
+export { Alert, AlertsComponent, AlertListManager, Icon, AlertList };
