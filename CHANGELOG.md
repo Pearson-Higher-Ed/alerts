@@ -1,20 +1,5 @@
-<a name="1.1.0"></a>
-# [1.1.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.2...v1.1.0) (2017-06-20)
-
-
-
-<a name="1.0.2"></a>
-## [1.0.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.1...v1.0.2) (2017-03-17)
-
-
-
-<a name="1.0.1"></a>
-## [1.0.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.0...v1.0.1) (2017-03-08)
-
-
-
-<a name="1.0.0"></a>
-# [1.0.0](https://github.com/Pearson-Higher-Ed/alerts/compare/896ea18...v1.0.0) (2017-03-08)
+<a name="1.1.1"></a>
+## 1.1.1 (2017-08-01)
 
 
 ### Bug Fixes
@@ -65,6 +50,7 @@
 * **component-archetype:** run demo tests against feature branch in ci ([073f975](https://github.com/Pearson-Higher-Ed/alerts/commit/073f975))
 * **demo:** Add event listener for card comments. ([8ed5d8f](https://github.com/Pearson-Higher-Ed/alerts/commit/8ed5d8f))
 * Check package.json main field to ensure it is changed to the actual component name. ([1046e41](https://github.com/Pearson-Higher-Ed/alerts/commit/1046e41))
+* controlled component ([9fcff1f](https://github.com/Pearson-Higher-Ed/alerts/commit/9fcff1f))
 
 
 
