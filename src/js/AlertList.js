@@ -4,18 +4,18 @@
 import React, { Component }       from 'react';
 import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
-import { CSSTransitionGroup }    from 'react-transition-group';
+import { CSSTransitionGroup }     from 'react-transition-group';
 import { intlShape, injectIntl }  from 'react-intl';
 
 class AlertList extends Component {
 
   static propTypes = {
     intl: intlShape.isRequired,
-    alertList: PropTypes.shape([{
+    alertList: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       alertTitle: PropTypes.string,
       alertMessage: PropTypes.string
-    }]),
+    })),
     handleClose: PropTypes.func
   };
 

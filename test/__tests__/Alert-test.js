@@ -21,6 +21,14 @@ describe('Alert', () => {
       expect(this.wrapper.node.type).toEqual('li');
     });
 
+    it('should handle translations', () => {
+      const wrapperWithIntl = shallow(
+        <Alert alertMessage={{ defaultMessage: 'test', id: '123' }} />
+      );
+
+      expect(wrapperWithIntl.find('FormattedMessage').length).toEqual(1);
+    });
+
     it('should click close button', () => {
 
       let hasClicked     = false;
@@ -48,7 +56,19 @@ describe('Alert', () => {
 
       expect(hasClicked).toBe(true)
 
-  });
+    });
+
+    // jest.fn() doesn't work?
+    let clicked = false;
+    const handleClose = () => {
+      clicked = true;
+    };
+
+    it('handles clicks', () => {
+      const wrapper = shallow(<Alert handleClose={handleClose}>Test</Alert>);
+      wrapper.find('button').simulate('click');
+      expect(clicked).toEqual(true);
+    });
 
   });
 });

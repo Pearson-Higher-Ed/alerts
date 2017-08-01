@@ -23,7 +23,6 @@ class AlertListManager extends Component {
   }
 
   render () {
-    console.log('rendering alertlist');
     return (
       <AlertList
         alertList={this.state.alertList}
