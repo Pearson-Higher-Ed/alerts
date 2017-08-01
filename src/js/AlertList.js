@@ -4,29 +4,20 @@
 import React, { Component }       from 'react';
 import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
-import { CSSTransitionGroup }    from 'react-transition-group';
+import { CSSTransitionGroup }     from 'react-transition-group';
 import { intlShape, injectIntl }  from 'react-intl';
 
 class AlertList extends Component {
 
   static propTypes = {
     intl: intlShape.isRequired,
-    data: PropTypes.shape({
-      locale: PropTypes.string
-    })
+    alertList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      alertTitle: PropTypes.string,
+      alertMessage: PropTypes.string
+    })),
+    handleClose: PropTypes.func
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = { alertList: [] };
-
-    this.renderAlert = _renderAlert.bind(this);
-    this.handleClose = _handleClose.bind(this);
-
-    document.body.addEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
-    document.body.addEventListener('clearAlert', () => this.setState({ alertList:[] }) );
-  }
 
   render () {
     return (
@@ -38,7 +29,7 @@ class AlertList extends Component {
           transitionEnterTimeout={300}
           transitionLeaveTimeout={200}
           className="alertList">
-          {this.renderAlert(this.state.alertList)}
+          {_renderAlert(this.props.alertList, this.props.handleClose)}
         </CSSTransitionGroup>
       </div>
     )
@@ -48,23 +39,15 @@ class AlertList extends Component {
 
 export default injectIntl(AlertList);
 
-
-function _handleClose (closeIndex) {
-  const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
-  this.setState({ closeIndex, alertList:alertListFiltered });
-}
-
-function _renderAlert (alertList) {
-
+function _renderAlert (alertList = [], handleClose) {
   return alertList.map((alert, index) =>
-
     <Alert
       key          = {alert.id}
       index        = {index}
-      alertType    = {this.state.alertList[index].alertType}
+      alertType    = {alertList[index].alertType}
       alertTitle   = {alert.alertTitle}
       alertMessage = {alert.alertMessage}
-      handleClose  = {this.handleClose}
+      handleClose  = {handleClose}
     />
   );
 }

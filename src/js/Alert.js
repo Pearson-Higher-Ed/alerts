@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import { FormattedMessage}  from 'react-intl';
 import Icon                 from './Icon';
 
 export default class Alert extends Component {
 
   render () {
 
-    const { index, alertType, alertMessage, handleClose, alertTitle } = this.props;
+    const { index, alertType, handleClose, alertTitle } = this.props;
     const infoCheck = alertType === 'Information' ? 'info' :'';
+    let { alertMessage } = this.props;
+
+    if (alertMessage && alertMessage.defaultMessage) {
+      alertMessage = <FormattedMessage {...alertMessage} />
+    }
 
     return (<li className ="pe-alert"
                 id = {`alert-${alertType}-${index}`}>
