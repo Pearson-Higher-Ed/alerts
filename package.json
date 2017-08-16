@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "react-addons-css-transition-group": "^15.4.2",
-    "react-intl": "~2.0.1"
+    "react-intl": "~2.3.0"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.3.7",
@@ -81,9 +81,9 @@
     "node-sass": "~3.7.0",
     "pearson-elements": "^1.11.0",
     "prop-types": "^15.5.10",
-    "react": "^15.0.0",
+    "react": "15.6.0",
     "react-addons-test-utils": "^15.0.0",
-    "react-dom": "^15.0.0",
+    "react-dom": "15.6.0",
     "react-transition-group": "^1.2.0",
     "sass-loader": "~3.2.0",
     "semver": "~5.1.0",
