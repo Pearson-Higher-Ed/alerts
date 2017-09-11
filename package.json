@@ -20,7 +20,7 @@
     "postpublish": "npm access public && echo 'Package scope set to public!'"
   },
   "author": "Pearson Design Accelerator",
-  "license": "MIT",
+  "license": "PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pearson-Higher-Ed/alerts"
