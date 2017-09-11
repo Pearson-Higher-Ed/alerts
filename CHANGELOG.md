@@ -1,3 +1,8 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.2...v1.1.3) (2017-09-11)
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.1...v1.1.2) (2017-08-18)
 
