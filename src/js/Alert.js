@@ -22,7 +22,7 @@ export default class Alert extends Component {
 
   render () {
     const { index, alertType, handleClose, alertTitle, alertMessage } = this.props;
-    const infoCheck = alertType === 'Information' ? 'info' :'';
+    const infoCheck = alertType === 'Information' ? '-info' :'';
 
     return (
       <li className ="pe-alert"
@@ -38,7 +38,7 @@ export default class Alert extends Component {
 
         <div className="alert-content-container">
           {this.alertTypeCheck()}
-          <div className={`alert-content-${infoCheck}`}>
+          <div className={`alert-content${infoCheck}`}>
             <h2 className="pe-label alert-title">
               <strong>{alertTitle}</strong>
             </h2>

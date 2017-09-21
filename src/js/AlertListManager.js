@@ -7,18 +7,35 @@ export default class AlertListManager extends Component {
     super(props);
 
     this.state = { alertList: [] };
-
-    this.handleClose = _handleClose.bind(this);
   }
 
   componentDidMount() {
-    document.body.addEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
-    document.body.addEventListener('clearAlert', () => this.setState({ alertList:[] }) );
+    document.body.addEventListener('triggerAlert', this.triggerAlerts);
+    document.body.addEventListener('clearAlert', this.clearAlerts);
   }
 
   componentWillUnmount() {
-    document.body.removeEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
-    document.body.removeEventListener('clearAlert', () => this.setState({ alertList:[] }) );
+    document.body.removeEventListener('triggerAlert', this.triggerAlerts);
+    document.body.removeEventListener('clearAlert', this.clearAlerts);
+  }
+
+  triggerAlerts = (e) => {
+    this.setState({
+      e,
+      alertList: this.state.alertList.concat(e.detail.alertList)
+    });
+  }
+
+  clearAlerts = () => {
+    this.setState({ alertList: [] });
+  }
+
+  handleClose = (closeIndex) => {
+    const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
+    this.setState({
+      closeIndex,
+      alertList: alertListFiltered
+    });
   }
 
   render () {
@@ -30,12 +47,4 @@ export default class AlertListManager extends Component {
     )
   }
 
-}
-
-function _handleClose (closeIndex) {
-  const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
-  this.setState({
-    closeIndex,
-    alertList: alertListFiltered
-  });
 }
