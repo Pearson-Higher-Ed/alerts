@@ -1,15 +1,7 @@
-import React, { Component }       from 'react';
-import PropTypes                  from 'prop-types';
-import { intlShape, injectIntl }  from 'react-intl';
-import AlertList                  from './AlertList';
+import React, { Component } from 'react';
+import AlertList            from './AlertList';
 
-class AlertListManager extends Component {
-  static propTypes = {
-    intl: intlShape.isRequired,
-    data: PropTypes.shape({
-      locale: PropTypes.string
-    })
-  };
+export default class AlertListManager extends Component {
 
   constructor(props) {
     super(props);
@@ -35,7 +27,8 @@ class AlertListManager extends Component {
 
 function _handleClose (closeIndex) {
   const alertListFiltered = this.state.alertList.filter((e, index) => index !== closeIndex)
-  this.setState({ closeIndex, alertList:alertListFiltered });
+  this.setState({
+    closeIndex,
+    alertList: alertListFiltered
+  });
 }
-
-export default injectIntl(AlertListManager);

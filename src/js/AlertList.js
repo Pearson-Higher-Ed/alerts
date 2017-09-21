@@ -5,12 +5,10 @@ import React, { Component }       from 'react';
 import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
 import { CSSTransitionGroup }     from 'react-transition-group';
-import { intlShape, injectIntl }  from 'react-intl';
 
-class AlertList extends Component {
+export default class AlertList extends Component {
 
   static propTypes = {
-    intl: intlShape.isRequired,
     alertList: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       alertTitle: PropTypes.string,
@@ -20,6 +18,8 @@ class AlertList extends Component {
   };
 
   render () {
+    const { alertList, handleClose } = this.props;
+
     return (
       <div role="alert">
         <CSSTransitionGroup
@@ -29,15 +29,13 @@ class AlertList extends Component {
           transitionEnterTimeout={300}
           transitionLeaveTimeout={200}
           className="alertList">
-          {_renderAlert(this.props.alertList, this.props.handleClose)}
+          {_renderAlert(alertList, handleClose)}
         </CSSTransitionGroup>
       </div>
     )
   }
 
 }
-
-export default injectIntl(AlertList);
 
 function _renderAlert (alertList = [], handleClose) {
   return alertList.map((alert, index) =>
