@@ -21,14 +21,6 @@ describe('Alert', () => {
       expect(this.wrapper.node.type).toEqual('li');
     });
 
-    it('should handle translations', () => {
-      const wrapperWithIntl = shallow(
-        <Alert alertMessage={{ defaultMessage: 'test', id: '123' }} />
-      );
-
-      expect(wrapperWithIntl.find('FormattedMessage').length).toEqual(1);
-    });
-
     it('should click close button', () => {
 
       let hasClicked     = false;

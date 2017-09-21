@@ -9,9 +9,16 @@ export default class AlertListManager extends Component {
     this.state = { alertList: [] };
 
     this.handleClose = _handleClose.bind(this);
+  }
 
+  componentDidMount() {
     document.body.addEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
     document.body.addEventListener('clearAlert', () => this.setState({ alertList:[] }) );
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('triggerAlert', e => this.setState( {e, alertList:this.state.alertList.concat(e.detail.alertList)} ) );
+    document.body.removeEventListener('clearAlert', () => this.setState({ alertList:[] }) );
   }
 
   render () {
