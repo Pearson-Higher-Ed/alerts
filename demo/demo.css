@@ -19,6 +19,11 @@
   margin-top: 175px;
 }
 
+.buttonGroup button {
+  display: block;
+  margin-bottom: 14px;
+}
+
 h1 {
   margin: 0;
 }
