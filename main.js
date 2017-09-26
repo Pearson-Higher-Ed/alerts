@@ -1,8 +1,8 @@
 import ReactDOM         from 'react-dom';
 import AlertListManager from './src/js/AlertListManager';
 import AlertList        from './src/js/AlertList';
-import Alert from './src/js/Alert';
-import Icon from './src/js/Alert';
+import Alert            from './src/js/Alert';
+import Icon             from './src/js/Alert';
 
 import './src/scss/component-specific.scss';
 
@@ -13,7 +13,6 @@ export default class AlertsComponent {
   }
 
   init(config) {
-
     ReactDOM.render(
       <AlertListManager />,
       document.getElementById(config.elementId)
