@@ -1,15 +1,35 @@
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.3...v1.1.4) (2017-09-27)
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.2...v1.1.3) (2017-09-11)
 
 
 
 <a name="1.1.2"></a>
-## [1.1.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.1...v1.1.2) (2017-08-18)
+## [1.1.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.1...v1.1.2) (2017-08-18)
+
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.0...v1.1.1) (2017-08-01)
 
 
 ### Features
 
 * controlled component ([9fcff1f](https://github.com/Pearson-Higher-Ed/alerts/commit/9fcff1f))
+
+
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.2...v1.1.0) (2017-06-20)
+
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.1...v1.0.2) (2017-03-17)
 
 
 
@@ -62,7 +82,7 @@
 * roles ([ab11ad0](https://github.com/Pearson-Higher-Ed/alerts/commit/ab11ad0))
 * spacing between title and body ([c0629a8](https://github.com/Pearson-Higher-Ed/alerts/commit/c0629a8))
 * Title and body text handled through state ([67c7413](https://github.com/Pearson-Higher-Ed/alerts/commit/67c7413))
-* Use verify npm script to ensure package name has [@pearson](https://github.com/pearson)-components scope. ([772586f](https://github.com/Pearson-Higher-Ed/alerts/commit/772586f))
+* Use verify npm script to ensure package name has [@pearson-components](https://github.com/pearson-components) scope. ([772586f](https://github.com/Pearson-Higher-Ed/alerts/commit/772586f))
 
 
 ### Features
