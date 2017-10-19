@@ -47,8 +47,7 @@
     "verbose": true
   },
   "dependencies": {
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-intl": "~2.3.0"
+    "react-addons-css-transition-group": "^15.4.2"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.3.7",
