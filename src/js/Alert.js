@@ -15,12 +15,12 @@ const Alert = ({ index, alertType, handleClose, alertTitle, alertMessage }) => {
         <span className="success-svg">
           <Icon name="check-sm-18" />
         </span>
-      )
+      );
     }
   };
 
   const infoCheck = alertType === 'Information' ? '-info' :'';
-  
+
   return (
     <li className ="pe-alert" id = {`alert-${alertType}-${index}`}>
       <button className="pe-icon--btn close-title"
