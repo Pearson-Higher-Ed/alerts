@@ -1,3 +1,13 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.0...v1.2.1) (2017-11-13)
+
+
+### Features
+
+* Integrate Sonar ([eaa7378](https://github.com/Pearson-Higher-Ed/alerts/commit/eaa7378))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.4...v1.2.0) (2017-10-25)
 
