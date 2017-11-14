@@ -1,3 +1,13 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.1...v1.2.2) (2017-11-14)
+
+
+### Bug Fixes
+
+* Update success icon size ([4ae7528](https://github.com/Pearson-Higher-Ed/alerts/commit/4ae7528))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.0...v1.2.1) (2017-11-13)
 
