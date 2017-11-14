@@ -13,7 +13,7 @@ const Alert = ({ index, alertType, handleClose, alertTitle, alertMessage }) => {
     if (alertType === 'Success') {
       return (
         <span className="success-svg">
-          <Icon name="check-sm-18" />
+          <Icon name="check-lg-18" />
         </span>
       );
     }
