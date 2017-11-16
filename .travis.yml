@@ -3,11 +3,18 @@ sudo: false
 node_js:
 - 4
 - 6
+addons:
+  sonarcloud:
+    organization: "PDA.Alerts"
+    token:
+      secure: Qc4DLc6T9/51Y4inBD2MRFj7Hd6mz3ndadkZ2dBUSyNOXgnsR+1UsYcQp3mdR0KI2AKHS22IuYbF8PNnGpZqFJvLO0O/pmE/hj8Eo4wYaU9PyFA7+9sa6zNIFb3KGYtDRuGhg+c/Fvq1VFlGMvOQFHxNgW6YSOd9ITf1RSuo6cOXAI4FdOgM9Zi/IGebWGQcXyrcnnUNa2ubL0foIfetd1giEA3lrpGmtIQOdDlM9wU1PyDHRmzVwL3j/q2DkOiqjEXuf3g5JQsqFXy7Ftmb3CWeBQvo+AB+lcr+2+75EMHPjRuVtndnm6eHk1U9y6dLE76qmOnEU8jpyG4Uc40Idyn4DhZ7BPBaA45xb8sPF6UoRiBxOuimXjgyv45jAtxSN1U64HT+5S7pmxHllf+2zQNInPLO0qB8fT5ge0XfNV4SMp479VrISHh8bY/hcUEgEZJtBUEfPzndPD02EqPa0OAT6J1lm1xJ6AKxdcfPhxB2ghqFTNOHPAXCR4BQh88/6K9RFf7DrkCN/9wK1PEPCV+npGo3FSx8FjrYR2R0cjGDWxBUWxJQMy6cyKD5KqIR+Ty/76Kf9cBMY0cBZDIZvLWHB43j6HHln0QoKpLkmlAI1m1pqjAPuiEj4DS3bLEzUKMRLQD2YNQ2WttgbCl6adlvwtn8SJUSUzPaEONIV3U=
+
 script:
 - npm run copy-utils
 - npm run ci
 - chmod 777 ./test/shell_scripts/run_tests.sh
 - ./test/shell_scripts/run_tests.sh
+- sonar-scanner
 deploy:
   provider: npm
   email: pearson-design-accelerator@pearson.com
