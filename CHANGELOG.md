@@ -1,3 +1,13 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.2...v1.2.3) (2017-11-21)
+
+
+### Features
+
+* Sonar integrated with Travis ([c9f6335](https://github.com/Pearson-Higher-Ed/alerts/commit/c9f6335))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.1...v1.2.2) (2017-11-14)
 
