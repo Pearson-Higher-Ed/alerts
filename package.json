@@ -4,18 +4,19 @@
   "description": "Component to render alerts",
   "main": "./build/dist.alerts.js",
   "scripts": {
-    "dev-setup": "node ./npm_scripts/dev-setup.js",
-    "dev": "node ./npm_scripts/dev.js",
+    "dev-setup": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/dev-setup.js",
+    "dev": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/dev.js",
     "start": "npm run dev",
-    "pretest": "node ./npm_scripts/pretest.js",
+    "pretest": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/pretest.js",
+    "gh-pages": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts",
     "test": "jest --coverage",
-    "build": "node ./npm_scripts/build.js",
-    "lint": "node ./npm_scripts/lint.js",
-    "gen-changelog": "node ./npm_scripts/gen-changelog.js",
-    "version": "node ./npm_scripts/version.js",
-    "ci": "node ./npm_scripts/ci.js",
-    "release": "node ./npm_scripts/release.js",
-    "verify": "node ./npm_scripts/verify.js",
+    "build": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/build.js",
+    "lint": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/lint.js",
+    "gen-changelog": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/gen-changelog.js",
+    "version": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/version.js",
+    "ci": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/ci.js",
+    "release": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/release.js",
+    "verify": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/verify.js",
     "copy-utils": "node ./node_modules/@pearson-components/npm-scripts/npm_scripts/cross-platform.js",
     "postpublish": "npm access public && echo 'Package scope set to public!'"
   },
@@ -50,7 +51,7 @@
     "react-addons-css-transition-group": "^15.4.2"
   },
   "devDependencies": {
-    "@pearson-components/npm-scripts": "^0.5.2",
+    "@pearson-components/npm-scripts": "^0.5.6",
     "babel-core": "~6.3.17",
     "babel-eslint": "~4.1.6",
     "babel-jest": "^18.0.0",
@@ -88,7 +89,7 @@
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",
-    "webpack": "~1.12.9",
+    "webpack": "^1.12.15",
     "webpack-dev-server": "~1.14.0"
   },
   "keywords": [

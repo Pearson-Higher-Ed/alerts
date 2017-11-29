@@ -2,8 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-   dev: ['webpack/hot/dev-server', './demo/demo.js', './main.js'],
-   dist: ['./main.js']
+    dev: ['webpack/hot/dev-server', './demo/demo.js', './main.js'],
+    dist: ['./main.js']
   },
   output: {
     path: './',

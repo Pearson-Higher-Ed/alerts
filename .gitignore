@@ -5,8 +5,7 @@ fonts
 demo/elements.css
 npm-debug.log
 *.iml
-build/dev*
-build/dist*
+/build
 npm_scripts/*.js
 yarn.lock
 coverage
