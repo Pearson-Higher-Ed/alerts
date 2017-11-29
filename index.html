@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Alerts Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="elements.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+  <div class="banner"><h1>Pearson Design Accelerator</h1></div>
+  <div id="demo-target1"></div>
+
+  <h1 class="target">Alerts demo</h1>
+  <p class="target">Styled using the Elements SDK.</p>
+
+  <div class="rightContent">
+    <h3>Alerts Event API</h3>
+    <p>
+      The Alerts Component works on an evented API.
+      Dispatch an event of 'triggerAlert' with the alertType, alertTitle
+      and alertMessage to display an alert.
+      Dispatch an event of 'clearAlert' to delete all events from
+      queue. Click the buttons on the left to dispatch an event.
+    </p>
+  </div>
+
+  <div class="buttonGroup">
+    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Success')">Success</button>
+    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Error')">Error/Warning</button>
+    <button class="target pe-btn__primary--btn_small" onclick="buttonHandler('Information')">Information</button>
+    <button class="target pe-btn__cta--btn_xlarge" onclick="buttonHandler('clear')">Clear Alert</button>
+  </div>
+
+    <script>
+      function buttonHandler(type) {
+// ========EVENT API FOR INTERACTING WITH THE COMPONENT=========================
+//
+// To trigger an alert...
+// - dispatch 'triggerAlert' event with valid type and message
+//   valid type is Success or Error... so far.
+// - dispatch 'clearAlert' to clear the array of events
+//
+// ** Consumer must polyfill CustomEvent **
+// -----------------------------------------------------------------------------
+// @param detail       <Object> on event (ie. ref e.detail)
+// @param alertList    <Array>  array of event Objects (ie. [{},{},...])
+// @param alertType    <String> 'Success' || 'Error' || 'Information'
+// @param alertMessage <String> 'user specified string'
+// -----------------------------------------------------------------------------
+          if(type === 'Success' || type === 'Error' || type === 'Information') {
+            document.body.dispatchEvent(new CustomEvent('triggerAlert', {
+                "detail":{
+                  "alertList":[{
+                    "id"          : new Date().getTime(),
+                    "alertType"   : type,
+                    "alertTitle"  : "Test title",
+                    "alertMessage": type + ' message. Adding more text to see it wrap to the second line!'
+                  }]
+                }
+            }));
+          }
+
+          if(type === 'clear') {
+            document.body.dispatchEvent(new CustomEvent('clearAlert'));
+          }
+// =============================================================================
+      }
+    </script>
+
+
+    <script>
+      if (document.body.children[0].nodeName !== 'svg') {
+        var pe_ajax = new XMLHttpRequest();
+        pe_ajax.open("GET", "../node_modules/pearson-elements/dist/icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.responseType = "document";
+        pe_ajax.onload = function(e) {
+          document.body.insertBefore(
+            pe_ajax.responseXML.documentElement,
+            document.body.childNodes[0]
+          );
+        }
+        pe_ajax.send();
+      }
+    </script>
+
+    <!-- External dependencies for React -->
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <!-- CustomEvent polyfill is for IE, Intl.js polyfill is for Safari -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=CustomEvent,Intl.~locale.en,Intl.~locale.fr"></script>
+    <!-- Locally hosted demo server -->
+    <script src="http://localhost:8081/webpack-dev-server.js"></script>
+    <!-- Demo build of component -->
+    <script src="../build/dev.alerts.js"></script>
+</body>
+</html>
