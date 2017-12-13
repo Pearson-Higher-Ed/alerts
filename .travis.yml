@@ -6,13 +6,13 @@ node_js:
 addons:
   sonarcloud:
     organization: PDA.Alerts
+filter_secrets: false
 script:
 - npm run copy-utils
 - npm run ci
 - chmod 777 ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
 - export TEST_GROUP=desktop-regression
 - ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
-- filter_secrets: false
 - echo $SONAR_TOKEN
 - sonar-scanner
 deploy:
