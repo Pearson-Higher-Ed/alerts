@@ -7,7 +7,8 @@ addons:
   sonarcloud:
     organization: PDA.Alerts
     token:
-      secure: FsHmOXBBcseTL9UFOMrRRAo+9GpTwWyjE6crGQNiyiKpvRO/C559QK82t2Gz7L9YSxaeEgIRqqa2RDwdK76McdrJnotWEWIXCAePrAUPgwFA/qhtbP1elrSyD9DLjumP5lAi8SRt6cFjlWT6M3vKNXI+nIzY2IdMQwy1ly+eP1ddjOuJdT4cV4HOgG905nU5UiTyO4w0hwvUKsxBtFrEdSzWi77vhwBnpuW9fXGRHCMyowfjexESZzjKZ8r2Tr4MOP/zIGpAOUx+r97/51Ln+UnTAWqs5uRnv48sZvcolf6VaEPFlNP18dgFRmGbOVpnax4MZrVcZ+nLV/Cvu1541232bbhUFsCvZ6H7W3AOW8HTZnbPavWWaDE0Ei8cTmuYmVrt+odhWtfpZ9kzTM1ON/+bDUnFm2b+W2geFYe/kD8LyTxo16kJG7OpuIUrvh1LZqqeqtENdlTDKlpmucfZcz6xu3aSXxSDVmxqDXlz7ZjEk47G0K3WBG9HPSwEg83s/uMASLBuAXXGnNA4gNgJpjfPysIcrb8QQSxBjXEfnUYGwZcy47ccJ7okoRTSo9hdVxu4iQEX9JnEY03DXX9xW4xRewIlaIXaWtUQiax7Q8tVOuCgl86OrcfMYW8EZyXTLmJlSauxnttkiRr8iO0W82V2hGy3kRwczfXd0owkONc=
+      secure:
+      9d60662a7fba0cd93bc76f8ad91b15ebf7ebf8b2
 script:
 - npm run copy-utils
 - npm run ci
