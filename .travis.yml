@@ -5,7 +5,7 @@ node_js:
 - 6
 addons:
   sonarcloud:
-    organization: PDA.Alerts
+    organization: serv.UXFramework
     token: 9d60662a7fba0cd93bc76f8ad91b15ebf7ebf8b2
 script:
 - npm run copy-utils
