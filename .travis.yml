@@ -5,8 +5,6 @@ node_js:
 addons:
   sonarcloud:
     organization: PDA.Alerts
-    token:
-      secure: 7Y/AlDUYdO83JHp/JygzqZJhrmS59nvBb8aE4BN7KwNC+Ddi7H8JVvxmqJY3fFY4wXx7R5GTh0tJRlfenaIQhyiUlFGd+D958Ydu06aWfiXeYY33Tn1hYAFewj9OyhOS5OFaOHz+wGDk+qvQ+LKPAxF3Re9l8+sH3ga5V24UXx58B4Pf5L/h41plodQCZP+tuuNSksCUkPuuMC82MU49XBAifym4JeA/22aSktwjPS+JyLdWqbxtRW5PONEcUhyMXAoU3WYEk/befYYgFUzoNlSLdeJQS43OLIiYX7nByZplJLcx8fOGJKSQtDbt7Wx2aowBLlhaKupn193VIkoH9FoOgQ51C4FR7HQ/8YAabzBUCGbaxEa6eaCqPCeOrxT3yQ+TgihYEnJahBS5/9SQfCd+0Nq0dxhLPP6vdrncjeQToshhMiqZi6lfWVQi8w2i8l1G5Juo9pj1jDoBI6YtkmS09dnK+qbJC2nnNGvH/wNnJX7KaapJA5FY/YvC4WKQNkPg0+VfyVHvYZdKsn7D9Vsnh94+8idBI2Z1R2kFRS9Lw9GlUt5YPcLQR4sHEuIijFgniysnJI7AsjIHCM2Y0GsaVdYztBxiqmLgdJEx2TWy58bxJQT/rKhcQZcaHepr0MbqUL+odk3CqHwSJ4c53N2x4xgXCx1MyQ/J1pGDFBY=
 script:
 - npm run copy-utils
 - npm run ci
