@@ -2,18 +2,13 @@ language: node_js
 sudo: false
 node_js:
 - 6
-addons:
-  sonarcloud:
-    organization: PDA.Alerts
-    token:
-      secure: dLb0v5Ry+40enGhtIEBiYUlQVb/u5eKWLBkajRjTk+dx03l61gd531FAKKpv2ThgJkyCpl+y+DrCtzKXM8vwdXw7eYis5Bqsm9pDRDRl7JqTrbF6mL4RCZ//MRRRPajzeyLEYHNGrxrW5YYoKRwjIAyjCxvx2iyACd7KdCuxrFu+l6f6BEXEYU7+bcFFe1ctvTKctOUH6ZDiBVtvvlW+Goa/zhoX7NTGZsNxceC4c1kimkBNnNLrmQ/KWLs59OXgpBZCsdCOCqyYNVM+DMsVrqKf5cT9M6NiRqPVrwuqhN1IxOZaZjRMcZTyfZDGL7/Vu+XK21yBYmuK1zxe/6ETHwXbQPxdxci2myPa9P+39QJeQc5bh91+ZlL/UkoYBFdTSlmlE18Jdc6OvJwtgDXp98qLtw3pwxW/6pjTObPUSeZDp9G14C0e/0i5cOLgt29wJRgYySXsPLisr2BFhpxiJt8pL82csfA7EdyNcOERyOxl5hA5LxjzmPdjS1A4VAR7fhWXX9LWUHFsZ4Rhc7lDIpVn3eyr5cIj2MDy0EiKiEY8hCoxnM2AedIbEWQYCIN2V8kVr0AB4OQoe5bc2t47IoiYltSgQdUIoiQeBaMiK/DJT1v3yIkmblctN7D9nJ3gZWkDWDMtSwbNu32/fDHYcjKlB6f/GfF7lNGFB5W6oWQ=
+- 8
 script:
 - npm run copy-utils
 - npm run ci
 - chmod 777 ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
 - export TEST_GROUP=desktop-regression
-- cat sonar-project.properties
-- sonar-scanner
+- ./node_modules/@pearson-components/npm-scripts/shell_scripts/run_selenium_ci_tests.sh
 deploy:
   provider: npm
   email: pearson-design-accelerator@pearson.com
