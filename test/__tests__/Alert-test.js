@@ -22,32 +22,26 @@ describe('Alert', () => {
     });
 
     it('should click close button', () => {
+      let hasClicked = false;
+      let renderer = createRenderer();
+      const handleClose = () => hasClicked = true;
 
-      let hasClicked     = false;
-      let renderer       = createRenderer();
-
-      const index        = 1;
-      const closeIndex   = 1;
-      const alertType    = 'Success';
-      const alertTitle   = 'Title';
-      const alertMessage = 'hi';
-      const handleClose  = () => hasClicked = true;
-
-      renderer.render(<Alert
-        index        = {index}
-        closeIndex   = {closeIndex}
-        key          = {index}
-        alertTitle   = {alertTitle}
-        alertType    = {alertType}
-        alertMessage = {alertMessage}
-        handleClose  = {handleClose}
-      />);
+      renderer.render(
+        <Alert
+          index={1}
+          closeIndex={1}
+          key={1}
+          alertTitle='Title'
+          alertType='Success'
+          alertMessage='hi'
+          handleClose={handleClose}
+        />
+      );
 
       let actualElement = renderer.getRenderOutput();
-      let actualElementClicked = actualElement.props.children[0].props.onClick();
+      let actualElementClicked = actualElement.props.children[1].props.onClick();
 
       expect(hasClicked).toBe(true)
-
     });
 
     // jest.fn() doesn't work?
