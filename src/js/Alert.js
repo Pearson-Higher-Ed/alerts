@@ -23,12 +23,6 @@ const Alert = ({ index, alertType, handleClose, alertTitle, alertMessage }) => {
 
   return (
     <li className ="pe-alert" id = {`alert-${alertType}-${index}`}>
-      <button className="pe-icon--btn close-title"
-              onClick={() => handleClose(index)}
-              aria-label="Close alert">
-        <Icon name="remove-sm-24" />
-      </button> <br/>
-
       <div className="alert-content-container">
         {alertTypeCheck()}
         <div className={`alert-content${infoCheck}`}>
@@ -38,6 +32,12 @@ const Alert = ({ index, alertType, handleClose, alertTitle, alertMessage }) => {
           <p className="pe-paragraph alert-text">{alertMessage}</p>
         </div>
       </div>
+      <button
+        className="pe-icon--btn close-title"
+        onClick={() => handleClose(index)}
+        aria-label="Close alert">
+        <Icon name="remove-sm-24" />
+      </button>
     </li>
   );
 };

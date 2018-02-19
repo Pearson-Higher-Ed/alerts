@@ -5,6 +5,7 @@
     margin-top: 32px;
   }
 
+  display: flex;
   position: relative;
   margin-top: 20px;
   list-style: none;
@@ -21,6 +22,7 @@
 }
 
 .alert-content {
+  margin-top: 1em;
   margin-left: 12px;
   padding: 4px 12px 0 0;
 }
@@ -79,16 +81,16 @@ svg {
   width: 0;
 }
 
-.error-svg {
+.alert-content-container .error-svg {
   color: #db0020;
   display: inline;
-  margin-top: 9px;
+  margin-top: 23px;
 }
 
-.success-svg {
+.alert-content-container .success-svg {
   color: #19A5A3;
   display: inline;
-  margin-top: 6px;
+  margin-top: 22px;
 }
 
 .alert-content-container {
@@ -107,6 +109,7 @@ svg {
 
 .close-title {
   float: right;
+  align-self: flex-start;
 }
 
 .transition-enter {
