@@ -1,5 +1,31 @@
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.4...v1.2.5) (2018-02-19)
+
+
+### Bug Fixes
+
+* Bring in new npm_scripts & setup gh pages ([17dae3a](https://github.com/Pearson-Higher-Ed/alerts/commit/17dae3a))
+* Element order for live-region reading ([1167cea](https://github.com/Pearson-Higher-Ed/alerts/commit/1167cea))
+
+
+
 <a name="1.2.4"></a>
-## [1.2.4](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.1...v1.2.4) (2017-11-21)
+## [1.2.4](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.3...v1.2.4) (2017-11-21)
+
+
+
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.2...v1.2.3) (2017-11-21)
+
+
+### Features
+
+* Sonar integrated with Travis ([c9f6335](https://github.com/Pearson-Higher-Ed/alerts/commit/c9f6335))
+
+
+
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.1...v1.2.2) (2017-11-14)
 
 
 ### Bug Fixes
@@ -7,15 +33,64 @@
 * Update success icon size ([4ae7528](https://github.com/Pearson-Higher-Ed/alerts/commit/4ae7528))
 
 
+
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.0...v1.2.1) (2017-11-13)
+
+
 ### Features
 
 * Integrate Sonar ([eaa7378](https://github.com/Pearson-Higher-Ed/alerts/commit/eaa7378))
-* Sonar integrated with Travis ([c9f6335](https://github.com/Pearson-Higher-Ed/alerts/commit/c9f6335))
+
+
+
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.4...v1.2.0) (2017-10-25)
+
+
+
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.3...v1.1.4) (2017-09-27)
+
+
+
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.2...v1.1.3) (2017-09-11)
+
+
+
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.1...v1.1.2) (2017-08-18)
 
 
 
 <a name="1.1.1"></a>
-## [1.1.1](https://github.com/Pearson-Higher-Ed/alerts/compare/896ea18...v1.1.1) (2017-08-01)
+## [1.1.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.1.0...v1.1.1) (2017-08-01)
+
+
+### Features
+
+* controlled component ([9fcff1f](https://github.com/Pearson-Higher-Ed/alerts/commit/9fcff1f))
+
+
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.2...v1.1.0) (2017-06-20)
+
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.1...v1.0.2) (2017-03-17)
+
+
+
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.0.0...v1.0.1) (2017-03-08)
+
+
+
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/Pearson-Higher-Ed/alerts/compare/896ea18...v1.0.0) (2017-03-08)
 
 
 ### Bug Fixes
@@ -58,7 +133,7 @@
 * roles ([ab11ad0](https://github.com/Pearson-Higher-Ed/alerts/commit/ab11ad0))
 * spacing between title and body ([c0629a8](https://github.com/Pearson-Higher-Ed/alerts/commit/c0629a8))
 * Title and body text handled through state ([67c7413](https://github.com/Pearson-Higher-Ed/alerts/commit/67c7413))
-* Use verify npm script to ensure package name has [@pearson](https://github.com/pearson)-components scope. ([772586f](https://github.com/Pearson-Higher-Ed/alerts/commit/772586f))
+* Use verify npm script to ensure package name has [@pearson-components](https://github.com/pearson-components) scope. ([772586f](https://github.com/Pearson-Higher-Ed/alerts/commit/772586f))
 
 
 ### Features
@@ -66,7 +141,6 @@
 * **component-archetype:** run demo tests against feature branch in ci ([073f975](https://github.com/Pearson-Higher-Ed/alerts/commit/073f975))
 * **demo:** Add event listener for card comments. ([8ed5d8f](https://github.com/Pearson-Higher-Ed/alerts/commit/8ed5d8f))
 * Check package.json main field to ensure it is changed to the actual component name. ([1046e41](https://github.com/Pearson-Higher-Ed/alerts/commit/1046e41))
-* controlled component ([9fcff1f](https://github.com/Pearson-Higher-Ed/alerts/commit/9fcff1f))
 
 
 
