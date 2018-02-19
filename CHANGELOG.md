@@ -1,3 +1,13 @@
+<a name="1.2.6"></a>
+## [1.2.6](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.5...v1.2.6) (2018-02-19)
+
+
+### Bug Fixes
+
+* Add content spacing ([31cbcf1](https://github.com/Pearson-Higher-Ed/alerts/commit/31cbcf1))
+
+
+
 <a name="1.2.5"></a>
 ## [1.2.5](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.4...v1.2.5) (2018-02-19)
 
