@@ -1,10 +1,10 @@
-// Lifecycle interface for CSSTransitionGroup located in
+// Lifecycle interface for CSSTransition located in
 // Component-specific.scss with the naming convention
 // transitionName-lifecyclehook
 import React, { Component }       from 'react';
 import PropTypes                  from 'prop-types';
 import Alert                      from './Alert';
-import { CSSTransitionGroup }     from 'react-transition-group';
+import { TransitionGroup, CSSTransition }     from 'react-transition-group';
 
 export default class AlertList extends Component {
 
@@ -22,30 +22,28 @@ export default class AlertList extends Component {
 
     return (
       <div role="alert">
-        <CSSTransitionGroup
-          component="ul"
-          aria-live="polite"
-          transitionName="transition"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={200}
-          className="alertList">
+        <TransitionGroup className="alertlList" aria-live="polite">
           {_renderAlert(alertList, handleClose)}
-        </CSSTransitionGroup>
+        </TransitionGroup>
       </div>
     )
   }
-
 }
 
 function _renderAlert (alertList = [], handleClose) {
   return alertList.map((alert, index) =>
-    <Alert
-      key          = {alert.id}
-      index        = {index}
-      alertType    = {alertList[index].alertType}
-      alertTitle   = {alert.alertTitle}
-      alertMessage = {alert.alertMessage}
-      handleClose  = {handleClose}
-    />
+    <CSSTransition
+      key={alert.id}
+      classNames="transition"
+      timeout={{ enter: 300, exit: 200 }}
+    >
+      <Alert
+        index        = {index}
+        alertType    = {alertList[index].alertType}
+        alertTitle   = {alert.alertTitle}
+        alertMessage = {alert.alertMessage}
+        handleClose  = {handleClose}
+      />
+    </CSSTransition>
   );
 }
