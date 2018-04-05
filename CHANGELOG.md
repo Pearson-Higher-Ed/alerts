@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.6...v2.0.0) (2018-04-05)
+
+
+### Bug Fixes
+
+* add previous jest setup ([c04e262](https://github.com/Pearson-Higher-Ed/alerts/commit/c04e262))
+
+
+
 <a name="1.2.6"></a>
 ## [1.2.6](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.5...v1.2.6) (2018-02-19)
 
