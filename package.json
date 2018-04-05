@@ -31,7 +31,7 @@
     "verbose": true,
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "<rootDir>/(build|node_modules|demo|coverage|npm_scripts)/"
+      "<rootDir>/(build|node_modules|demo|fonts|npm_scripts|translations|coverage)/"
     ],
     "moduleFileExtensions": [
       "jsx",
