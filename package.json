@@ -27,25 +27,10 @@
     "url": "https://github.com/Pearson-Higher-Ed/alerts"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json"
-    ],
-    "collectCoverageFrom": [
-      "**/src/js/AlertList.js",
-      "**/src/js/Alert.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "lines": 80
-      }
-    },
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",
     "testPathIgnorePatterns": [
-      "<rootDir>/(build|node_modules|demo|fonts|npm_scripts|translations|coverage)/"
-    ],
-    "testEnvironment": "node",
-    "verbose": true
+      "<rootDir>/(build|node_modules|demo|coverage|npm_scripts)/"
+    ]
   },
   "dependencies": {
     "react-transition-group": "^2.3.0"
@@ -64,7 +49,8 @@
     "colors": "~1.1.2",
     "conventional-changelog": "~1.1.0",
     "css-loader": "~0.23.0",
-    "enzyme": "^2.7.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "~1.10.3",
     "eslint-loader": "~1.1.1",
     "eslint-plugin-react": "~3.16.1",
@@ -74,7 +60,7 @@
     "fs-extra": "^1.0.0",
     "ignore-styles": "~5.0.1",
     "intl": "~1.1.0",
-    "jest": "^18.1.0",
+    "jest-cli": "^19.0.0",
     "jsdom": "^8.5.0",
     "json-loader": "~0.5.4",
     "mocha": "~2.4.5",
@@ -82,7 +68,6 @@
     "pearson-elements": "^1.14.0",
     "prop-types": "^15.5.10",
     "react": "^16.2.0",
-    "react-addons-test-utils": "^15.0.0",
     "react-dom": "^16.2.0",
     "sass-loader": "~3.2.0",
     "semver": "~5.1.0",

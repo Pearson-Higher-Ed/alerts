@@ -22,7 +22,7 @@ export default class AlertList extends Component {
 
     return (
       <div role="alert">
-        <TransitionGroup className="alertlList" aria-live="polite">
+        <TransitionGroup className="alertList" aria-live="polite" component="ul">
           {_renderAlert(alertList, handleClose)}
         </TransitionGroup>
       </div>

@@ -1,13 +1,8 @@
 import expect             from 'expect';
-import expectJSX          from 'expect-jsx';
 import React              from 'react';
 import Alert              from '../../src/js/Alert';
-import Icon               from '../../src/js/Icon';
 import { shallow }        from 'enzyme';
 import { jsdom }          from 'jsdom';
-import { createRenderer } from 'react-addons-test-utils';
-
-expect.extend(expectJSX);
 
 describe('Alert', () => {
   describe('Basic Alert Test', () => {
@@ -18,15 +13,14 @@ describe('Alert', () => {
     });
 
     it('should render the Alert', function() {
-      expect(this.wrapper.node.type).toEqual('li');
+      expect(this.wrapper.getElement().type).toEqual('li');
     });
 
     it('should click close button', () => {
       let hasClicked = false;
-      let renderer = createRenderer();
       const handleClose = () => hasClicked = true;
 
-      renderer.render(
+      const wrapper = shallow(
         <Alert
           index={1}
           closeIndex={1}
@@ -38,9 +32,7 @@ describe('Alert', () => {
         />
       );
 
-      let actualElement = renderer.getRenderOutput();
-      let actualElementClicked = actualElement.props.children[1].props.onClick();
-
+      wrapper.find('button').simulate('click');
       expect(hasClicked).toBe(true)
     });
 

@@ -1,11 +1,9 @@
 import expect      from 'expect';
-import expectJSX   from 'expect-jsx';
 import React       from 'react';
 import AlertList   from '../../src/js/AlertList';
 import { mount }   from 'enzyme';
 import { jsdom }   from 'jsdom';
 
-expect.extend(expectJSX);
 
 describe('AlertList', () => {
   describe('Basic AlertList Test', () => {
