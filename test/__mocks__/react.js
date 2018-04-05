@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const react = require('react');
 
 // Resolution for requestAnimationFrame not supported in jest error :
@@ -9,9 +7,5 @@ window.addEventListener = () => {};
 window.requestAnimationFrame = () => {
   throw new Error('requestAnimationFrame is not supported in Node');
 };
-
-Object.assign(react, {
-  PropTypes
-});
 
 module.exports = react;
