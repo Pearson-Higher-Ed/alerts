@@ -1,6 +1,10 @@
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.6...v2.0.0) (2018-04-05)
 
+### Features
+
+* Upgrade to React 16 and compatible transition library.
+
 
 ### Bug Fixes
 
