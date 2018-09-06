@@ -77,11 +77,6 @@ li[id^="alert-Information"] {
   border-left: $alert-border-left #19A5A3;
 }
 
-svg {
-  height: 0;
-  width: 0;
-}
-
 .alert-content-container .error-svg {
   color: #db0020;
   display: inline;
