@@ -1,9 +1,15 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/Pearson-Higher-Ed/alerts/compare/v2.0.0...v2.0.1) (2018-09-07)
+
+
+### Bug Fixes
+
+* Remove global svg style ([02e8934](https://github.com/Pearson-Higher-Ed/alerts/commit/02e8934))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/Pearson-Higher-Ed/alerts/compare/v1.2.6...v2.0.0) (2018-04-05)
-
-### Features
-
-* Upgrade to React 16 and compatible transition library.
 
 
 ### Bug Fixes
